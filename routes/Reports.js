@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 
 router.get('/reports', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/Reports.html'));
+  res.render('Reports');
 });
 
 module.exports = router;

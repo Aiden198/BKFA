@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
-router.get('/volenteer', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/Volenteer.html'));
+router.get('/volunteer', function(req, res) {
+  res.render('Volunteer');
 });
 
 module.exports = router;
