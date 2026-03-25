@@ -97,6 +97,7 @@ p {
 
 .nav-links {
   display: flex;
+  align-items: center; /* THIS fixes vertical misalignment */
   gap: 1.4rem;
   list-style: none;
   margin: 0;
@@ -105,19 +106,29 @@ p {
 
 /* each menu item becomes the anchor point for its own dropdown */
 
-.nav-links > li {
-  position: relative;
+.nav-links li {
+  display: flex;
+  align-items: center; /* making all nav items same height due to <a> and <button> elements */
 }
 
 /* links + dropdown buttons */
 /* this part also removes the browser's default button box */
 
+/* making links and buttons look identical */
 .nav-btn a,
 .dropdown-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+  position: relative;  
+  display: flex;              
+  align-items: center;        /* vertical center */
+  justify-content: center;
+
+  height: 40px;               /* forcing same height due to changes in elements */
+  line-height: 1;             
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  padding: 0 6px;
 
   background: transparent;
   border: none;
@@ -128,10 +139,7 @@ p {
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  padding: 0.5rem 0.15rem;
   color: var(--text);
-  font-size: 1rem;
-  font-weight: 700;
   cursor: pointer;
 }
 
