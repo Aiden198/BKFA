@@ -1,0 +1,445 @@
+:root {
+  --bg: #f6f1ea;
+  --surface: #ffffff;
+  --surface-soft: #f3ebe2;
+  --footer-bg: #2f5b4d;
+
+  --text: #1f2a2a;
+  --muted: #6a756f;
+  --line: #e7ddd2;
+
+  --primary: #d26a3d;
+  --primary-dark: #b9552b;
+  --secondary: #315c4f;
+  --accent: #f2b84b;
+
+  --shadow-sm: 0 6px 18px rgba(25, 31, 34, 0.06);
+  --shadow-md: 0 12px 30px rgba(25, 31, 34, 0.10);
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+
+  --container: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(210, 106, 61, 0.08), transparent 24%),
+    radial-gradient(circle at top right, rgba(49, 92, 79, 0.08), transparent 20%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--muted);
+}
+
+.container {
+  width: min(var(--container), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.header-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: min(1200px, calc(100% - 2rem));
+  margin: 1rem auto 0;
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-links > li {
+  position: relative;
+}
+
+.nav-btn a,
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 0.96rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.35rem 0.1rem;
+}
+
+.nav-links > li > a,
+.dropdown-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: none;
+  padding: 0.5rem 0.15rem;
+  color: var(--text);
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-links > li > a::after,
+.dropdown-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.1rem;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-links > li > a:hover,
+.dropdown-btn:hover {
+  color: var(--primary-dark);
+}
+
+.nav-links > li > a:hover::after,
+.dropdown-btn:hover::after,
+.nav-links > li > a.active::after {
+  transform: scaleX(1);
+}
+
+/* DROPDOWNS */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 220px;
+  margin: 0;
+  padding: 0.7rem;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(231, 221, 210, 0.9);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.8rem 0.95rem;
+  border-radius: 12px;
+  color: var(--text);
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(210, 106, 61, 0.08);
+  color: var(--primary-dark);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* PAGE WRAPPER */
+.page-content {
+  width: min(var(--container), calc(100% - 2rem));
+  margin: 2.5rem auto 0;
+  padding: 4.5rem 2rem;
+  min-height: 60vh;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.page-content h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  color: var(--secondary);
+}
+
+.page-content p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* SHARED BUTTON STYLE IF YOU ADD LINKS/BUTTONS LATER */
+.btn,
+.page-content .cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 1.15rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.page-content .cta-link:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--text);
+  border-color: rgba(31, 42, 42, 0.1);
+}
+
+/* FOOTER */
+.web-floor {
+  margin-top: 3rem;
+  background:
+    radial-gradient(circle at top right, rgba(242, 184, 75, 0.14), transparent 18%),
+    var(--footer-bg);
+  color: #f8faf9;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.floor-nav {
+  width: min(var(--container), 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.floor-links-1,
+.floor-links-2 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.floor-links-1 li,
+.floor-links-2 li {
+  margin-bottom: 0.95rem;
+}
+
+.floor-links-1 a,
+.floor-links-2 a {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.floor-links-1 a:hover,
+.floor-links-2 a:hover {
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.web-floor::after {
+  content: "Birthing Kit Foundation Australia";
+  display: block;
+  width: min(var(--container), 100%);
+  margin: 2rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+}
+
+/* FORM BASICS FOR OTHER PAGES */
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid #d8dfdd;
+  border-radius: 14px;
+  background: #fff;
+  padding: 0.9rem 1rem;
+  color: var(--text);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(210, 106, 61, 0.58);
+  box-shadow: 0 0 0 4px rgba(210, 106, 61, 0.12);
+}
+
+/* ACCESSIBILITY */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(210, 106, 61, 0.22);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 920px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 28px;
+  }
+
+  .dropdown-menu {
+    left: 0;
+    transform: translateX(0) translateY(8px);
+  }
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    transform: translateX(0) translateY(0);
+  }
+
+  .floor-nav {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0.9rem 0.75rem;
+  }
+
+  .nav-links {
+    gap: 0.9rem;
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+
+  .nav-links > li {
+    width: 100%;
+  }
+
+  .nav-links > li > a,
+  .dropdown-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    margin-top: 0.5rem;
+    min-width: auto;
+    box-shadow: none;
+    border-radius: 14px;
+  }
+
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  .page-content {
+    padding: 3rem 1.25rem;
+    border-radius: 24px;
+  }
+}
