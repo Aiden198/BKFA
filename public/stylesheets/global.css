@@ -1,47 +1,51 @@
+/* COLOURS (THEME SETUP) */
+/* This is where all colours used in the site are defined.
+   Change here = affects the whole website */
+
 :root {
-  --bg: #f6f1ea;
-  --surface: #ffffff;
-  --surface-soft: #f3ebe2;
-  --footer-bg: #2f5b4d;
+  --primary: #6c63a8;        /* main purple (brand colour) */
+  --primary-dark: #5a5390;   /* darker purple for hover */
+  --secondary: #4f4a7d;      /* used for headings / footer */
 
-  --text: #1f2a2a;
-  --muted: #6a756f;
-  --line: #e7ddd2;
+  --accent: #f2b84b;         /* optional highlight colour */
 
-  --primary: #d26a3d;
-  --primary-dark: #b9552b;
-  --secondary: #315c4f;
-  --accent: #f2b84b;
+  --bg: #f7f5fb;             /* very light purple background */
+  --surface: #ffffff;        /* white cards / sections */
+  --surface-soft: #f3f0fa;   /* soft background */
 
-  --shadow-sm: 0 6px 18px rgba(25, 31, 34, 0.06);
-  --shadow-md: 0 12px 30px rgba(25, 31, 34, 0.10);
-  --radius-sm: 12px;
-  --radius-md: 18px;
-  --radius-lg: 24px;
+  --footer-bg: #4f4a7d;      /* footer colour */
+
+  --text: #1f1f2e;           /* main text colour */
+  --muted: #6b6b7a;          /* lighter text */
+
+  --line: #e7e3f2;           /* borders */
+
+  --shadow-sm: 0 6px 18px rgba(70, 60, 120, 0.08);
+  --shadow-md: 0 12px 30px rgba(70, 60, 120, 0.12);
 
   --container: 1200px;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* BASE STYLES (RESET). Applies to everything */
 
-html {
-  scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   color: var(--text);
+
+  /* soft purple background */
   background:
-    radial-gradient(circle at top left, rgba(210, 106, 61, 0.08), transparent 24%),
-    radial-gradient(circle at top right, rgba(49, 92, 79, 0.08), transparent 20%),
+    radial-gradient(circle at top left, rgba(108, 99, 168, 0.08), transparent 24%),
     var(--bg);
+
   line-height: 1.6;
 }
+
+/* GENERAL ELEMENTS */
 
 img {
   max-width: 100%;
@@ -49,397 +53,235 @@ img {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  color: inherit;
 }
 
 p {
   color: var(--muted);
 }
 
-.container {
-  width: min(var(--container), calc(100% - 2rem));
-  margin-inline: auto;
-}
+/* LOGOS - separate header & footer logos */
 
 .header-logo {
   height: 70px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
 }
 
 .footer-logo {
-  height: 64px;
-  width: auto;
-  object-fit: contain;
+  height: 60px;
 }
 
-/* NAVBAR */
+/* NAVBAR (TOP MENU) */
+
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
 
-  width: min(1200px, calc(100% - 2rem));
-  margin: 1rem auto 0;
-  padding: 1rem 1.5rem;
+  margin: 1rem auto;
+  width: min(var(--container), calc(100% - 2rem));
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
 
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid var(--line);
+  padding: 1rem 1.5rem;
+
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 999px;
+  border: 1px solid var(--line);
+
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(12px);
 }
+
+/* navigation links container */
 
 .nav-links {
-  list-style: none;
   display: flex;
-  align-items: center;
   gap: 1.4rem;
+  list-style: none;
   margin: 0;
   padding: 0;
-  flex-wrap: nowrap;
 }
+
+/* each menu item becomes the anchor point for its own dropdown */
 
 .nav-links > li {
   position: relative;
 }
 
-.nav-btn a,
-.dropdown-btn {
-  background: none;
-  border: none;
-  color: var(--text);
-  font-size: 0.96rem;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 0.35rem 0.1rem;
-}
+/* links + dropdown buttons */
+/* this part also removes the browser's default button box */
 
-.nav-links > li > a,
+.nav-btn a,
 .dropdown-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: none;
+
+  background: transparent;
   border: none;
+  outline: none;
+  box-shadow: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
   padding: 0.5rem 0.15rem;
   color: var(--text);
-  font-size: 0.96rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
   cursor: pointer;
-  transition: color 0.2s ease;
 }
 
-.nav-links > li > a::after,
+/* underline effect on hover */
+
+.nav-btn a::after,
 .dropdown-btn::after {
   content: "";
   position: absolute;
+  bottom: -2px;
   left: 0;
-  bottom: -0.1rem;
   width: 100%;
   height: 2px;
-  border-radius: 999px;
   background: var(--primary);
+
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.25s ease;
+  transition: 0.25s;
 }
 
-.nav-links > li > a:hover,
+.nav-btn a:hover,
 .dropdown-btn:hover {
-  color: var(--primary-dark);
+  color: var(--primary);
 }
 
-.nav-links > li > a:hover::after,
-.dropdown-btn:hover::after,
-.nav-links > li > a.active::after {
+.nav-btn a:hover::after,
+.dropdown-btn:hover::after {
   transform: scaleX(1);
 }
 
-/* DROPDOWNS */
+/* DROPDOWN MENU */
+/* left: 0 makes each menu drop under its own item */
+
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 1rem);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  min-width: 220px;
-  margin: 0;
-  padding: 0.7rem;
+  top: calc(100% + 0.6rem);
+  left: 0;
+
+  background: white;
+  border-radius: 16px;
+  padding: 0.5rem;
   list-style: none;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(231, 221, 210, 0.9);
-  border-radius: 20px;
-  box-shadow: var(--shadow-md);
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 0.22s ease,
-    transform 0.22s ease,
-    visibility 0.22s ease;
-}
-
-.dropdown-menu li {
   margin: 0;
+  min-width: 220px;
+
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--line);
+
+  display: none;
+  z-index: 1000;
 }
 
-.dropdown-menu a {
+/* show dropdown on hover */
+
+.dropdown:hover .dropdown-menu {
   display: block;
-  padding: 0.8rem 0.95rem;
-  border-radius: 12px;
-  color: var(--text);
-  font-weight: 600;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.dropdown-menu a:hover {
-  background: rgba(210, 106, 61, 0.08);
-  color: var(--primary-dark);
+/* dropdown links */
+
+.nav-btn-drp a {
+  display: block;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+.nav-btn-drp a:hover {
+  background: rgba(108, 99, 168, 0.1);
+  color: var(--primary);
 }
 
-/* PAGE WRAPPER */
+/* PAGE CONTENT AREA */
+
 .page-content {
+  margin: 2rem auto;
   width: min(var(--container), calc(100% - 2rem));
-  margin: 2.5rem auto 0;
-  padding: 4.5rem 2rem;
-  min-height: 60vh;
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.58);
-  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  padding: 3rem;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
+
   text-align: center;
 }
 
-.page-content h1 {
-  margin-bottom: 1rem;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
-  color: var(--secondary);
-}
-
-.page-content p {
-  max-width: 760px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-}
-
-/* SHARED BUTTON STYLE IF YOU ADD LINKS/BUTTONS LATER */
-.btn,
-.page-content .cta-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 1.15rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.btn:hover,
-.page-content .cta-link:hover {
-  transform: translateY(-2px);
-}
+/* BUTTONS */
 
 .btn-primary {
   background: var(--primary);
-  color: #fff;
-  box-shadow: var(--shadow-sm);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
 }
 
 .btn-primary:hover {
   background: var(--primary-dark);
 }
 
-.btn-secondary {
-  background: #fff;
-  color: var(--text);
-  border-color: rgba(31, 42, 42, 0.1);
-}
-
 /* FOOTER */
+
 .web-floor {
   margin-top: 3rem;
-  background:
-    radial-gradient(circle at top right, rgba(242, 184, 75, 0.14), transparent 18%),
-    var(--footer-bg);
-  color: #f8faf9;
-  padding: 3rem 1.5rem 2rem;
+  padding: 3rem 1.5rem;
+
+  background: var(--footer-bg);
+  color: white;
 }
 
+/* footer layout */
+
 .floor-nav {
-  width: min(var(--container), 100%);
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
   gap: 2rem;
+
+  width: min(var(--container), 100%);
+  margin: auto;
 }
+
+/* footer links */
 
 .floor-links-1,
 .floor-links-2 {
   list-style: none;
   padding: 0;
-  margin: 0;
-}
-
-.floor-links-1 li,
-.floor-links-2 li {
-  margin-bottom: 0.95rem;
 }
 
 .floor-links-1 a,
 .floor-links-2 a {
-  color: rgba(255, 255, 255, 0.88);
-  font-weight: 500;
-  transition: color 0.2s ease, transform 0.2s ease;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .floor-links-1 a:hover,
 .floor-links-2 a:hover {
-  color: #fff;
-  transform: translateX(2px);
+  color: white;
 }
 
-.web-floor::after {
-  content: "Birthing Kit Foundation Australia";
-  display: block;
-  width: min(var(--container), 100%);
-  margin: 2rem auto 0;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.92rem;
+/* acknowledgement text */
+
+#acknowlagment {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 1rem;
 }
 
-/* FORM BASICS FOR OTHER PAGES */
-input,
-textarea,
-select {
-  width: 100%;
-  border: 1px solid #d8dfdd;
-  border-radius: 14px;
-  background: #fff;
-  padding: 0.9rem 1rem;
-  color: var(--text);
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: rgba(210, 106, 61, 0.58);
-  box-shadow: 0 0 0 4px rgba(210, 106, 61, 0.12);
-}
-
-/* ACCESSIBILITY */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 3px solid rgba(210, 106, 61, 0.22);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 920px) {
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 28px;
-  }
-
-  .dropdown-menu {
-    left: 0;
-    transform: translateX(0) translateY(8px);
-  }
-
-  .dropdown:hover .dropdown-menu,
-  .dropdown:focus-within .dropdown-menu {
-    transform: translateX(0) translateY(0);
-  }
-
-  .floor-nav {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .navbar {
-    padding: 0.9rem 0.75rem;
-  }
-
-  .nav-links {
-    gap: 0.9rem;
-    padding: 1rem;
-    justify-content: flex-start;
-  }
-
-  .nav-links > li {
-    width: 100%;
-  }
-
-  .nav-links > li > a,
-  .dropdown-btn {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .dropdown-menu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    display: none;
-    margin-top: 0.5rem;
-    min-width: auto;
-    box-shadow: none;
-    border-radius: 14px;
-  }
-
-  .dropdown:hover .dropdown-menu,
-  .dropdown:focus-within .dropdown-menu {
-    display: block;
-  }
-
-  .page-content {
-    padding: 3rem 1.25rem;
-    border-radius: 24px;
-  }
+#acknowlagment p {
+  font-size: 0.9rem;
 }
