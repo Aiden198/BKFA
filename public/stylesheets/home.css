@@ -1,0 +1,148 @@
+/* HERO SECTION (TOP OF PAGE) - Big intro section with text + image */
+
+.hero {
+  padding: 4rem 0;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* hero text */
+.hero__text h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.hero__text p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+/* hero buttons area */
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* HERO IMAGE / CARD */
+.hero-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SMALL STATS / INFO BOXES */
+.pill-stat {
+  background: white;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* GENERIC SECTION WRAPPER - Used for any homepage section */
+.section {
+  padding: 4rem 0;
+}
+
+.section__header {
+  margin-bottom: 2rem;
+}
+
+.section__header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+.section__header p {
+  color: var(--muted);
+}
+
+/* GRID CARDS (PROJECTS / NEWS) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+/* individual card */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover effect */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+/* CTA SECTION (CALL TO ACTION) - Big purple section (donate / volunteer) */
+.cta-band {
+  background: var(--secondary);
+  color: white;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta-band h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-band p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+/* BUTTON OVERRIDES (OPTIONAL) - Use with global .btn classes */
+.hero .btn-primary {
+  min-width: 140px;
+}
+
+/* RESPONSIVE (MOBILE) */
+@media (max-width: 900px) {
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}
