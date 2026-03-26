@@ -48,11 +48,17 @@
 }
 
 .logo {
-  height: 130px;
+  height: 110px;
   width: auto;
   margin-right: 30px;
 }
 
+.footer-logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 .nav-links {
   list-style: none;
   margin: 0;
@@ -88,13 +94,31 @@
 
 .web-floor {
   background-color: #555;
+  color: white;
+  margin-top: 60px;
+  padding: 50px 40px 20px;
 }
 
 .floor-nav {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 240px;
+}
+
+.footer-links-wrapper {
+  flex: 2;
+  display: flex;
+  gap: 60px;
+  min-width: 300px;
 }
 
 .floor-links-1,
@@ -102,12 +126,77 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  display: block;
-  justify-content: center;
-  align-items: center;
 }
 
+.floor-links-1 li,
+.floor-links-2 li {
+  margin-bottom: 12px;
+}
+
+.floor-links-1 a,
+.floor-links-2 a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.floor-links-1 a:hover,
+.floor-links-2 a:hover {
+  color: #ddd6f7;
+  padding-left: 4px;
+}
+
+.footer-social {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-social h3 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: white;
+  color: #6b6296;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 22px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #ddd6f7;
+  transform: translateY(-3px);
+}
+
+#acknowledgment {
+  max-width: 1200px;
+  margin: 35px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+#acknowledgment p {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+  color: white;
+}
 .page-content {
   padding: 20px;
   background-color: #ccc;
