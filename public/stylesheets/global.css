@@ -149,7 +149,7 @@ p {
 .dropdown-btn::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
@@ -158,6 +158,8 @@ p {
   transform: scaleX(0);
   transform-origin: left;
   transition: 0.25s;
+
+   z-index: 2;
 }
 
 .nav-btn a:hover,
@@ -179,15 +181,18 @@ p {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.6rem);
-  left: 0;
+  top: 100%;                 /* directly attached to button */
+  left: 50%;
+  transform: translateX(-50%);
 
   background: white;
   border-radius: 16px;
   padding: 0.5rem;
   list-style: none;
   margin: 0;
-  min-width: 220px;
+
+  min-width: 200px;
+  width: max-content;
 
   box-shadow: var(--shadow-md);
   border: 1px solid var(--line);
@@ -198,16 +203,22 @@ p {
 
 /* show dropdown on hover */
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
   display: block;
 }
-
 /* dropdown links */
+
+.nav-btn-drp {
+  width: 100%;
+}
 
 .nav-btn-drp a {
   display: block;
+  width: 100%;
   padding: 0.7rem 1rem;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .nav-btn-drp a:hover {
