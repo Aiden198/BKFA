@@ -20,6 +20,7 @@ var reportsRouter = require('./routes/Reports')
 var resourcesRouter = require('./routes/Resources')
 var volunteerRouter = require('./routes/Volunteer')
 var hostAnAssemblyDayRouter = require('./routes/HostAnAssemblyDay')
+var testRouter = require('./routes/test')
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use('/', reportsRouter)
 app.use('/', resourcesRouter)
 app.use('/', volunteerRouter)
 app.use('/', hostAnAssemblyDayRouter)
+app.use('/', testRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

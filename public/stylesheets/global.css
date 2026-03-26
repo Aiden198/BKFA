@@ -117,13 +117,13 @@ p {
 /* making links and buttons look identical */
 .nav-btn a,
 .dropdown-btn {
-  position: relative;  
-  display: flex;              
+  position: relative;
+  display: flex;
   align-items: center;        /* vertical center */
   justify-content: center;
 
   height: 40px;               /* forcing same height due to changes in elements */
-  line-height: 1;             
+  line-height: 1;
 
   font-size: 1rem;
   font-weight: 700;
@@ -292,4 +292,31 @@ p {
 
 #acknowlagment p {
   font-size: 0.9rem;
+}
+
+.fly-in-prepare {
+  opacity: 0;
+  transition: transform 0.45s ease-out, opacity 0.45s ease-out;
+  will-change: transform, opacity;
+}
+
+.fly-start-up {
+  transform: translateY(-100px);
+}
+
+.fly-start-down {
+  transform: translateY(100px);
+}
+
+.fly-start-left {
+  transform: translateX(-100px);
+}
+
+.fly-start-right {
+  transform: translateX(100px);
+}
+
+.fly-show {
+  opacity: 1;
+  transform: translate(0, 0);
 }
