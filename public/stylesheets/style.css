@@ -53,12 +53,18 @@
   margin-right: 30px;
 }
 
+.header-logo {
+  height: 130px;
+  width: auto;
+  margin-right: 30px;
+}
+
+
 .nav-links {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 20px;
-
+  gap: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,14 +93,39 @@
 }
 
 .web-floor {
-  background-color: #555;
+  background-color: #6b6296;
+  color: white;
+  margin-top: 60px;
+  padding: 50px 40px 20px;
 }
 
 .floor-nav {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-links-wrapper {
+  flex: 2;
+  display: flex;
+  gap: 60px;
+  min-width: 280px;
 }
 
 .floor-links-1,
@@ -102,13 +133,75 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  display: block;
-  justify-content: center;
-  align-items: center;
 }
 
-.page-content {
-  padding: 20px;
-  background-color: #ccc;
+.floor-links-1 li,
+.floor-links-2 li {
+  margin-bottom: 14px;
+}
+
+.floor-links-1 a,
+.floor-links-2 a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.floor-links-1 a:hover,
+.floor-links-2 a:hover {
+  color: #d9d0f3;
+  padding-left: 4px;
+}
+
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-social h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 22px;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+  color: #6b6296;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #d9d0f3;
+  transform: translateY(-3px);
+}
+
+#acknowledgment {
+  max-width: 1200px;
+  margin: 35px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+#acknowledgment p {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+  color: white;
 }
