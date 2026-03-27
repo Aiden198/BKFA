@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+
+<main>
+    <div class="page-content">
+        <section style="padding: 60px 20px; max-width: 800px; margin: auto;">
+
+            <h1>Fly in test</h1>
+
+            <div class="fly-in" data-fly="left" style="margin: 40px 0; background:#a1a1a1; padding:20px;">
+                shouldnt animate
+            </div>
+
+            <div class="fly-in" data-fly="right" style="margin: 40px 0; background:#525252; padding:20px;">
+                shouldnt animate
+            </div>
+
+            <div style="height: 100vh;"></div> <!-- make space -->
+
+            <div class="fly-in" data-fly="left" style="margin: 40px 0; background:#09ff00; padding:20px;">
+                left
+            </div>
+
+            <div class="fly-in" data-fly="right" style="margin: 40px 0; background:#00d9ff; padding:20px;">
+                right
+            </div>
+
+            <div class="fly-in" data-fly="up" style="margin: 40px 0; background:#0051ff; padding:20px;">
+                up
+            </div>
+
+            <div class="fly-in" data-fly="down" style="margin: 40px 0; background:#f700ff; padding:20px;">
+                down
+            </div>
+
+            <div style="height: 80vh;"></div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="fly-in" data-fly="left" style="background:#e2e3e5; padding:20px;">1</div>
+                <div class="fly-in" data-fly="right" style="background:#e2e3e5; padding:20px;">2</div>
+                <div class="fly-in" data-fly="up" style="background:#e2e3e5; padding:20px;">3</div>
+                <div class="fly-in" data-fly="down" style="background:#e2e3e5; padding:20px;">4</div>
+            </div>
+
+            <div style="height: 100vh;"></div>
+
+            <div class="fly-in" data-fly="left" style="margin: 20px 0; background:#f1f1f1; padding:20px;">A</div>
+            <div class="fly-in" data-fly="right" style="margin: 20px 0; background:#f1f1f1; padding:20px;">B</div>
+            <div class="fly-in" data-fly="up" style="margin: 20px 0; background:#f1f1f1; padding:20px;">C</div>
+            <div class="fly-in" data-fly="down" style="margin: 20px 0; background:#f1f1f1; padding:20px;">D</div>
+            <div class="fly-in" data-fly="left" style="margin: 20px 0; background:#f1f1f1; padding:20px;">E</div>
+            <div class="fly-in" data-fly="right" style="margin: 20px 0; background:#f1f1f1; padding:20px;">F</div>
+
+            <div style="height: 100vh;"></div>
+
+            <div class="fly-in" data-fly="up" style="margin: 20px 0; background:#ccc; padding:20px;">
+                Final element at bottom
+            </div>
+
+            </section>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

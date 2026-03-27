@@ -54,17 +54,23 @@
 }
 
 .footer-logo {
-  width: 240px;
+  width: 220px;
   max-width: 100%;
   height: auto;
   display: block;
 }
+.header-logo {
+  height: 130px;
+  width: auto;
+  margin-right: 30px;
+}
+
+
 .nav-links {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 20px;
-
+  gap: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +99,7 @@
 }
 
 .web-floor {
-  background-color: #555;
+  background-color: #6b6296;
   color: white;
   margin-top: 60px;
   padding: 50px 40px 20px;
@@ -103,22 +109,29 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .footer-brand {
   flex: 1;
-  min-width: 240px;
+  min-width: 220px;
+}
+
+.footer-logo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .footer-links-wrapper {
   flex: 2;
   display: flex;
   gap: 60px;
-  min-width: 300px;
+  min-width: 280px;
 }
 
 .floor-links-1,
@@ -130,7 +143,7 @@
 
 .floor-links-1 li,
 .floor-links-2 li {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .floor-links-1 a,
@@ -144,18 +157,19 @@
 
 .floor-links-1 a:hover,
 .floor-links-2 a:hover {
-  color: #ddd6f7;
+  color: #d9d0f3;
   padding-left: 4px;
 }
 
 .footer-social {
   flex: 1;
-  min-width: 180px;
+  min-width: 200px;
 }
 
 .footer-social h3 {
-  margin: 0 0 15px 0;
-  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 22px;
   color: white;
 }
 
@@ -165,21 +179,21 @@
 }
 
 .social-icons a {
-  width: 46px;
-  height: 46px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  background: white;
+  background-color: white;
   color: #6b6296;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 20px;
   transition: 0.3s ease;
 }
 
 .social-icons a:hover {
-  background: #ddd6f7;
+  background-color: #d9d0f3;
   transform: translateY(-3px);
 }
 
