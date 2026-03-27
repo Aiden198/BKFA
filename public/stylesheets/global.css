@@ -301,7 +301,7 @@ p {
   padding-top: 1rem;
 }
 
-#acknowlagment p {
+#acknowledgment p {
   font-size: 0.9rem;
 }
 
@@ -379,4 +379,53 @@ p {
 .social-icons a:hover {
   background-color: #d9d0f3;
   transform: translateY(-3px);
+}
+
+/* ===== PRIVACY PAGE FIX ===== */
+
+.privacy-policy-section {
+  padding: 60px 0;
+}
+
+.privacy-policy-container {
+  max-width: 900px;              /* controls width */
+  margin: 0 auto;                /* centers it */
+  padding: 0 20px;               /* spacing from sides */
+}
+
+/* small label */
+.privacy-policy-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #6b6296;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* big heading */
+.privacy-policy-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #5a5585;
+  margin-bottom: 25px;
+}
+
+/* paragraphs */
+.privacy-policy-container p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;              /* 🔥 THIS FIXES LIGHT TEXT */
+  margin-bottom: 18px;
+}
+
+/* links */
+.privacy-link {
+  color: #3db2a4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
 }
