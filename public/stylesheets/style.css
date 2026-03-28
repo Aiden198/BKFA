@@ -205,13 +205,38 @@
 }
 
 #acknowledgment p {
-  margin: 0;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.7;
-  color: white;
+  margin: 35px auto 0;
+  max-width: 1200px;
+  padding-top: 20px;
 }
+
 .page-content {
   padding: 20px;
   background-color: #ccc;
+}
+
+/* ===== FOOTER BOTTOM (COPYRIGHT / PRIVACY) ===== */
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #d9d0f3;
 }

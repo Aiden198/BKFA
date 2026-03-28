@@ -6,4 +6,8 @@ router.get('/', function(req, res) {
   res.render('home');
 });
 
+router.get('/privacypolicy', function(req, res) {
+  res.render('PrivacyPolicy');
+});
+
 module.exports = router;
