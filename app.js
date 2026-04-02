@@ -37,21 +37,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
-app.use('/', memberRouter)
-app.use('/', birthKitsRouter)
-app.use('/', contactRouter)
-app.use('/', donateRouter)
-app.use('/', faqRouter)
-app.use('/', newsRouter)
-app.use('/', ourHistoryRouter)
-app.use('/', ourProjectsRouter)
-app.use('/', ourSupportersRouter)
-app.use('/', ourTeamRouter)
-app.use('/', reportsRouter)
-app.use('/', resourcesRouter)
-app.use('/', volunteerRouter)
-app.use('/', hostAnAssemblyDayRouter)
-app.use('/', testRouter)
+app.use('/member', memberRouter)
+app.use('/birthkits', birthKitsRouter)
+app.use('/contact', contactRouter)
+app.use('/donate', donateRouter)
+app.use('/faq', faqRouter)
+app.use('/news', newsRouter)
+app.use('/ourhistory', ourHistoryRouter)
+app.use('/ourprojects', ourProjectsRouter)
+app.use('/oursupporters', ourSupportersRouter)
+app.use('/ourteam', ourTeamRouter)
+app.use('/reports', reportsRouter)
+app.use('/resources', resourcesRouter)
+app.use('/volunteer', volunteerRouter)
+app.use('/hostanassemblyday', hostAnAssemblyDayRouter)
+app.use('/test', testRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
