@@ -429,3 +429,57 @@ p {
 .privacy-link:hover {
   text-decoration: underline;
 }
+
+/* expanding text */
+.expandable {
+  margin: 1rem 0;
+}
+
+.expandable-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #dfe7e8;
+  border: none;
+  padding: 1rem 1.25rem;
+
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.expandable-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #3f3f8f;
+}
+
+.expandable-icon {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #3f3f8f;
+  transition: transform 0.25s ease;
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.expandable-inner {
+  padding: 1rem 1.25rem;
+  background: white;
+}
+
+.expandable.open .expandable-content {
+  opacity: 1;
+}
+
+.expandable.open .expandable-icon {
+  transform: rotate(45deg);
+}

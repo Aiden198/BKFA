@@ -2,7 +2,23 @@
 
 <main>
     <div class="page-content">
-        <h1> Volunteer </h1>
+        <h1>Volunteer</h1>
+
+        <%- include("partials/expandable", {
+          title: "Title 1",
+          content: `<p>blah blah blah blah</p>`
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "Title 2", <!-- title in just normal text -->
+          content: `
+            <p>blah blah blah blah</p> <!-- content in html -->
+            <p>blah blah blah blah</p>
+            <p>blah blah blah blah</p>
+            <p>blah blah blah blah</p>
+          `
+        }) %>
+
     </div>
 </main>
 
