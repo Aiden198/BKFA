@@ -19,8 +19,9 @@ var ourTeamRouter = require('./routes/OurTeam')
 var reportsRouter = require('./routes/Reports')
 var resourcesRouter = require('./routes/Resources')
 var volunteerRouter = require('./routes/Volunteer')
-var hostAnAssemblyDayRouter = require('./routes/HostAnAssemblyDay')
 var testRouter = require('./routes/test')
+var becomeAMemberRouter = require('./routes/BecomeAMember')
+var ourApproachRouter = require('./routes/OurApproach')
 
 var app = express();
 
@@ -38,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/member', memberRouter)
-app.use('/birthkits', birthKitsRouter)
+app.use('/cleanbirthkits', birthKitsRouter)
 app.use('/contact', contactRouter)
 app.use('/donate', donateRouter)
 app.use('/faq', faqRouter)
@@ -50,8 +51,9 @@ app.use('/ourteam', ourTeamRouter)
 app.use('/reports', reportsRouter)
 app.use('/resources', resourcesRouter)
 app.use('/volunteer', volunteerRouter)
-app.use('/hostanassemblyday', hostAnAssemblyDayRouter)
 app.use('/test', testRouter)
+app.use('/becomeamember', becomeAMemberRouter)
+app.use('/ourapproach', ourApproachRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

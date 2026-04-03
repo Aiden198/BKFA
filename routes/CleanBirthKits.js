@@ -6,4 +6,8 @@ router.get('/', function(req, res) {
   res.render('CleanBirthKits');
 });
 
+router.get('/buyassembledkits', function(req, res) {
+  res.render('BuyAssembledKits');
+});
+
 module.exports = router;
