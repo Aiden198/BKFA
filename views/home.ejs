@@ -1,5 +1,8 @@
 <%- include('partials/header') %>
 
+<script src="/javascripts/countUp.umd.js"></script>
+<script src="/javascripts/counter.js"></script>
+
 <main>
     <header class="hero">
         <div class="container">
@@ -128,7 +131,7 @@
                         <img src="/images/2022/10/icon-Birthing-kit.png" alt="Birthing kit icon">
                     </div>
                     <div class="card__text" >
-                        <h3>3 M</h3>
+                        <h3 id="count-total-kits">3 M</h3>
                         <p>ACCUMULATIVE TOTAL NUMBER OF KITS DISTRIBUTED</p>
                     </div>
                 </div>
@@ -158,7 +161,7 @@
                             <img src="/images/2022/10/icon-assembly-days.png" alt="Assembly days icon">
                         </div>
                         <div class="card__text">
-                            <h3>303</h3>
+                            <h3 id="count-assembly">303</h3>
                             <p>ASSEMBLY DAYS WERE HELD IN AUSTRALIA</p>
                         </div>
                     </div>
@@ -167,7 +170,7 @@
                             <img src="/images/2022/10/icon-volunteers.png" alt="Volunteers icon">
                         </div>
                         <div class="card__text">
-                            <h3>15k</h3>
+                            <h3 id="count-volunteers">15k</h3>
                             <p>VOLUNTEERS DEDICATED THEIR TIME TO ASSEMBLE BIRTHING KITS</p>
                         </div>
                     </div>
@@ -176,7 +179,7 @@
                             <img src="/images/2022/10/icon-maternity.png" alt="Maternity icon">
                         </div>
                         <div class="card__text">
-                            <h3>258k</h3>
+                            <h3 id="count-mothers">258k</h3>
                             <p>MOTHERS AND NEWBORNS WERE HELPED WITH HEALTH EQUIPMENT AND/OR SERVICES</p>
                         </div>
                     </div>
