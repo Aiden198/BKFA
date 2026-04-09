@@ -19,8 +19,9 @@ var ourTeamRouter = require('./routes/OurTeam')
 var reportsRouter = require('./routes/Reports')
 var resourcesRouter = require('./routes/Resources')
 var volunteerRouter = require('./routes/Volunteer')
-var hostAnAssemblyDayRouter = require('./routes/HostAnAssemblyDay')
 var testRouter = require('./routes/test')
+var becomeAMemberRouter = require('./routes/BecomeAMember')
+var ourApproachRouter = require('./routes/OurApproach')
 
 var app = express();
 
@@ -37,21 +38,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
-app.use('/', memberRouter)
-app.use('/', birthKitsRouter)
-app.use('/', contactRouter)
-app.use('/', donateRouter)
-app.use('/', faqRouter)
-app.use('/', newsRouter)
-app.use('/', ourHistoryRouter)
-app.use('/', ourProjectsRouter)
-app.use('/', ourSupportersRouter)
-app.use('/', ourTeamRouter)
-app.use('/', reportsRouter)
-app.use('/', resourcesRouter)
-app.use('/', volunteerRouter)
-app.use('/', hostAnAssemblyDayRouter)
-app.use('/', testRouter)
+app.use('/member', memberRouter)
+app.use('/cleanbirthkits', birthKitsRouter)
+app.use('/contact', contactRouter)
+app.use('/donate', donateRouter)
+app.use('/faq', faqRouter)
+app.use('/news', newsRouter)
+app.use('/ourhistory', ourHistoryRouter)
+app.use('/ourprojects', ourProjectsRouter)
+app.use('/oursupporters', ourSupportersRouter)
+app.use('/ourteam', ourTeamRouter)
+app.use('/reports', reportsRouter)
+app.use('/resources', resourcesRouter)
+app.use('/volunteer', volunteerRouter)
+app.use('/test', testRouter)
+app.use('/becomeamember', becomeAMemberRouter)
+app.use('/ourapproach', ourApproachRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
