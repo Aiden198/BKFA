@@ -1,0 +1,65 @@
+/* ===== DONATE PAGE ===== */
+
+.main-container--sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#donate-page .page-content {
+    text-align: left;
+    background-color: #ffffff;
+    padding: 3rem;
+}
+
+#donate-page h1 {
+    color: #5d5a94;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+#donate-page h2 {
+    color: #5d5a94;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#donate-page .content-text {
+    color: #4f4b6b;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 760px;
+}
+
+#donate-page .content-image {
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.ecard-btn {
+    display: inline-block;
+    background: #625b96;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 18px 38px;
+    border-radius: 14px;
+    margin-top: 20px;
+    transition: 0.25s ease;
+}
+
+.ecard-btn:hover {
+    background: #554f84;
+    transform: translateY(-2px);
+}

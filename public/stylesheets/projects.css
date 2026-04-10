@@ -1,0 +1,31 @@
+/* ===== PROJECTS PAGE ===== */
+
+#projects-page .page-content {
+    text-align: left;
+    background-color: #ffffff;
+    padding: 3rem;
+}
+
+#projects-page h1 {
+    color: #5d5a94;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+#projects-page h2 {
+    color: #5d5a94;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#projects-page .content-text {
+    color: #4f4b6b;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 760px;
+}
