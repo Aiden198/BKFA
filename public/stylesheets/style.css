@@ -240,3 +240,14 @@
 .footer-bottom a:hover {
   color: #d9d0f3;
 }
+
+.main-container--sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+

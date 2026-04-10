@@ -1,9 +1,75 @@
+<link rel="stylesheet" href="stylesheets/projects.css">
+
 <%- include('partials/header') %>
 
-<main>
+<main id="projects-page" class="main-container--sidebar">
     <%- include ('partials/ourWorkSideMenu') %>
     <div class="page-content">
-        <h1> Our Projects </h1>
+        <h2> Our Projects </h2>
+
+        <p class="content-text fly-in" data-fly="left">Since 2005, we have been working in developing countries to achieve long-term change and are in the
+            process of growing our innovation partnerships across the world.
+            Our projects are driven by our Global Partners and are designed through a collaborative process in response to
+            local maternal and newborn health issues.
+        </p>
+
+        <%- include("partials/expandable", {
+          title: "ETHIOPIA",
+          content: `<p><b>“Strengthening the Rural Health Network to Improve Reproductive, Maternal and Newborn Health"</b></p>
+          <p>BKFA has partnered with Afar Pastoralist Development Association (APDA), Afar Region, Dullassa District, Ethiopia, for over ten years.</p>
+          <p>Afar Regional State has poor maternal health indicators, even by national standards. Low status of women, poor literacy, geographical isolation, unequal
+            access to essential sexual and reproductive health services, and harmful traditions that negatively impact on the wellbeing of girls and women, are all factors that contribute to the
+             disproportionately high levels of poor maternal health outcomes experienced by Afar women.</p>
+          <p>Disempowerment of Afar women within the household and community means that women and girls are unable to define their own
+            issues or influence change. This, in turn, reinforces the cycle of poor maternal health outcomes across generations.</p>
+          <p>BKFA has partnered with APDA on a project that aims to improve maternal and newborn survival and prioritise the
+            reproductive health of girls and mothers in 10 Kebeles of Dullassa District by ensuring that community health teams work well,
+             and work together, that fewer girls and mothers are harmed by traditional practices and that men and boys prioritise their
+             families’ health. Project activities comprise:</p>
+          <ul>
+            <li>training of local health team members in reproductive health and safe motherhood practices;</li>
+            <li>community engagement and sensitisation on the importance of safe motherhood;</li>
+            <li>local delivery set (birthing kit) component procurement and assembly; and,</li>
+            <li>distribution of locally assembled delivery kits to pregnant mothers and APDA-trained traditional birth attendants.</li>
+          </ul>
+          <p>You can read the full APDA 6-Month Report 2023-24 here.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "DEMOCRATIC REPUBLIC OF CONGO",
+          content: `
+          <p>Since 2005, BKFA has been involved in supporting community development projects in DR Congo, working
+            alongside Mission in Health Care and Development (MHCD) in Sud Kivu, Nord Kivu, and Katanga.
+          </p>
+          <p>The funded projects have included traditional birth attendant training, training of trainers, in-country kit production,
+            and a monitoring and evaluation project.</p>
+          <p>MHCD primarily works on the Eastern side of DRC, where the African War (1996-2004) resulted in the deaths of over 5 million
+            people. Even today, there are smaller rebel groups operating in the area, and rape is endemic. Women in these communities suffer greatly, with many
+            having been raped and taken as child soldiers, while their husbands were killed or fled, and all their food was taken. As a result, they are left
+             destitute and often pregnant.</p>
+          <p>Through TBA and micro-credit training funded by MHCD and its supporters, these women have been given hope, as they are able
+            to earn a sustainable income and purchase food, whilst having some control over their futures.</p>
+          <p>The profits generated from their businesses have allowed most of them to send their children to school, giving them a sustainable
+            education and a future. Dr Luc Mulimbalimba from MHCD personally supervised 12 TBA training seminars in Uvira Territory, where over 1,200 TBAs were
+            trained.</p>
+          <p>For some of the most marginalized communities, like the pygmies of Goma Nyringongo, Lemera, and Mulenge, this was their first
+            experience of education, and they were eager to learn more. This was the beginning of a transformation in their communities,
+            particularly the Mulenge community.</p>
+          <p>In 2014-15, BKFA and AusAID funded two Midwifery Seminar Training (MST) programs, each with 18 participants. Six participants
+            were selected from each of the three provinces of North Kivu, South Kivu, and Katanga, with two from each of three villages.
+            They attended a three-week general health and midwifery care course and were taught how to train TBAs to improve childbirth outcomes.
+            The MSTs were so encouraged by their ability to learn that they requested further training to become midwives/nurses.</p>
+          <p>As a result, MHCD established the “Great Lakes Midwifery College,” with a national curriculum and national examinations and examiners.
+            To date, 40 midwives/nurses have graduated and returned to their remote villages. MHCD supporters then funded the construction of a local hospital/clinic and
+            provided it with resources to care for the people. Most of these resources come from Australia in containers.</p>
+          <p>For the first time, remote communities have access to professional healthcare, and the midwives are able to earn a respectable, valuable, and
+            sustainable living. This empowers women in their communities to pursue further education.</p>
+          <p>You can read the full 2023 MHCD Report here.</p>
+          `
+        }) %>
+
+
     </div>
 </main>
 
