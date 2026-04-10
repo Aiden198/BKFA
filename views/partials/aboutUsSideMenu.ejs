@@ -1,0 +1,14 @@
+<%- include("sidemenu", {
+    title: "About Us",
+    items: [
+        { href: "/OurHistory", label: "Our History" },
+        { href: "/OurTeam", label: "Our Team" },
+        { href: "/OurSupporters", label: "Our Supporters",
+            sublinks: [
+                { href: "/oursupporters/zontaclub", label: "ZontaClub" },
+                { href: "/oursupporters/rotaryinternational", label: "Rotary International" },
+                { href: "/oursupporters/srisathyasai", label: "Sri Sathya Sai" }
+            ]
+        },
+    ]
+}) %>

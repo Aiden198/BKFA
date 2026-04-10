@@ -1,0 +1,29 @@
+<aside class="side-menu">
+    <% if (title) { %>
+        <h3 class="side-menu__title"><%= title %></h3>
+    <% } %>
+
+    <% if (items && items.length) { %>
+        <ul class="side-menu__list">
+            <% items.forEach(item => { %>
+                <li class="side-menu__item">
+                    <a href="<%= item.href %>" class="side-menu__link">
+                        <%- item.label %>
+                    </a>
+
+                    <% if (item.sublinks && item.sublinks.length) { %>
+                        <ul class="side-menu__sublinks">
+                            <% item.sublinks.forEach(sub => { %>
+                                <li class="side-menu__subitem">
+                                    <a href="<%= sub.href %>" class="side-menu__sublink">
+                                        <%- sub.label %>
+                                    </a>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    <% } %>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</aside>

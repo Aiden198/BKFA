@@ -1,0 +1,19 @@
+<%- include("sidemenu", {
+    title: "Our Work",
+    items: [
+        { href: "/FAQ", label: "FAQ" },
+        { href: "/Reports", label: "Reports" },
+        { href: "/CleanBirthKits", label: "Clean Birth Kits",
+            sublinks: [
+                { href: "/CleanBirthKits/BuyAssembledKits", label: "Buy Assembled Kits" }
+            ]
+        },
+        { href: "/OurApproach", label: "Our Approach" },
+        { href: "/OurProjects", label: "Our Projects",
+            sublinks: [
+                { href: "/OurProjects/FieldPartners", label: "Field Partners" },
+                { href: "/OurProjects/OurAchievements", label: "Our Achievements" }
+            ]
+        },
+    ]
+}) %>
