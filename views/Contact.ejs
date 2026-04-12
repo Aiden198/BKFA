@@ -1,9 +1,80 @@
 <%- include('partials/header') %>
 
-<main>
-    <div class="page-content">
-        <h1> Contact Us </h1>
+<link rel="stylesheet" href="/stylesheets/contact.css">
+
+<main class="contact-main">
+  <section class="contact-page">
+    <div class="contact-overlay">
+      <div class="contact-card">
+        <h1>Contact Us</h1>
+
+        <div class="contact-intro">
+          <p>
+            At BKFA, we work to develop positive and empowering partnerships,
+            ensuring accountable and effective programming while advocating for
+            maternal and newborn health.
+          </p>
+
+          <p>
+            Our Adaptive Strategy for 2021 – 2023 can be found
+            <a href="/documents/adaptive-strategy-2021-2023.pdf" target="_blank">here</a>.
+          </p>
+
+          <div class="contact-details">
+            <p><strong>Birthing Kit Foundation Australia</strong></p>
+            <p>PO Box 330, Belair, South Australia, 5052</p>
+            <p>info@bkfa.org.au</p>
+            <p>ABN: 65 121 658 428</p>
+          </div>
+        </div>
+
+        <form class="contact-form" action="/contact/submit" method="POST">
+            <% if (submitted) { %>
+                <div class="contact-success-message">
+                    Thank you — your message has been submitted successfully.
+                </div>
+            <% } %>
+          <div class="form-group">
+            <label for="enquiryType">Enquiry Type <span>*</span></label>
+            <select id="enquiryType" name="enquiryType" required>
+              <option value="General enquiry">General enquiry</option>
+              <option value="Assembly Days enquiry">Assembly Days enquiry</option>
+              <option value="Field Partner enquiry">Field Partner enquiry</option>
+              <option value="Marketing enquiry">Marketing enquiry</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="firstName" name="firstName" placeholder="First Name *" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name *" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Email *" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="phone" name="phone" placeholder="Phone">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Message *" required></textarea>
+          </div>
+
+          <div class="captcha-placeholder">
+            CAPTCHA
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
+  </section>
 </main>
 
 <%- include('partials/footer') %>
