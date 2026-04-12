@@ -1,0 +1,81 @@
+/* ===== OUR SUPPORTERS PAGE ===== */
+
+.main-container--sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#supporters-page .page-content {
+    text-align: left;
+    background-color: #ffffff;
+    padding: 3rem;
+}
+
+#supporters-page h1 {
+    color: #5d5a94;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+#supporters-page h2 {
+    color: #5d5a94;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#supporters-page .content-text {
+    color: #4f4b6b;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 760px;
+}
+
+/* ===== SUPPORTERS GRID ===== */
+
+.supporters-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.supporter-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supporter-logo img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .supporters-grid {
+        flex-direction: column;
+    }
+}
+
+/* ===== HERO IMAGE ===== */
+
+.page-content__hero-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 2rem;
+}
