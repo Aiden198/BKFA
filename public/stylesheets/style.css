@@ -197,6 +197,37 @@
   transform: translateY(-3px);
 }
 
+/* Subscribe to News Letter */
+
+.subscribe-newsletter {
+  display: grid;
+  justify-items: end;
+}
+
+.subscribe-heading-container h4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe-newsletter input[type="text"] {
+  background-color: #8886b5;
+  padding: 15px;
+  border: 1px solid white;
+}
+/*aligns the button in the center*/
+.subscribe-newsletter-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe-newsletter input[type="submit"] {
+  color: #514e86;
+  padding: 15px;
+  border: 1px solid white;
+  width: 150px;
+}
+
 #acknowledgment {
   max-width: 1200px;
   margin: 35px auto 0;

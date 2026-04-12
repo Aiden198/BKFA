@@ -413,6 +413,41 @@ main,
 .floor-links-2 a:hover {
   color: white;
 }
+/* Subscribe News Letter Form */
+
+.subscribe-newsletter {
+  display: grid;
+  justify-items: end;
+  margin-right: 100px;
+}
+.subscribe-heading-container h4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe-newsletter input[type="text"] {
+  background-color: #8886b5;
+  padding: 15px;
+  border: 1px solid white;
+}
+/*aligns the button in the center*/
+.subscribe-newsletter-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe-newsletter input[type="submit"] {
+  color: #514e86;
+  padding: 15px;
+  border: 1px solid white;
+  width: 150px;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 1; /* Firefox adds lower opacity by default */
+}
 
 /* acknowledgement text */
 
@@ -1021,3 +1056,4 @@ main,
         max-width: 240px;
     }
 }
+
