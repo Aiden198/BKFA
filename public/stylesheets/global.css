@@ -66,6 +66,8 @@ p {
 
 .header-logo {
   height: 70px;
+  border-radius: 18px;
+  overflow: hidden;
 }
 
 .footer-logo {
