@@ -309,6 +309,40 @@ main:not(.home-page) {
   }
 }
 
+main.page-main-with-hero {
+  display: block;
+  width: auto;
+  margin: 0;
+  padding-top: 0;
+}
+
+.page-hero-top {
+  width: min(var(--container), calc(100% - 2rem));
+  margin: -7.5rem auto 2rem;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+.page-hero-top img {
+  width: 100%;
+  height: clamp(220px, 34vw, 420px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.page-body-with-sidebar {
+  width: min(var(--container), calc(100% - 2rem));
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
 .page-content {
   margin: 2rem 0 0;
   width: auto;
@@ -322,6 +356,14 @@ main:not(.home-page) {
 
   text-align: center;
   flex: 1;
+}
+
+main.page-main-with-hero .page-content {
+  margin-top: 0;
+}
+
+main.page-main-with-hero .side-menu {
+  margin-top: 0;
 }
 
 /* BUTTONS */
@@ -681,6 +723,18 @@ input::placeholder {
   .side-menu {
     max-width: none;
     flex-basis: auto;
+  }
+
+  .page-body-with-sidebar {
+    width: min(var(--container), calc(100% - 1.5rem));
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-hero-top {
+    margin-top: -8.5rem;
   }
 }
 

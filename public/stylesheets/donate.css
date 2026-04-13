@@ -1,15 +1,5 @@
 /* ===== DONATE PAGE ===== */
 
-.main-container--sidebar {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 #donate-page .page-content {
     text-align: left;
     background-color: #ffffff;
@@ -40,12 +30,6 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
     max-width: 760px;
-}
-
-#donate-page .content-image {
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
 }
 
 .ecard-btn {
