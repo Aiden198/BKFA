@@ -52,6 +52,10 @@ img {
   display: block;
 }
 
+main img {
+  border-radius: 24px;
+}
+
 a {
   text-decoration: none;
   color: inherit;

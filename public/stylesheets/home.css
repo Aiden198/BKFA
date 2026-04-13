@@ -295,15 +295,17 @@
 
 .video-section {
   width: 100%;
-  margin-top: 40px;
+  margin: 2.5rem 0 3.5rem;
 }
 
 .video-wrapper {
   position: relative;
-  width: 100%;
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
   height: 0;
   padding-bottom: 56.25%; /* 16:9 ratio */
   overflow: hidden;
+  border-radius: 24px;
 }
 
 .video-wrapper iframe {
