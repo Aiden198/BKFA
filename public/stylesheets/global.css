@@ -34,7 +34,7 @@
 
 body {
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
+  font-family: "Nunito", "Trebuchet MS", Arial, sans-serif;
   color: var(--text);
 
   /* soft purple background */
@@ -63,6 +63,19 @@ a {
 
 p {
   color: var(--muted);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea,
+select {
+  font-family: "Nunito", "Trebuchet MS", Arial, sans-serif;
 }
 
 /* LOGOS - separate header & footer logos */
