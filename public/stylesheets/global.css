@@ -43,7 +43,6 @@ body {
     var(--bg);
 
   line-height: 1.6;
-  padding-top: 7.5rem;
 }
 
 /* GENERAL ELEMENTS */
@@ -246,10 +245,6 @@ p {
 }
 
 @media (max-width: 980px) {
-  body {
-    padding-top: 8.5rem;
-  }
-
   .navbar {
     top: 0.75rem;
     padding: 0.85rem 1.1rem;
@@ -277,6 +272,16 @@ p {
 }
 
 /* PAGE CONTENT AREA */
+
+main:not(.home-page) {
+  padding-top: 7.5rem;
+}
+
+@media (max-width: 980px) {
+  main:not(.home-page) {
+    padding-top: 8.5rem;
+  }
+}
 
 .page-content {
   margin: 2rem auto;

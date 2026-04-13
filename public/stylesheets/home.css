@@ -4,6 +4,60 @@
   padding: 4rem 0;
 }
 
+.hero--feature {
+  padding-top: 0;
+  padding-bottom: 1rem;
+  margin-top: -7.5rem;
+}
+
+.hero--feature .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.hero-feature {
+  position: relative;
+  width: min(100%, calc(100vw - 2rem));
+  min-height: 700px;
+  margin: 0 auto;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-feature > img {
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 18, 36, 0.1) 0%, rgba(20, 18, 36, 0.18) 38%, rgba(20, 18, 36, 0.68) 100%);
+  pointer-events: none;
+}
+
+.hero-feature__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.hero-feature__overlay h1 {
+  margin: 0;
+  max-width: 14ch;
+  color: #ffffff;
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
 .hero__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,6 +117,10 @@
   padding: 4rem 0;
 }
 
+.hero + .section {
+  padding-top: 1rem;
+}
+
 .section__header {
   margin-bottom: 2rem;
 }
@@ -92,6 +150,7 @@
 /* Repeats four instead of three on one line */
 .repeat-four {
   grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
 /* individual card */
@@ -158,14 +217,25 @@
 .cta-band {
   background: var(--secondary);
   color: white;
-  padding: 2.5rem 2rem;
+  padding: 1.8rem 1.4rem;
   border-radius: 20px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 0.6rem;
+  min-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cta-band h2 {
-  margin-bottom: 1rem;
+.cta-band h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  text-align: center;
+  max-width: 10ch;
 }
 
 .cta-band p {
@@ -180,6 +250,28 @@
 
 /* RESPONSIVE (MOBILE) */
 @media (max-width: 900px) {
+
+  .hero--feature {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    margin-top: -8.5rem;
+  }
+
+  .hero-feature {
+    width: min(100%, calc(100vw - 1rem));
+    min-height: 520px;
+    border-radius: 24px;
+  }
+
+  .hero-feature > img {
+    min-height: 520px;
+  }
+
+  .hero-feature__overlay h1 {
+    max-width: 11ch;
+    font-size: clamp(2.4rem, 9vw, 4rem);
+    line-height: 1.02;
+  }
 
   .hero__grid {
     grid-template-columns: 1fr;
