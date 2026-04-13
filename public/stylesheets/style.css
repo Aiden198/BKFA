@@ -95,7 +95,8 @@
 
 .nav-links a:hover,
 .dropdown-btn:hover {
-  background-color: #bd06bd;
+  background-color: transparent;
+  color: #6b6296;
 }
 
 .web-floor {
