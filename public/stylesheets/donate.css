@@ -17,23 +17,25 @@
 }
 
 #donate-page h1 {
-    color: #5d5a94;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--secondary);
+    font-size: clamp(2.3rem, 4vw, 4rem);
     font-weight: 800;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 #donate-page h2 {
-    color: #5d5a94;
-    font-size: 2rem;
+    color: var(--secondary);
+    font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+    font-weight: 800;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 #donate-page .content-text {
-    color: #4f4b6b;
-    font-size: 18px;
+    color: var(--text);
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
     font-weight: 500;
     line-height: 1.6;
     margin-bottom: 1.5rem;
