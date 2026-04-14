@@ -283,3 +283,104 @@
     padding: 20px;
 }
 
+/* OUR HISTORY PAGE */
+/* =========================
+   OUR HISTORY PAGE
+========================= */
+
+.about-page {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 50px 80px;
+    background: #f6f5fb;
+}
+
+.our-history-page {
+    flex: 1;
+    max-width: 980px;
+    background: transparent;
+}
+
+.history-text-section,
+.history-video-section,
+.milestones-section {
+    max-width: 980px;
+    margin: 0;
+    text-align: left;
+}
+
+.about-us-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #57508f;
+    text-transform: uppercase;
+    margin: 0 0 18px 0;
+}
+
+.history-text-section h1 {
+    font-size: 4.2rem;
+    line-height: 1;
+    font-weight: 800;
+    color: #57508f;
+    margin: 0 0 28px 0;
+    text-transform: uppercase;
+}
+
+.history-text-section p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #2f2f3a;
+    margin: 0 0 22px 0;
+    text-align: left;
+}
+
+.history-text-section a {
+    color: #6eb8bc;
+    text-decoration: none;
+}
+
+.history-text-section a:hover {
+    text-decoration: underline;
+}
+
+.history-video-section {
+    margin: 40px 0 48px 0;
+}
+
+.history-video-wrapper {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.history-video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.milestones-section h2 {
+    font-size: 3.9rem;
+    line-height: 1.05;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #57508f;
+    margin: 0 0 30px 0;
+}
+
+.milestone-item {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #2f2f3a;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.milestone-item strong {
+    font-weight: 800;
+    color: #1f1f28;
+}
