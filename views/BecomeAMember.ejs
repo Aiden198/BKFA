@@ -1,10 +1,221 @@
+<link rel="stylesheet" href="/stylesheets/becomeamember.css">
+
 <%- include('partials/header') %>
 
 <main>
-    <%- include ('partials/getInvolvedSideMenu') %>
-    <div class="page-content">
-        <h1> Become a Member </h1>
+    <div id="members-page">
+
+        <div class="main-container--sidebar">
+            <%- include('partials/getInvolvedSideMenu') %>
+            <div class="page-content">
+                <h2>Become a Member</h2>
+                <p>For just $30 for an individual and $70 for a corporate membership, becoming a BKFA member is a great way to show your support.
+                Anyone over the age of 18 is eligible and membership lasts for one year. BKFA Members will receive the newsletter and Annual Report,
+                plus general updates and occasional appeals. Members are also invited to attend and vote at the AGM. If you do not wish to receive
+                this information please confirm this by email to info@bkfa.org.au.</p>
+                <p>If you would like to become a member, download the Membership Application Form and email it to info@bkfa.org.au or
+                simply complete the form below. Membership runs from the time you join until June 30th.</p>
+            </div>
+        </div>
+
+        <div class="map-form-section">
+            <div class="map-form-card">
+                <h2>BECOME A MEMBER</h2>
+
+                <div class="form-grid">
+
+                    <!-- 1. New or renewing member -->
+                    <div class="form-group form-group--full">
+                        <label class="form-label">Are you a new or renewing member?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="memberStatus" value="new">
+                                <span>New Member</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="memberStatus" value="renewing">
+                                <span>Renewing Member</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 2.How did you hear about us section -->
+                    <div class="form-group form-group--half">
+                        <label for="hearAboutUs">How did you hear about us?</label>
+                        <select id="hearAboutUs">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="friend">Friend referral</option>
+                            <option value="social">Social media</option>
+                            <option value="event">Industry event / conference</option>
+                            <option value="volunteer">Volunteer event (e.g. Assembly Day)</option>
+                            <option value="website">BKFA website</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Spacer -->
+                    <div class="form-group form-group--half"></div>
+
+                    <!-- 3. Individual or corporate member -->
+                    <div class="form-group form-group--full">
+                        <label class="form-label">I would like to register as an...</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="memberType" value="individual">
+                                <span>Individual Member</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="memberType" value="corporate">
+                                <span>Corporate Member</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 4. Options checkboxes -->
+                    <div class="form-group form-group--full">
+                        <label class="form-label">Options</label>
+                        <div class="form-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="taxDeductibleDonation" onchange="toggleDonationAmount(this)">
+                                <span>I would like to make a tax deductible donation in addition to my membership</span>
+                            </label>
+                            <div id="donationAmountGroup" class="donation-amount-group">
+                                <label for="donationAmount">Donation Amount ($)</label>
+                                <input type="number" id="donationAmount" placeholder="Enter donation amount" min="1">
+                            </div>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="annualReportHardCopy">
+                                <span>I would like a hard copy of the Annual Report (Annual Report will be emailed to you either way)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 5. First name - own line -->
+                    <div class="form-group form-group--full">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="Enter your first name">
+                    </div>
+
+                    <!-- 6. Last name - own line -->
+                    <div class="form-group form-group--full">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Enter your last name">
+                    </div>
+
+                    <!-- 7. Company/Club - own line -->
+                    <div class="form-group form-group--full">
+                        <label for="companyClub">Company/Club (if applicable)</label>
+                        <input type="text" id="companyClub" placeholder="Enter your company/club">
+                    </div>
+
+                    <div class="form-divider form-group--full">
+                        <span>Address Details</span>
+                    </div>
+
+                    <!-- 8. Street - own line -->
+                    <div class="form-group form-group--full">
+                        <label for="streetAddress">Street Address</label>
+                        <input type="text" id="streetAddress" placeholder="Enter your street address">
+                    </div>
+
+                    <!-- 9. City - half line -->
+                    <div class="form-group form-group--half">
+                        <label for="city">City</label>
+                        <input type="text" id="city" placeholder="Enter your city here">
+                    </div>
+
+                    <!-- 10. State - half line -->
+                    <div class="form-group form-group--half">
+                        <label for="state">State / Province / Region</label>
+                        <input type="text" id="state" placeholder="Enter your state / province / region here">
+                    </div>
+
+                    <!-- 11. ZIP / Postal Code - half line -->
+                    <div class="form-group form-group--half">
+                        <label for="zipPostal">ZIP / Postal Code</label>
+                        <input type="text" id="zipPostal" placeholder="Enter your ZIP / Postal Code here">
+                    </div>
+
+                    <!-- Spacer -->
+                    <div class="form-group form-group--half"></div>
+
+                    <div class="form-divider form-group--full">
+                        <span>Contact Information</span>
+                    </div>
+
+                    <!-- 12. Mobile - own line -->
+                    <div class="form-group form-group--full">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" id="mobile" placeholder="Enter your mobile number">
+                    </div>
+
+                    <div class="form-group form-group--full">
+                        <label for="homeNumber">Home/Business Phone Number</label>
+                        <input type="tel" id="homeNumber" placeholder="Enter your home number">
+                    </div>
+
+                    <div class="form-group form-group--full">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email here">
+                    </div>
+
+                    <div class="form-group form-group--full">
+                        <label class="form-label">In applying for membership of the Birthing Kit Foundation Australia, you certify that:</label>
+                        <div class="form-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="over18">
+                                <span>You are over 18 years and agree to be bound by the BKFA Constitution.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeToPay">
+                                <span>You agree to pay the appropriate membership fee.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="upholdValues">
+                                <span>You agree to uphold and support the values and mission of BKFA.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="avoidConflictofInterest">
+                                <span>You will avoid and declare any actual, potential or perceived conflict of interest.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="noCompromise">
+                                <span>You have not been reported or convicted regarding any action which may have brought a charity, or other organisation into disrepute, compromised its brand or its operational/financial stability.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="noRevoke">
+                                <span>You have not had any membership of any organisation revoked for any reason especially inappropriate behaviour.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacyPolicy">
+                                <span>You agree to the terms of our Privacy Policy.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="updatesAndNewsletter">
+                                <span>You agree to receive the BKFA newsletter, occasional appeals and general updates.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="form-submit-btn" type="button">Submit Application</button>
+
+            </div>
+        </div>
+
     </div>
 </main>
+
+<script>
+    function toggleDonationAmount(checkbox) {
+        const donationGroup = document.getElementById('donationAmountGroup');
+        if (checkbox.checked) {
+            donationGroup.classList.add('visible');
+        } else {
+            donationGroup.classList.remove('visible');
+            document.getElementById('donationAmount').value = '';
+        }
+    }
+</script>
 
 <%- include('partials/footer') %>

@@ -1,0 +1,286 @@
+/* ===== BECOME A MEMBER PAGE ===== */
+
+#members-page .page-content {
+    text-align: left;
+    background-color: #ffffff;
+    padding: 3rem;
+}
+
+#members-page h1 {
+    color: #5d5a94;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+#members-page h2 {
+    color: #5d5a94;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#members-page .content-text {
+    color: #4f4b6b;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 760px;
+}
+
+/* ===== MAP FORM SECTION ===== */
+
+.map-form-section {
+    width: 100%;
+    background-image: url('images/2022/11/Forms-map-transparent-1.png'); /* Image won't appear in background, unsure why */
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #dff0f5;
+    padding: 60px 40px;
+    box-sizing: border-box;
+}
+
+.map-form-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    border-radius: 16px;
+    padding: 3rem 4rem;
+    box-shadow: 0 8px 40px rgba(93, 90, 148, 0.15);
+}
+
+.map-form-card h2 {
+    color: #5d5a94;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ===== FORM GRID ===== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 2rem;
+    margin-bottom: 1.75rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4f4b6b;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 14px;
+    border: 1.5px solid #c5c2e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #5d5a94;
+    box-shadow: 0 0 0 3px rgba(93, 90, 148, 0.15);
+}
+
+.form-group select {
+    /* Creates that little 'V' symbol for the group-selections */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235d5a94' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+    cursor: pointer;
+}
+
+/* Single line */
+.form-group--full {
+    grid-column: 1 / -1;
+}
+
+/* Half line */
+.form-group--half {
+    grid-column: span 1;
+}
+
+/* ===== SECTION DIVIDERS ===== */
+
+.form-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 0.5rem;
+}
+
+.form-divider span {
+    font-size: 15px;
+    font-weight: 700;
+    color: #5d5a94;
+    white-space: nowrap;
+}
+
+.form-divider::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background-color: #c5c2e0;
+    border-radius: 2px;
+}
+
+/* ===== RADIO BUTTONS ===== */
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4f4b6b;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #4f4b6b;
+}
+
+.radio-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #5d5a94;
+    cursor: pointer;
+}
+
+/* ===== CHECKBOXES ===== */
+
+.form-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #4f4b6b;
+    line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+    accent-color: #5d5a94;
+    cursor: pointer;
+}
+
+/* ===== DONATION AMOUNT TOGGLE ===== */
+
+.donation-amount-group {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 16px;
+    background-color: rgba(93, 90, 148, 0.06);
+    border-left: 3px solid #5d5a94;
+    border-radius: 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.donation-amount-group.visible {
+    display: flex;
+}
+
+.donation-amount-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4f4b6b;
+}
+
+.donation-amount-group input {
+    padding: 10px 14px;
+    border: 1.5px solid #c5c2e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    background-color: #ffffff;
+    font-family: inherit;
+    max-width: 280px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donation-amount-group input:focus {
+    outline: none;
+    border-color: #5d5a94;
+    box-shadow: 0 0 0 3px rgba(93, 90, 148, 0.15);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+
+.form-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #5d5a94;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: inherit;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    letter-spacing: 0.3px;
+}
+
+.form-submit-btn:hover {
+    background-color: #4a4778;
+    transform: translateY(-1px);
+}
+
+.form-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-form-card {
+        padding: 2rem 1.5rem;
+    }
+}
