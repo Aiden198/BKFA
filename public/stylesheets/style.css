@@ -569,3 +569,257 @@
         font-size: 1.05rem;
     }
 }
+
+/* CLEAN BIRTH KITS PAGE */
+
+.clean-birth-kits-page {
+    display: flex;
+    align-items: flex-start;
+    gap: 42px;
+    padding: 40px 50px 90px;
+    background: #f6f5fb;
+    box-sizing: border-box;
+}
+
+.clean-birth-kits-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 1100px;
+    text-align: left;
+}
+
+.cbk-intro-section {
+    margin-bottom: 42px;
+    text-align: left;
+    max-width: 980px;
+}
+
+.cbk-subheading {
+    margin: 0 0 16px 0;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #5b568f;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.cbk-main-heading {
+    margin: 0 0 28px 0;
+    font-size: 4.2rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #5b568f;
+    text-align: left;
+
+}
+
+.cbk-intro-section p {
+    margin: 0 0 18px 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2f2f3a;
+    max-width: 980px;
+    text-align: left;
+}
+
+.cbk-action-boxes {
+    display: flex;
+    gap: 30px;
+    margin: 36px 0 50px 0;
+    flex-wrap: wrap;
+}
+
+.cbk-action-box {
+    width: 310px;
+    min-height: 112px;
+    background: #5bb1ab;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.15;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+.cbk-action-box:hover {
+    background: #4aa39d;
+}
+
+.cbk-accordion-section {
+    margin: 0 0 50px 0;
+    max-width: 1060px;
+}
+
+.cbk-accordion-item {
+    margin-bottom: 14px;
+}
+
+.cbk-accordion-header {
+    width: 100%;
+    min-height: 64px;
+    background: #f1f8f7;
+    border: 1px solid #e5efee;
+    color: #5b568f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+}
+
+.cbk-symbol {
+    font-size: 2.1rem;
+    line-height: 1;
+    font-weight: 300;
+    color: #5b568f;
+    flex-shrink: 0;
+}
+
+.cbk-accordion-content {
+    display: none;
+    padding: 22px 14px 10px 14px;
+}
+
+.cbk-accordion-item.active .cbk-accordion-content {
+    display: block;
+}
+
+.cbk-kit-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 34px;
+}
+
+.cbk-kit-image {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.cbk-kit-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.cbk-kit-text {
+    max-width: 560px;
+    padding-top: 2px;
+}
+
+.cbk-kit-text h3 {
+    margin: 0 0 12px 0;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #5b568f;
+}
+
+.cbk-kit-text p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2f2f3a;
+}
+
+.cbk-info-section {
+    margin-top: 40px;
+    max-width: 850px;
+    text-align: left;
+}
+
+.cbk-info-section h2 {
+    margin: 0 0 14px 0;
+    font-size: 2.6rem;
+    line-height: 1.15;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #5e5a8d;
+    text-align: left;
+}
+
+.cbk-info-section h2:not(:first-child) {
+    margin-top: 28px;
+}
+
+.cbk-info-section p {
+    margin: 0 0 16px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2f2f3a;
+    max-width: 800px;
+    text-align: left;
+
+}
+
+.cbk-info-section a {
+    color: #6fb7b5;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+
+.cbk-info-section a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .cbk-main-heading {
+        font-size: 3.5rem;
+    }
+
+    .cbk-info-section h2 {
+        font-size: 2.8rem;
+    }
+
+    .cbk-kit-detail {
+        flex-direction: column;
+    }
+
+    .cbk-kit-image {
+        width: 300px;
+    }
+
+    .cbk-kit-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .clean-birth-kits-page {
+        flex-direction: column;
+        padding: 30px 24px 70px;
+        gap: 24px;
+    }
+
+    .cbk-main-heading {
+        font-size: 3rem;
+    }
+
+    .cbk-info-section h2 {
+        font-size: 2.4rem;
+    }
+
+    .cbk-action-box {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .cbk-kit-image {
+        width: 100%;
+        max-width: 320px;
+    }
+}
