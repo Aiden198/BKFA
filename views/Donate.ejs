@@ -2,7 +2,7 @@
 
 <%- include('partials/header') %>
 
-<main id="donate-page" class="page-main-with-hero">
+<div id="donate-page" class="page-main-with-hero">
     <section class="page-hero-top" aria-label="Donate page hero image">
         <img src="/images/2022/10/Womens-VTC_hands2-scaled.jpg" alt="Women holding hands">
 <main id="donate-page" class="main-container--sidebar">
@@ -64,64 +64,6 @@
             </div>
         </div>
     </section>
-
-    <div class="page-body-with-sidebar">
-        <%- include ('partials/getInvolvedSideMenu') %>
-
-        <div class="page-content">
-            <h1 class="content-title fly-in" data-fly="left">Donate to the Birthing Kit Foundation</h1>
-
-            <p class="content-text fly-in" data-fly="up">
-                Every $5 provides a clean birth kit to a woman in need. Your donation will contribute towards the pack and supply of
-                Clean Birth Kits to pregnant women living in rural communities around the world.
-            </p>
-
-            <h2 class="content-subtitle fly-in" data-fly="up">WHERE DOES MY DONATION GO?</h2>
-
-            <p class="content-text fly-in" data-fly="up">
-                BKFA provides support to women, babies and young girls around the world. Our approach is two-fold, with the supply of Birthing Kits to support improved maternal and newborn health and a commitment to longer term solutions to complex health
-                issues in remote and disadvantaged communities.
-            </p>
-
-            <p class="content-text fly-in" data-fly="up">
-                Your tax-deductible donations will support the work of BKFA and our priority areas of maternal and newborn health.
-            </p>
-
-            <%- include("partials/expandable", {
-              title: "Donate via direct transfer",
-              content: `
-              <p>Birthing Kit Foundation (Australia)</p>
-              <p><b>BSB: </b>015560</p>
-              <p><b>ACC: </b>492737593</p>
-              <p><b>SWIFT CODE: </b>ANZBAU3M</p>
-              <p><i>Please include your name in the details of the payment.</i></p>
-              <p><i>If a tax receipt is required please send proof of donation to accounts@bkfa.org.au and you will be provided with an electronic receipt.</i></p>
-              `
-            }) %>
-
-            <%- include("partials/expandable", {
-              title: "Credit card payments by mail",
-              content: `
-                <p>If you prefer to provide credit card details by mail, please download the Donations Form, print it and post the completed form to PO Box 330, Belair SA 5052.</p>
-              `
-            }) %>
-
-            <section>
-                <div class="container">
-                    <div class="hero__grid">
-                        <div class="hero-card fly-in" data-fly="left">
-                            <img src="images/2024/04/IMG_5958-scaled.jpg" alt="Happy Woman.">
-                        </div>
-                        <div class="hero__text fly-in" data-fly="right">
-                            <h2>SEND AN E-CARD</h2>
-                            <p>E-cards are the ideal gift to celebrate or honor someone special. Your donation will help mothers and babies access a cleaner, safer birth, without the need to head out to the shops, wrap or deliver! Choose an amount and we will do the rest.</p>
-                            <a href="https://www.mycause.com.au/giftcard/details?charityId=542" class="ecard-btn">SEND AN E-CARD</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
 </main>
 
 <%- include('partials/footer') %>
