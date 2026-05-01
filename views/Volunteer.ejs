@@ -1,25 +1,295 @@
+<link rel="stylesheet" href="stylesheets/volunteer.css">
+
 <%- include('partials/header') %>
 
-<main>
-    <%- include ('partials/getInvolvedSideMenu') %>
-    <div class="page-content">
-        <h1>Volunteer</h1>
+<div class="volunteer-cover">
+    <img src="images/2024/06/corporate-volunteer.jpg" alt="Volunteers assembling birthing kits">
+</div>
 
-        <%- include("partials/expandable", {
-          title: "Title 1",
-          content: `<p>blah blah blah blah</p>`
-        }) %>
+<main class="about-page">
+    <%- include('partials/getInvolvedSideMenu') %>
 
-        <%- include("partials/expandable", {
-          title: "Title 2", <!-- title in just normal text -->
-          content: `
-            <p>blah blah blah blah</p> <!-- content in html -->
-            <p>blah blah blah blah</p>
-            <p>blah blah blah blah</p>
-            <p>blah blah blah blah</p>
-          `
-        }) %>
+    <div class="page-content our-history-page">
+        <section class="history-text-section">
+            <p class="about-us-label">GET INVOLVED</p>
+            <h1>VOLUNTEER</h1>
+            <p>The support of our volunteers is essential in helping to manage our work in Australia.</p>
+            <p>You can get involved by organising an Assembly Day at your workplace, school, or home, or attending an existing event listed below.</p>
+            <p>Volunteers may also undertake fundraising activities and advocate on behalf of BKFA. The BKFA Board of Directors all undertake their roles on a voluntary basis.</p>
+        </section>
 
+        <section class="volunteer-cta-section">
+            <div class="volunteer-cta-grid">
+                <a href="#" class="vol-cta-band">
+                    <h3>PACK KITS</h3>
+                    <p>ORGANISE YOUR OWN ASSEMBLY DAY</p>
+                </a>
+                <a href="#" class="vol-cta-band">
+                    <h3>CORPORATE VOLUNTEERING</h3>
+                    <p>A FANTASTIC TEAM BUILDING OPPORTUNITY</p>
+                </a>
+                <a href="#" class="vol-cta-band">
+                    <h3>KITS AT HOME</h3>
+                    <p>MAKE A DIFFERENCE FROM YOUR HOME</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="history-text-section">
+            <h2>How can I get involved?</h2>
+
+            <p>If you’re interested in volunteering at an Assembly Day near you, please have a look in the upcoming assembly day listing. This is updated regularly, so be sure to keep looking if there isn’t one near you at this stage. If you see one that suits, contact info@bkfa.org.au</p>
+        </section>
+
+        <section class="history-text-section">
+
+            <%- include("partials/expandable", {
+              title: "Australian Capital Territory",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "New South Wales",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>NSW</td>
+                      <td>10 Apr 2026</td>
+                      <td>United Nations Association of Australia</td>
+                      <td>100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "Queensland",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>QLD</td>
+                      <td>17 Apr 2026</td>
+                      <td>Zonta Club of Stanthorpe</td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td>QLD</td>
+                      <td>18 Apr 2026</td>
+                      <td>Zonta Club of Brisbane Sunrise</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>QLD</td>
+                      <td>20 Apr 2026</td>
+                      <td>Coomera Anglican College</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>QLD</td>
+                      <td>26 Apr 2026</td>
+                      <td>Zonta Club of Roma</td>
+                      <td>200</td>
+                    </tr>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "South Australia",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>SA</td>
+                      <td>12 Apr 2026</td>
+                      <td>Rotary Club of St Peter's</td>
+                      <td>2000</td>
+                    </tr>
+                    <tr>
+                      <td>SA</td>
+                      <td>22 Apr 2026</td>
+                      <td>Rotary Club of Mitcham</td>
+                      <td>200</td>
+                    </tr>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "Victoria",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>VIC</td>
+                      <td>1 Apr 2026</td>
+                      <td>Siena College</td>
+                      <td>300</td>
+                    </tr>
+                    <tr>
+                      <td>VIC</td>
+                      <td>2 Apr 2026</td>
+                      <td>Ivanhoe Grammar School</td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td>VIC</td>
+                      <td>29 Apr 2026</td>
+                      <td>Mercer - Marsh Social Impact Committee</td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td>VIC</td>
+                      <td>30 Apr 2026</td>
+                      <td>Zonta Club of Central Goldfields</td>
+                      <td>400</td>
+                    </tr>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "Western Australia",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "Tasmania",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "Northen Territory",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">State</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+            <%- include("partials/expandable", {
+              title: "International",
+              content: `
+                <table class="vol-table">
+                  <thead>
+                    <tr>
+                      <th class="col-state">Country</th>
+                      <th class="col-date">Date</th>
+                      <th class="col-org">Organisation</th>
+                      <th class="col-kits">Kit Numbers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>USA</td>
+                      <td>6 Apr 2026</td>
+                      <td>AIG - New York (USA)</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>USA</td>
+                      <td>29 Apr 2026</td>
+                      <td>AIG - Melville (USA)</td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td>UK</td>
+                      <td>17 Apr 2026</td>
+                      <td>Thermo Fisher Scientific - Paisley (UK)</td>
+                      <td>800</td>
+                    </tr>
+                  </tbody>
+                </table>
+              `
+            }) %>
+
+        </section>
     </div>
 </main>
 
