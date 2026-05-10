@@ -1,10 +1,168 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/buyassembledkits.css">
+
 <%- include('partials/header') %>
 
-<main>
-    <%- include ('partials/cleanBirthKitsSideMenu') %>
-    <div class="page-content">
-        <h1> Contact Us </h1>
+<div class="buy-kits-cover">
+    <img src="/images/2022/10/DSC09131-scaled.jpg" alt="">
+</div>
+
+<main class="about-page">
+    <%- include('partials/getInvolvedSideMenu') %>
+
+    <div class="page-content our-history-page">
+        <section class="history-text-section">
+            <p class="about-us-label">CLEAN BIRTH KITS</p>
+            <h1>BUY KITS</h1>
+
+            <p>Clean Birth Kits can be purchased and shipped to your organisation.</p>
+
+            <p>A minimum order of 200 kits applies at a cost of AU$7 each for kits shipped within Australia, and US$7 each for kits shipped internationally.</p>
+
+            <p>Our kits are environmentally friendly – the plastic components of our kits have been treated with an organic compound and are biodegradable.</p>
+
+            <p>Please complete the order form below to purchase your kits <strong>for shipping to Australian destinations.</strong></p>
+
+            <p>If you require kits shipped to a destination outside of Australia, please contact us via email.</p>
+        </section>
     </div>
 </main>
+
+<div class="map-form-section">
+    <div class="map-form-card">
+        <h2>BUY ASSEMBLED KITS</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group form-group--half">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter your first name">
+            </div>
+
+            <div class="form-group form-group--half">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter your last name">
+            </div>
+
+            <div class="form-group form-group--full">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email here">
+            </div>
+
+            <div class="form-divider form-group--full">
+                <span>Address Details</span>
+            </div>
+
+            <div class="form-group form-group--full">
+                <label for="streetAddress">Street Address</label>
+                <input type="text" id="streetAddress" placeholder="Enter your street address">
+            </div>
+
+            <div class="form-group form-group--half">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Enter your city">
+            </div>
+
+            <div class="form-group form-group--half">
+                <label for="state">State / Province / Region</label>
+                <input type="text" id="state" placeholder="Enter your state / province / region">
+            </div>
+
+            <div class="form-group form-group--half">
+                <label for="zipPostal">ZIP / Postal Code</label>
+                <input type="text" id="zipPostal" placeholder="Enter your ZIP / Postal Code">
+            </div>
+
+            <div class="form-group form-group--half">
+                <label for="country">Country</label>
+                <select id="country">
+                    <option value="" disabled selected>Select a country</option>
+                    <option value="AU">Australia</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="US">United States</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-divider form-group--full">
+                <span>Order Details</span>
+            </div>
+
+            <div class="form-group form-group--full">
+                <div class="kit-price-display">Price: <span>$7.00</span> per kit</div>
+            </div>
+
+            <div class="form-group form-group--half">
+                <label for="numKits">Number of Kits</label>
+                <input type="number" id="numKits" min="200" max="1000"
+                       placeholder="Enter quantity" oninput="updateTotal()">
+                <span class="form-helper-text">Minimum kit order, 200.</span>
+            </div>
+
+            <div class="form-group form-group--half">
+                <label>Total Price</label>
+                <div class="kit-total-display" id="kitTotal">—</div>
+            </div>
+
+            <div class="form-group form-group--full">
+                <div class="form-checkboxes">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="acceptTerms">
+                        <span>I acknowledge that the Birthing Kit Foundation (Australia) takes no responsibility for the in-country processes associated with the clearance and collection of Clean Birth Kits, including: customs, taxes, handling charges and any other fees. Dollar amounts are in AUD.</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-divider form-group--full">
+                <span>Card Details</span>
+            </div>
+
+            <div class="form-group form-group--full">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+            </div>
+
+            <div class="form-group form-group--full">
+                <div class="card-expiry-row">
+                    <div class="form-group">
+                        <label for="cardMonth">Month</label>
+                        <input type="text" id="cardMonth" placeholder="MM" maxlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardYear">Year</label>
+                        <input type="text" id="cardYear" placeholder="YY" maxlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardCVC">CVC</label>
+                        <input type="text" id="cardCVC" placeholder="CVC" maxlength="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group--full">
+                <label for="cardHolder">Card Holder Name</label>
+                <input type="text" id="cardHolder" placeholder="Enter name as it appears on card">
+            </div>
+
+        </div>
+
+        <button class="form-submit-btn" type="button">Submit Order</button>
+
+    </div>
+</div>
+
+<script>
+    function updateTotal() {
+        const qty = parseInt(document.getElementById('numKits').value) || 0;
+        const totalEl = document.getElementById('kitTotal');
+        if (qty > 0) {
+            totalEl.textContent = '$' + (qty * 7).toFixed(2);
+        } else {
+            totalEl.textContent = '—';
+        }
+    }
+</script>
 
 <%- include('partials/footer') %>
