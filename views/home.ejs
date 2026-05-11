@@ -2,6 +2,42 @@
 
 <script src="/javascripts/countUp.umd.js"></script>
 <script src="/javascripts/counter.js"></script>
+<script src="/javascripts/home-kit-carousel.js" defer></script>
+
+<%
+const kitItems = [
+    {
+        title: 'A Plastic Sheet',
+        description: 'To prevent the mother and newborn coming into contact with the ground or an unhygienic surface.',
+        graphic: '/images/2022/11/birthing-kit-icon-plastic-sheet.png',
+        image: '/images/2022/11/birthing-kit-sheet.jpg'
+    },
+    {
+        title: 'Soap',
+        description: 'To wash the birth attendant’s hands and the mother’s perineum.',
+        graphic: '/images/2022/11/birthing-kit-icon-soap.png',
+        image: '/images/2022/11/birthing-kit-soap.jpg'
+    },
+    {
+        title: 'Cord Ties',
+        description: 'To tie the umbilical cord.',
+        graphic: '/images/2022/11/birthing-kit-icon-cord.png',
+        image: '/images/2022/11/birthing-kit-cord.jpg'
+    },
+    {
+        title: 'Sterile Blade',
+        description: 'To cut the umbilical cord cleanly and reduce risk of newborn sepsis and tetanus.',
+        graphic: '/images/2022/11/birthing-kit-icon-blade.png',
+        image: '/images/2022/11/birthing-kit-blade.jpg'
+    },
+    {
+        title: 'Gloves',
+        description: 'To cover the birth attendant’s hands and provide protection from infections such as HIV for carers and care recipients.',
+        graphic: '/images/2022/11/birthing-kit-icon-gloves.png',
+        image: '/images/2022/11/birthing-kit-gloves.jpg'
+    }
+];
+%>
 
 <main class="home-page">
     <header class="hero hero--feature">
@@ -197,6 +233,49 @@
                         </div>
                         <p class="glance-card__copy">GLOBAL PARTNERS ACROSS 11 COUNTRIES WERE INVOLVED IN OUR GLOBAL INITIATIVES</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kit-carousel-section">
+        <div class="container">
+            <div class="kit-carousel-header fly-in" data-fly="up">
+                <div class="kit-carousel-header__lead">
+                    <div class="kit-carousel-header__title-row">
+                        <h2>The Birthing Kit</h2>
+                        <span class="kit-carousel-header__logo">
+                            <img src="/images/2022/10/icon-Birthing-kit.png" alt="Birthing kit logo">
+                        </span>
+                    </div>
+                </div>
+                <p>Click the arrows below to view all items in the kit. Hover over each card to reveal the real item.</p>
+            </div>
+
+            <div class="kit-carousel-shell fly-in" data-fly="up" data-kit-carousel>
+                <div class="kit-carousel-track" data-kit-track>
+                    <% kitItems.forEach(function(item) { %>
+                        <article class="kit-item-card">
+                            <div class="kit-item-card__graphic" style="background-image: url('<%= item.graphic %>');" aria-hidden="true"></div>
+                            <div class="kit-item-card__photo" style="background-image: url('<%= item.image %>');"></div>
+                            <div class="kit-item-card__veil"></div>
+                            <div class="kit-item-card__content">
+                                <div class="kit-item-card__copy">
+                                    <h3><%= item.title %></h3>
+                                    <p><%= item.description %></p>
+                                </div>
+                            </div>
+                        </article>
+                    <% }) %>
+                </div>
+
+                <div class="kit-carousel-controls">
+                    <button type="button" class="kit-carousel-control" data-kit-prev aria-label="Show previous kit item">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button type="button" class="kit-carousel-control" data-kit-next aria-label="Show next kit item">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
