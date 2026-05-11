@@ -1,9 +1,222 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/ourachievements.css">
+
 <%- include('partials/header') %>
 
-<main>
-    <%- include ('partials/ourProjectsSideMenu') %>
-    <div class="page-content">
-        <h1> Contact Us </h1>
+<div class="achievements-cover">
+    <img src="/images/2022/10/DSC00538-scaled.jpg" alt="Banner Image">
+</div>
+
+<main class="about-page">
+    <%- include('partials/ourProjectsSideMenu') %>
+
+    <div class="page-content our-history-page">
+        <section class="achievements-text-section">
+            <h1>OUR ACHIEVEMENTS</h1>
+            <h2>Resources</h2>
+            <p>From our very first 100 kits sent to Papua New Guinea, we received positive feedback on the impact of the birthing kits. The Traditional Birth Attendants (TBA) could see more women and babies surviving as a result of these kits, and universally all requested more.</p>
+            <p>As our programs grew in complexity to TBA training programs, the achievements also grew along with the empowerment of the women with education.</p>
+            <p>Clean birth kits give women in remote regions of a developing country a chance to have a clean and safe birth. They stop infections and the deaths of mothers and babies from these infections. The use of gloves also stops the spread of HIV and other STDs.</p>
+
+            <%- include("partials/expandable", {
+            title: "2.8 million clean birth kits have been made in Australia",
+            content: `
+            <p>2.8 million clean birth kits have been made in Australia by volunteers and distributed by our on ground partners in over 30 developing countries.</p>
+            <p>We target communities in remote regions of developing countries where there is little chance of a midwife present, and the birthing mother is fortunate to have a Traditional Birth Attendant to help her.</p>
+            <p>In these countries the government often does not have the capacity to provide good maternal and neonatal health care. A clean birth kit will provide everything a mother needs to have reasonably safe and clean birthing environment.</p>
+            <p>A kit may be the difference between a woman and a baby living or dying during the birthing process. Everyone is precious. Ruth Kennedy in Ethiopia described the kit as being ”more precious than silver or gold.”</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "170,000 clean birthing kits made in-country by our partners",
+            content: `
+            <p>It is environmentally responsible to make the birthing kits in country. It reduces the carbon footprint of a kit compared to transporting it from Australia.</p>
+            <p>Making kits provides income to the local businesses where the resources are sourced and income to the women making up the kits. Many women start microcredit programs from these funds which leads to sustainable food, income and from the profits many started a school in their community. The women became empowered and the children healthy and educated.</p>
+            <p>We have encouraged the making of kits in-country, especially to accompany training programs in 3 countries. Once the community knows the value and impact of a kit they then can source their own supplies over the term of their pregnancy.</p>
+            <p>Vietnam produced 62,000 birthing packs made in Hanoi which were culturally specific in their contents. Many were funded by local organisations to accompany the training of Community Health Workers.</p>
+            <p>Ethiopia produced 107,000 kits through 3 partners. The Hamlin Fistula Hospital made 10,000, Abraham’s Oasis made 27,000 and Afar Pastoralist Development Association (APDA) made 70,000. APDA changed the contents to be more culturally specific and to accompany the many funded Health Extension Worker training programs.</p>
+            <p>DR Congo produced 38,000 birthing kits to accompany Traditional Birth Attendant training programs. Many of the TBAs also received a stipend for making kits and started microcredit programs supported by the staff of the program organiser Mission in Health Care and Development (MHCD).</p>
+            <p>Logistically, with weather, transport and customs fees, it is often easier and cheaper to have the kits locally made than try to bring them from Australia.</p>
+            `
+            }) %>
+
+            <h2>EDUCATION</h2>
+            <p>Education is the only way forward for illiterate women.</p>
+
+            <%- include("partials/expandable", {
+            title: "10,000 birth attendants have been trained in 5 countries",
+            content: `
+            <p>Education gives the birthing attendants the power of knowledge to understand health and birthing issues and overcome the practices they do that harm mothers in child-birth.</p>
+            <p>Learning how to provide a clean birth with local resources, if a birthing kit was not available, was an important step towards sustainability in remote communities.</p>
+            <p>Programs at high schools for adolescent teenage girls showed that education is essential to enhance opportunities and a key protective measure against marriage and early pregnancy.</p>
+            <p>The flow on affect in communities can never be underestimated as they value the impact and desire for education.</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "Female Genital Mutilation (FGM) is beginning to stop in many communities in Ethiopia",
+            content: `
+            <p>It is a few thousand years old tradition, therefore stopping it takes time. Working with our partner Afar Pastoralist Development Association (APDA) over 400 Health Extension Workers were trained through the program – around 300 woman extension workers specifically to interact intimately with pastoralist mothers.</p>
+            <p>Training programs administered by Valerie Browning from APDA have expanded in Afar over 10 years by training health extension workers, providing maternal health service where there is none and making birthing kits so the remote, home deliveries can be clean.</p>
+            <p>In a Traditional Birth Attendant’s (TBA) words, “before the training it was like working with our eyes closed – stopping female circumcision this is reality. It is better for the women. Before we were in ignorance, those that died, died, now we know when to refer to a health worker and have noticed a big improvement.”</p>
+            <p>After 40 years of performing FGM this TBA had stopped. Education is everything. In 22 of 32 woredas / districts in the Afar region FGM is significantly reduced, setting the framework to stop altogether through the work of the APDA in the Afar desert.</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "Stopped cultural practices that were killing their women and babies during and after birth. If the practices stop, maternal death can be reduced by around 70%",
+            content: `
+            <p>Cultural habits that were killing their women:</p>
+            <ul>
+                <li>When women went into labour they are traditionally denied food and water, believing the uterus and the bladder join and therefore the food is tipped on the baby.</li>
+                <li>The transverse cutting of the pulsating umbilical cord once the baby was born to ”let out the bad blood”. In tradition, bad blood must come out and good blood stays in, therefore, bleeding the mother is getting rid of the bad blood. If she dies from the blood loss, it was from too much “bad blood”, then they will say ‘God took her’ believing they did a good job.</li>
+                <li>After delivery, FGM is re-formed by resewing the mother’s labia together and then binding her from her hips to her knees for 1 week.</li>
+                <li>When the baby is born breast milk is withheld for 24 to 72 hours, believing colostrum to be poison to the baby. The baby is given water, goat’s milk, goat’s butter or water and sugar.</li>
+            </ul>
+            <p>What cultural practices changed:</p>
+            <ul>
+                <li>While in labour the mother is given an energy food such as ground barley mixed with sugar and water.</li>
+                <li>Not to cut the pulsating umbilical cord vertically – to instead use the birthing kit cords to stop bleeding.</li>
+                <li>Not to bind the mother from her knees to her hips or sew her together after birth.</li>
+                <li>To breast feed the baby from birth.</li>
+            </ul>
+            <p>What cultural practices changed:</p>
+            <ul>
+                <li>While in labour the mother is given an energy food such as ground barley mixed with sugar and water.</li>
+                <li>Not to cut the pulsating umbilical cord vertically – to instead use the birthing kit cords to stop bleeding.</li>
+                <li>Not to bind the mother from her knees to her hips or sew her together after birth.</li>
+                <li>To breast feed the baby from birth.</li>
+            </ul>
+            <p>They also learned:</p>
+            <ul>
+                <li>If they use a birthing kit it will stop many infections and keep their women alive. The TBA delivering the mother is also protected from touching the mother’s blood, avoiding Hepatitis B or HIV if the mother has these infections.</li>
+                <li>If the mother is in a risky group, like short (young), at her first birth or there are twins she should go to hospital or a clinic well before the delivery date.</li>
+                <li>If the mother is anaemic they should be given lentils and be carefully followed.</li>
+                <li>When about to deliver to give the mother ground barley for quick energy.</li>
+            </ul>
+            <p>There is a great demand for many more programs as there are many more kebeles (sub-districts) needing more education and resources.</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "4,000 Traditional Birth Attendants trained in DR Congo",
+            content: `
+            <p>Dr Luc Mulimbalimba, our partner from Mission in Health Care and Development (MHCD) in Uvira Territory, personally supervised 10 TBA training seminars where over 1,000 TBAs were trained. For some communities like the most marginalised pygmie communities of Goma Nyringongo, Lemera and Mulenge pygmies this was the first time they had experienced education and they all wanted to learn more. This was the start of transformation in their communities, especially the Mulenge community.</p>
+            <p>The BKFA works predominantly on the eastern side of DRC where over 5 million people were killed in the African War (1996 – 2004). There are still many smaller rebel groups. Rape is endemic and many women still suffer not only from the rape, but also as children were taken for child soldiers, husbands killed or escaped, and all food is taken. They are left destitute and often pregnant. These women are given some hope through the TBA and microcredit training funded by MHCD and supporters which gives them sustainable income and food, and empowers them to have some control over their futures. From their profits most women send their children to school, giving them a sustainable education and a future. Education is everything.</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "36 Midwifery Seminar Trainers (MST) from 3 provinces across eastern DR Congo trained at 3 week seminars. They trained over 3,000 TBAs in the following year",
+            content: `
+            <p>2 Midwifery Seminar Training (MST) programs with 18 participants in each were held in 2014/15. 6 participants from each of 3 provinces of North Kivu, South Kivu and Katanga were chosen by the community – 2 from each of 3 villages. They attended a 3-week general health and midwifery care course and were given instructions on how to train TBAs to improve childbirth outcomes.</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "Inspiration from the MST training by participants challenged our partner MHCF to open a 4-year accredited Midwifery College at Luvungi Hospital in 2016",
+            content: `
+            <p>MHCD established the “Great Lakes Midwifery college” with a national curriculum and national examinations and examiners. To date, 20 midwives/nurses have graduated and returned to their remote villages. MHCD supporters then funded a local hospital/clinic to be built and provided it with resources to look after the people. Most of these resources come from Australia in containers. For the first time remote communities have professional healthcare. The midwives can then earn an income to give them a respectable, valuable and sustainable life. The women in their community are empowered for further education.</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "Teso Women's Peace Activist (TEWPA), in three sub-counties of Katakwi, held programs at high schools for adolescent teenage girls",
+            content: `
+            <p>The programs showed that education is essential to enhance opportunities and a key protective measure against marriage and early pregnancy.</p>
+            <p>The program involved building the capacity of midwives to provide adolescent-friendly care and facilitate the group Antenatal Care model.</p>
+            <p>It supported the education and mentoring for adolescent mothers, held Sexual and Reproductive Health workshops for teachers and school mentors and there were Community sensitisation workshops. It provided female sanitary health equipment and hygiene supplies to enable the girls to stay at school and receive an education.</p>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "Over 4,000 Community Health Workers trained in Vietnam",
+            content: `
+            <p>From early 2003 – 2010 our partners, Professor Quynh and Ms Chau from CENESA, organised these training programs. By 2010 there was little need for our basic training programs and kits as tourism and development had changed the face of Vietnam and health care had greatly improved. A wonderful outcome.</p>
+            `
+            }) %>
+
+            <h2>OPPORTUNITIES</h2>
+            <p>Assembly Days give Australians a chance to help make kits and advocate for women.</p>
+
+            <%- include("partials/expandable", {
+            title: "150,000+ volunteers in Australia assembling clean birth kits have saved women and baby's lives",
+            content: `
+            <p>Over 1.6 million kits have been funded and assembled by Zonta club members, and their families and friends, across Australia. The program started in the Zonta Club of the Adelaide Hills in 1999 and grew organically.</p>
+            <p>Hundreds of assembly days at schools have introduced students to the concept of volunteering as they can hear about the realities of the lives of women and babies in developing countries. It is good for our youth to be aware of another world where life is easily lost, and can just as easily be saved.</p>
+            <p>Many other service organisations, church groups, university and high school students, individuals and businesses have held assembly days. All have volunteered to help and advocate for women.</p>
+            `
+            }) %>
+
+            <h2>MEDIA AND EXPOSURE ADVOCACY</h2>
+            <p>The benefits of media exposure and advocacy are felt Australia wide, especially for our largest supporter base in our Zonta clubs. Then world-wide at international conferences, in political halls of governments and on the ground for our partners.</p>
+
+            <%- include("partials/expandable", {
+            title: "Every time birthing kits are mentioned, you are advocating for the women we serve",
+            content: `
+            <p>There have been many media opportunities through magazine articles, TV segments and radio interviews which have spread our message and our supporters messages further into the Australian community.</p>
+            <p>The BKFA works with many important and respected organisations in Australia like Zonta, Rotary, schools, churches and university groups, all of which gain their own exposure for being humanitarian and showing Social Responsibility. They then have their own PR articles and often media sessions on radio and TV.</p>
+            <p>The Zonta Birthing Kit Project won the award at the 2014 Zonta International Convention as the best District Project in the world. This profile in Zonta, where the concept of birthing kits was initiated, has stimulated interest and support from around the global network of women.</p>
+            <p>Our partners on the ground receive more support and respect locally as they work with an Australia based organisation. Politically it elevates them in the eyes of the local government.</p>
+            `
+            }) %>
+
+            <h2>OUR IMPACT</h2>
+            <p>Over our 20 years of supplying birthing kits it has always been enlightening when we find the extra benefits of our kits.</p>
+
+            <%- include("partials/expandable", {
+            title: "Overall impact",
+            content: `
+            <ul>
+                <li>2.4 million birthing kits have been distributed. By conservative estimates this number of kits would have saved the lives of tens of thousands of women and babies by reducing maternal and neonatal mortality and morbidity.</li>
+                <li>Increased awareness across communities about the spread of HIV/Aids. Kits and training reduce the spread of HIV. An important motivation for the TBAs. In DR Congo our partner MHCD has identified stopping the spread of HIV/Aids as the most important reason why Traditional Birth Attendants (TBAs) want to use our kits.</li>
+                <li>Birthing mothers with HIV are treated with more dignity and are helped in childbirth by health workers when they present with a birthing kit.</li>
+                <li>The kits reduce life threatening infections which can cause death through haemorrhaging.</li>
+                <li>The kits also reduce other non-life threatening infections like umbilical and respiratory infections for the baby and gynaecological infections which are often embarrassing, debilitating, painful and lifelong for the mother.</li>
+                <li>By training Traditional Birth Attendants (TBAs), negative and damaging cultural practices for birthing mothers and babies have been changed or stopped.</li>
+                <li>By working with the community, cultural practices like FGM have been reduced and in some communities stopped.</li>
+                <li>By engaging the men in the community at the training sessions, changes were more easily achieved. In India our programs with the Dalit women encouraged the men to help their women when birthing and to respect them more.</li>
+                <li>Our training provides practical know-how on how to provide a clean birth when a birthing kit is not available – another step towards sustainability. The women have 9 months to purchase essential goods.</li>
+                <li>TBAs learn to recognise danger signs and know when to refer expectant mothers to a clinic.</li>
+                <li>TBAs meet and learn how to work respectfully with local health workers.</li>
+                <li>Our in-country kit production programs have employed and empowered poor women, increased the independence of our partners and driven our plans closer to sustainability.</li>
+                <li>Locally made kits are often customised to meet local needs, encouraging local skills and building capacity in communities.</li>
+                <li>Where partners have formed midwifery clubs and started monthly meetings for mothers and TBAs, whole communities are learning more and creating a new awareness about the issues for birthing mothers and their babies. This engagement has empowered thousands of women and TBAs.</li>
+            </ul>
+            `
+            }) %>
+
+            <%- include("partials/expandable", {
+            title: "Overall impact",
+            content: `
+            <ul>
+                <li>The education and knowledge our training has provided has empowered TBAs, seeding them with a desire to learn more and value education.</li>
+                <li>A midwifery college was established in Luvungi DR Congo as a direct impact from the MST training program, where the participants for the first time could see they had the potential to learn more. 20 fully trained midwife/nurses now live in 10 communities and provide professional health care. The local NGO has funded the building of health clinics and resourced them. The nurses can then charge nominally for services and become independent with sustainable clinics and incomes.</li>
+                <li>By supporting partners in developing countries, BKFA’s partner NGOs have experienced greater recognition in their local communities. Some have enjoyed more government support as the value of their programs is acknowledged.</li>
+                <li>Our partners have become more creative. For example some now are building “birthing huts”, they have formed “midwifery clubs” and worked with other local NGOs to provide more health resources. Some have built hospitals, developed midwifery schools and special clinics to meet the needs of their community. This has encouraged alternative sources of support and they have become more productive and powerful as a result.</li>
+            </ul>
+            `
+            }) %>
+
+            <h2>RESEARCH</h2>
+            <p>Research shows the value of birthing kits as a first line resource for women birthing in remote regions of developing countries, especially when accompanied by a Traditional Birth Attendant (TBA) training program.</p>
+
+            <%- include("partials/expandable", {
+            title: "Training of TBAs is the most effective way to help women birth safely in the remote communities we serve",
+            content: `
+            <p>Studies, reports and anecdotal information share the benefits of providing a clean birth kit.</p>
+            <p>In PNG, only 1 maternal death and no infant deaths were reported in the area where the first 100 kits were used in 1999.</p>
+            <p>An IMMPACT (Initiative for Maternal Mortality Programme Assessment, based at the University of Aberdeen in Scotland) study in 2010 identified that kits do make a difference especially when delivered by someone with training.</p>
+            <p>Anecdotal evidence: All our partners report to the BKFA on their experience of the local maternal and infant mortality and morbidity rates and all have identified lower rates of death and infection after the arrival of the kits. For example, in 2009 in Afghanistan where, at the time, there was an infant mortality rate of 165 per 1,000 live births, and a maternal mortality rate of 1,600 per 100,000 births, our partner reported that after the distribution of ‘2,359 kits only one woman died and no babies.’ Compare this with an expected death rate of 44 – 118 women (depending on region) and 330 – 400 babies.</p>
+            <p>In 2012, a World Vision report commissioned through the Burnet Institute identified a 20-29% reduction in infection-related maternal deaths with hygienic practices at 90% of home births. Their recommended method to assist in remote and poor areas was to use a birthing kit.</p>
+            <p>In 2014, a State of the World’s Mothers report produced by Save the Children identified “distributing clean delivery and newborn care supplies” as the first of five solutions to save newborn lives in humanitarian settings for women who may not be able to deliver in a health facility.</p>
+            <p>UN and WHO for many years discouraged any training of Traditional Birth Attendants (TBA) believing it encouraged more home-births and less clinic births with midwives. They believed birthing women would be more disadvantaged and more would die at home. At the time it sounded reasonable, however, many poor countries did not have the capacity to train enough midwives. Without community education and assistance at the TBA level this caused more maternal and neonatal deaths and infections. Contrary to UN/WHO recommendations the BKFA continued to train TBAs as our experience had showed training at the local community level was where it was most needed.</p>
+            `
+            }) %>
+
+
+        </section>
     </div>
 </main>
 
