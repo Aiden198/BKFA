@@ -31,4 +31,15 @@ window.onload = function() {
         duration: 3
     });
 
+    const totalKitsSent = new countUp.CountUp('count-kits-sent', 129, {
+        ...animateOptions,
+        suffix: 'k',
+        duration: 3
+    });
+
+    const totalGlobalPartners = new countUp.CountUp('count-global-partners', 27, {
+        ...animateOptions,
+        duration: 3
+    });
+
 };

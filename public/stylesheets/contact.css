@@ -1,6 +1,11 @@
 .contact-main {
   padding: 0;
   margin: 0;
+  width: 100vw;
+  max-width: none;
+  display: block;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .contact-page {
@@ -13,6 +18,9 @@
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
+  width: 100vw;
+  margin: -7.5rem auto 0;
+  padding-top: 10rem;
 }
 
 .contact-overlay {
@@ -33,21 +41,25 @@
 }
 
 .contact-card h1 {
-  font-size: 3rem;
-  color: #4b4f93;
+  font-size: var(--page-title-size);
+  font-weight: var(--page-title-weight);
+  line-height: var(--page-title-line);
+  color: var(--secondary);
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
 .contact-intro {
-  color: #5a5a6f;
-  line-height: 1.8;
+  color: var(--text);
+  line-height: var(--page-body-line);
   margin-bottom: 32px;
-  font-size: 1.08rem;
+  font-size: var(--page-body-size);
+  font-weight: var(--page-body-weight);
 }
 
 .contact-intro a {
-  color: #4b4f93;
-  font-weight: 600;
+  color: var(--secondary);
+  font-weight: 800;
   text-decoration: underline;
 }
 
@@ -63,15 +75,17 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  align-items: center;
 }
 
 .form-group {
   width: 100%;
+  max-width: 720px;
 }
 
 .form-group label {
   display: block;
-  text-align: left;
+  text-align: center;
   margin-bottom: 8px;
   color: #4b4f93;
   font-weight: 600;
@@ -84,6 +98,8 @@
 .form-row {
   display: flex;
   gap: 18px;
+  width: 100%;
+  max-width: 720px;
 }
 
 .form-row .form-group {
@@ -153,7 +169,7 @@
   }
 
   .contact-card h1 {
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 8vw, 2.8rem);
   }
 
   .form-row {
@@ -162,7 +178,8 @@
   }
 
   .contact-page {
-    padding: 30px 14px;
+    margin-top: -8.5rem;
+    padding: 11rem 14px 30px;
   }
 }
 

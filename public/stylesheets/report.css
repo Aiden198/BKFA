@@ -10,15 +10,18 @@
 .reports-title {
   margin: 0;
   color: var(--secondary);
-  font-size: clamp(2.3rem, 4vw, 4rem);
-  line-height: 1;
+  font-size: var(--page-title-size);
+  font-weight: var(--page-title-weight);
+  line-height: var(--page-title-line);
   text-transform: uppercase;
 }
 
 .reports-intro {
   margin: 1.5rem 0 2rem;
   max-width: 760px;
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-size: var(--page-body-size);
+  font-weight: var(--page-body-weight);
+  line-height: var(--page-body-line);
   color: var(--text);
 }
 

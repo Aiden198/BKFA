@@ -7,25 +7,27 @@
 }
 
 #members-page h1 {
-    color: #5d5a94;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 800;
+    color: var(--secondary);
+    font-size: var(--page-title-size);
+    font-weight: var(--page-title-weight);
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: var(--page-title-line);
 }
 
 #members-page h2 {
-    color: #5d5a94;
-    font-size: 2rem;
+    color: var(--secondary);
+    font-size: var(--page-subtitle-size);
+    font-weight: var(--page-subtitle-weight);
+    line-height: var(--page-subtitle-line);
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 #members-page .content-text {
-    color: #4f4b6b;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.6;
+    color: var(--text);
+    font-size: var(--page-body-size);
+    font-weight: var(--page-body-weight);
+    line-height: var(--page-body-line);
     margin-bottom: 1.5rem;
     max-width: 760px;
 }
