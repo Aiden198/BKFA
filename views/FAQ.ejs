@@ -1,9 +1,108 @@
+<link rel="stylesheet" href="/stylesheets/faq.css">
+
 <%- include('partials/header') %>
 
-<main>
+<main id="faq-page" class="main-container--sidebar">
     <%- include ('partials/ourWorkSideMenu') %>
+
     <div class="page-content">
-        <h1> FAQ </h1>
+        <h1 class="content-title">Frequently Asked Questions</h1>
+
+        <%- include("partials/expandable", {
+          title: "How do you host an Assembly Day and what's involved in getting started?",
+          content: `
+            <p>If you would like to host an Assembly Day, you will find all the information, including a comprehensive instruction manual, on our <a href="/hostanassemblyday">Host an Assembly Day</a> page.</p>
+            <p>A minimum commitment to assemble 200 Birthing Kits is required to organise an Assembly Day. You will need a group of people who are willing to help assemble the kits, a suitable venue in which to work, and the funds required to cover the cost of the quantity of kits pledged.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "What's in a Birthing Kit?",
+          content: `
+            <p><strong>Soap</strong> to wash the birth attendant's hands and the mother's perineum.</p>
+            <p><strong>A plastic sheet</strong> to prevent the mother and newborn coming into contact with the ground or an unhygienic surface.</p>
+            <p><strong>Gloves</strong> to cover the birth attendant's hands and provide protection from infections such as HIV for carers and care recipients.</p>
+            <p><strong>Gauze</strong> to wipe clean the newborn baby's eyes, and to clean the mother's perineum prior to giving birth.</p>
+            <p><strong>Cord ties</strong> to tie the umbilical cord.</p>
+            <p><strong>A sterile blade</strong> to cut the umbilical cord cleanly and reduce risk of newborn sepsis and tetanus.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "Why don't you put more in the kits?",
+          content: `
+            <p>The kits are a simple and effective tool for basic infection prevention and first-line childbirth care. Each component has been selected to support the 6 principles of cleanliness at birth for mothers, newborns, and birth attendants in low-resource and emergency settings. Additional items would increase the weight and cost of the kit and create issues with shipment and supply from Australia.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "How much does a kit cost?",
+          content: `
+            <p>Assembly Day fundraising supports the production and delivery of Birthing Kits. The cost of one Birthing Kit is $5. This includes all materials in the kit, costs associated with assembly, warehousing and freight of kits, and overall program management, including monitoring and evaluation.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "How do you know if the kits get to their destination?",
+          content: `
+            <p>All BKFA Field Partners are required to report back to us on the collection and distribution of Birthing Kits. This reporting process allows us to confirm that the kits sent arrive at their intended destination. Additionally, real time tracking, email notification and signatory on arrival confirms receipt of kits with the Field Partner.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "How do you decide who gets the kits?",
+          content: `
+            <p>Kits are sent to organisations that have undergone an application and approval process to become a BKFA Field Partner. This process ensures that our Field Partners have the capacity to identify high-need populations and effectively integrate the Birthing Kits into their existing programs and/or services. New and continuing Birthing Kit grants to Field Partners are awarded on an annual basis in line with BKFA's program strategy and partnership guidelines.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "How do you know the kits work?",
+          content: `
+            <p>'Disposable Delivery Kits' are recommended by the World Health Organisation (WHO) as an essential tool for use by birth attendants when a delivery occurs at home, particularly in emergency settings. There is international evidence to suggest that kits prevent childbirth-related infections and also act to improve health outcomes for mothers and babies by removing barriers and supporting mothers to access health services. In many low-resource settings health facilities are not adequately equipped with clean supplies, so kits can also be used to resource and improve the basic cleanliness of these environments. Our Field Partners also report back to us on a regular basis, describing the positive effect that kits have had on childbirth care in their distribution areas.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "Can I choose where my kits go?",
+          content: `
+            <p>We send kits to organisations in high-need areas that have undergone an approval process to become a Field Partner. The majority of our kits are pre-allocated on an annual basis to these approved partners. Some kits are kept for responding to emergencies. Volunteers who participate in a Birthing Kit Assembly Day will receive an email from BKFA confirming the countries the kits were distributed to in the month of their Assembly Day.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "Where are kits used and by whom?",
+          content: `
+            <p>Distribution methods are relevant to the different target communities and include individual, community-based, and health facility-based strategies. Kits are therefore used by mothers and birth attendants during births at home and other community settings or health facilities.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "Do the kits get used in natural disaster situations?",
+          content: `
+            <p>Yes, BKFA has kits available for disaster relief situations.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "Do you distribute kits to Aboriginal and Torres Strait Islander communities in Australia?",
+          content: `
+            <p>The Australian Government works to ensure that all women in Australia have access to quality health care during pregnancy, childbirth and postpartum periods, so there is no identified need for kit distribution in Australia.</p>
+          `
+        }) %>
+
+        <%- include("partials/expandable", {
+          title: "How do I lodge a complaint with Birthing Kit Foundation Australia?",
+          content: `
+            <p>Our Complaints Handling Policy may be requested by contacting us at <a href="mailto:info@bkfa.org.au">info@bkfa.org.au</a>.</p>
+          `
+        }) %>
+
+        <section class="faq-notes" aria-label="Frequently asked questions references">
+            <p>(1) The <em>Six Principles of Cleanliness at Birth</em> are: clean hands, clean perineum, nothing unclean to be introduced into the vagina, clean delivery surface, cleanliness in cutting the umbilical cord, cleanliness for cord care of the newborn baby (WHO 1996 Essential Newborn Care: Report of a Technical Working Group).</p>
+
+            <p>(2) WHO 2015 Pregnancy, Childbirth, Postpartum and Newborn Care: A guide for essential practice, 3rd Edition, Integrated Management of Pregnancy and Childbirth (IMPAC), WHO/UNFPA/UNICEF <a href="http://apps.who.int/iris/bitstream/10665/249580/1/9789241549356-eng.pdf?ua=1" target="_blank" rel="noopener noreferrer">http://apps.who.int/iris/bitstream/10665/249580/1/9789241549356-eng.pdf?ua=1</a></p>
+        </section>
     </div>
 </main>
 
