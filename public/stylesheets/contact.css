@@ -33,21 +33,25 @@
 }
 
 .contact-card h1 {
-  font-size: 3rem;
-  color: #4b4f93;
+  font-size: var(--page-title-size);
+  font-weight: var(--page-title-weight);
+  line-height: var(--page-title-line);
+  color: var(--secondary);
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
 .contact-intro {
-  color: #5a5a6f;
-  line-height: 1.8;
+  color: var(--text);
+  line-height: var(--page-body-line);
   margin-bottom: 32px;
-  font-size: 1.08rem;
+  font-size: var(--page-body-size);
+  font-weight: var(--page-body-weight);
 }
 
 .contact-intro a {
-  color: #4b4f93;
-  font-weight: 600;
+  color: var(--secondary);
+  font-weight: 800;
   text-decoration: underline;
 }
 
@@ -153,7 +157,7 @@
   }
 
   .contact-card h1 {
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 8vw, 2.8rem);
   }
 
   .form-row {
