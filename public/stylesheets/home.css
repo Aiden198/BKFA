@@ -89,6 +89,130 @@
   margin-top: 1.75rem;
 }
 
+.distribution-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0 0 3.5rem;
+  background-color: #16b1ab;
+  background-image: url('/images/2022/11/map-of-birthing-kit-distribution.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.distribution-section__inner {
+  position: relative;
+  min-height: 760px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 2rem;
+}
+
+.distribution-layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 420px) minmax(560px, 1fr);
+  gap: 1.5rem;
+  align-items: end;
+  justify-content: start;
+  width: 100%;
+}
+
+.distribution-card {
+  background: white;
+  color: var(--secondary);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: 0 18px 34px rgba(45, 38, 88, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  min-height: 280px;
+  justify-content: flex-start;
+  justify-self: center;
+  width: min(100%, 460px);
+  align-self: end;
+}
+
+.distribution-card__top {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.distribution-card__icon {
+  width: 108px;
+  height: 108px;
+  flex: 0 0 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(79, 74, 125, 0.16);
+  box-shadow: inset 0 0 0 12px rgba(79, 74, 125, 0.12);
+}
+
+.distribution-card__icon img {
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+}
+
+.distribution-card__value {
+  flex: 1;
+}
+
+.distribution-card__value h3 {
+  margin: 0;
+  color: var(--secondary);
+  font-size: clamp(3rem, 4vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: left;
+}
+
+.distribution-card__copy {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-align: left;
+  max-width: 100%;
+  width: 100%;
+}
+
+.distribution-copy {
+  max-width: none;
+  justify-self: start;
+  align-self: end;
+  padding: 0 0 0.25rem;
+  margin-left: 0;
+  background: transparent;
+  border-radius: 20px;
+}
+
+.distribution-copy h2 {
+  margin: 0 0 1.25rem;
+  color: #ffffff;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 0.98;
+  font-weight: 900;
+  text-transform: uppercase;
+  max-width: none;
+}
+
+.distribution-copy p {
+  margin: 0;
+  max-width: 52rem;
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.75;
+  text-align: left;
+}
+
 /* hero buttons area */
 .hero__actions {
   display: flex;
@@ -150,6 +274,82 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
+}
+
+.cards-grid--glance {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.cards-grid--glance > .glance-card {
+  grid-column: span 2;
+  background: var(--footer-bg);
+  color: white;
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: 0 18px 34px rgba(45, 38, 88, 0.18);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.4rem;
+}
+
+.cards-grid--glance > .glance-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.cards-grid--glance > .glance-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.cards-grid--glance > .glance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px rgba(45, 38, 88, 0.22);
+}
+
+.cards-grid--glance .glance-card__top {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cards-grid--glance .glance-card__icon {
+  width: 108px;
+  height: 108px;
+  flex: 0 0 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+.cards-grid--glance .glance-card__icon img {
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+}
+
+.cards-grid--glance .glance-card__value {
+  flex: 1;
+}
+
+.cards-grid--glance .glance-card__value h3 {
+  margin: 0;
+  color: white;
+  font-size: clamp(3rem, 4vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: left;
+}
+
+.cards-grid--glance .glance-card__copy {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
 }
 
 /* Ensures the card spans two repeats instead of just 1 */
@@ -346,8 +546,62 @@ a.cta-band {
     grid-template-columns: 1fr;
   }
 
+  .distribution-section {
+    padding: 3rem 0 3.5rem;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .distribution-section__inner {
+    min-height: 0;
+    display: block;
+  }
+
+  .distribution-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .distribution-card {
+    max-width: 420px;
+    justify-self: start;
+  }
+
+  .distribution-card__copy {
+    max-width: none;
+  }
+
+  .distribution-copy h2 {
+    max-width: none;
+  }
+
+  .distribution-copy p {
+    max-width: none;
+  }
+
+  .distribution-copy {
+    margin-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+
   .cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cards-grid--glance > .glance-card,
+  .cards-grid--glance > .glance-card:nth-child(4),
+  .cards-grid--glance > .glance-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .cards-grid--glance > .glance-card {
+    min-height: 0;
+  }
+
+  .cards-grid--glance .glance-card__top {
+    align-items: center;
   }
 
   .hero {
