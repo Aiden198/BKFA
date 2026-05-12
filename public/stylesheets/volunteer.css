@@ -1,0 +1,250 @@
+.about-us-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #57508f;
+    text-transform: uppercase;
+    margin: 0 0 18px 0;
+}
+
+/* ===== COVER IMAGE ===== */
+/* adjusted so that it dosen't go behind the header */
+
+.volunteer-cover {
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.volunteer-cover img {
+    width: 100%;
+    max-width: 1100px;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ===== CTA BUTTONS (three side-by-side) ===== */
+
+.volunteer-cta-section {
+    margin-top: 48px;
+}
+
+.volunteer-cta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    max-width: 980px;
+}
+
+.vol-cta-band {
+    background: transparent;
+    color: #57508f;
+    padding: 1.8rem 1.4rem;
+    border-radius: 20px;
+    border: 3px solid #8f8ac0;
+    text-align: center;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.vol-cta-band h3 {
+    margin: 0;
+    color: #57508f;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.vol-cta-band p {
+    margin: 0;
+    color: #57508f;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.vol-cta-band:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(107, 98, 150, 0.15);
+    border-color: #7c76b2;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+    .volunteer-cover {
+        padding: 0 20px;
+        margin-top: 110px;
+    }
+
+    .volunteer-cover img {
+        height: 240px;
+    }
+
+    .volunteer-cta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vol-cta-band {
+        min-height: 120px;
+    }
+}
+
+/* ===== EVENTS TABLE ===== */
+
+.volunteer-events-section {
+    margin-top: 52px;
+    max-width: 980px;
+}
+
+.volunteer-events-heading {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #57508f;
+    text-transform: uppercase;
+    margin: 0 0 24px 0;
+}
+
+/* Wrapper allows horizontal scroll on small screens */
+.volunteer-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.volunteer-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #2f2f3a;
+}
+
+/* Column widths — Organisation gets the most room */
+.volunteer-table .col-state        { width: 8%; }
+.volunteer-table .col-date         { width: 14%; }
+.volunteer-table .col-organisation { width: 58%; }
+.volunteer-table .col-kits         { width: 20%; }
+
+.volunteer-table thead tr {
+    background-color: #57508f;
+    color: #ffffff;
+}
+
+.volunteer-table th {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.volunteer-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #e0ddf0;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+/* Zebra striping using the page's light purple tones */
+.volunteer-table tbody tr:nth-child(even) {
+    background-color: #f2f0fb;
+}
+
+.volunteer-table tbody tr:hover {
+    background-color: #e8e5f7;
+}
+
+@media (max-width: 900px) {
+    .volunteer-events-heading {
+        font-size: 1.8rem;
+    }
+
+    .volunteer-table th,
+    .volunteer-table td {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== ASSEMBLY DAY TABLE ===== */
+
+.vol-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    color: #2f2f3a;
+    margin-bottom: 10px;
+}
+
+.vol-table thead tr {
+    background-color: #57508f;
+    color: white;
+}
+
+.vol-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.vol-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+/* Alternating row colour */
+.vol-table tbody tr:nth-child(odd) {
+    background-color: #f6f5fb;
+}
+
+.vol-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.vol-table tbody tr:hover {
+    background-color: #ece9f8;
+}
+
+/* Column widths — Organisation gets the most space */
+.vol-table .col-state  { width: 8%; }
+.vol-table .col-date   { width: 16%; }
+.vol-table .col-org    { width: 58%; font-size: 1.05rem; }
+.vol-table .col-kits   { width: 18%; text-align: right; }
+
+.vol-table td:last-child {
+    text-align: right;
+}
+
+@media (max-width: 700px) {
+    .vol-table {
+        font-size: 0.88rem;
+    }
+
+    .vol-table th,
+    .vol-table td {
+        padding: 10px 10px;
+    }
+
+    .vol-table .col-org {
+        font-size: 0.95rem;
+    }
+}

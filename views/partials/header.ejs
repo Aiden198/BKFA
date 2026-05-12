@@ -14,6 +14,12 @@
 </head>
 <body>
 
+    <% if (locals.showDonateBanner) { %>
+    <div class="donate-bar">
+        <a href="/donate" class="donate-bar__btn">Donate</a>
+    </div>
+    <% } %>
+
     <nav class="navbar">
         <a href="/" aria-label="Birthing Kit Foundation home">
             <img src="/images/2025/05/bkf_logo_l.jpg" alt="Logo" class="header-logo">

@@ -1,3 +1,4 @@
+<% locals.showDonateBanner = true; %>
 <%- include('partials/header') %>
 
 <script src="/javascripts/countUp.umd.js"></script>
@@ -39,6 +40,14 @@ const kitItems = [
     }
 ];
 %>
+
+<script>
+  const bar = document.querySelector('.donate-bar');
+  const nav = document.querySelector('.navbar');
+  if (bar && nav) {
+    nav.style.top = bar.offsetHeight + 'px';
+  }
+</script>
 
 <main class="home-page">
     <header class="hero hero--feature">

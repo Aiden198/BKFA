@@ -1,0 +1,30 @@
+.field-partners-cta {
+    display: block;
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+.field-partners-cta .cta-band {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6b6296;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 24px 48px;
+    min-width: 260px;
+    transition: background-color 0.2s ease;
+}
+
+.field-partners-cta .cta-band h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.field-partners-cta .cta-band:hover {
+    background-color: #57508f;
+}
