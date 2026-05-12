@@ -2,6 +2,7 @@
 
 <script src="/javascripts/countUp.umd.js"></script>
 <script src="/javascripts/counter.js"></script>
+<script src="/javascripts/home-hero-carousel.js" defer></script>
 <script src="/javascripts/home-kit-carousel.js" defer></script>
 
 <%
@@ -43,25 +44,8 @@ const kitItems = [
     <header class="hero hero--feature">
         <div class="container">
             <div class="hero-feature">
-                <img src="/images/2025/04/hut.jpg" alt="A rural home in a community setting.">
-		<img src="/images/2025/04/happy-baby.jpg" alt="Mother holding her happy baby.">
-		<img src="/images/2026/03/Hope-for-Sustainable-Development-Post-March-2026-scaled.jpg" alt="Local Leaders Group">                
-		<img src="/images/2026/03/Mbambu-harriet-in-Nyakasanga-west-on-22-jan_-2025.jpg" alt="Mbambu harriet in Nyakasa">
-		<img src="/images/2026/03/Mr-Kasereka-Amon-from-the-local-government-addressing-the-pregnant-mothers-scaled.jpg" alt="Government Local Adressing pregnant mothers.">
-		<img src="/images/2026/03/NANTUMBE-JOAN-RECEIVING-A-BIRTHING-KIT-LADY-IN-BLUE-DRESS-AT-NYAMWAMBA-EAST-ON-22-JAN_-2025-1-scaled.jpg" alt="Lady receiving birthing kit.">
-		<div class="hero-feature__overlay">
-                
-                    <h1>A world in which all women and girls have access to a clean and safe birth.</h1>
-			                
-		</div>
-		<div class="arrow-container">
-		    <button id="prevBtn" class="arrow-btn" onclick="pushSlides(-1)">
-			<p> <i class="arrow left"></i></p>
-		    </button>
-	            <button id="nextBtn" class="arrow-btn" onclick="pushSlides(1)">
-			<p> <i class="arrow right"></i></p>
-		    </button>
-		</div>
+                <img class="hero-feature__slide is-active" src="/images/2026/03/Beneficiaries_-local-leaders-and-volunteers-pose-for-a-group-photo-after-distribution-of-kits-in-Kizungu-on-22-jan-2025-scaled.jpg" alt="Community members holding birthing kits after distribution.">
+                <img class="hero-feature__slide" src="/images/2025/04/hut.jpg" alt="A rural home in a community setting.">
                 <div class="hero-feature__overlay">
                     <h1>A world in which all women and girls have access to a clean and safe birth.</h1>
                 </div>
@@ -69,48 +53,61 @@ const kitItems = [
         </div>
     </header>
 
-    <section class="section">
-        <div class="container">
-            <div class="section__header">
+    <section class="section home-panel home-panel--twenty">
+        <div class="home-panel__inner">
             <section class="find-out-more-section fly-in" data-fly="up">
                 <div class="find-out-more-grid">
                     <div class="find-out-more-image">
                         <img src="/images/2025/04/mums-group.jpg" alt="20 Years of BKFA">
                     </div>
 
-                        <div class="find-out-more-content">
-                            <h2>CELEBRATE 20 YEARS OF THE BKFA</h2>
-                            <p>
-                                Help us pack 20,000 kits across the country during May to acknowledge our 20 year milestone!
-                            </p>
-                            <a href="/twenty-years" class="find-out-more-btn">FIND OUT MORE</a>
+                    <div class="find-out-more-content">
+                        <h2>CELEBRATE 20 YEARS OF THE BKFA</h2>
+                        <p>
+                            Help us pack 20,000 kits across the country during May to acknowledge our 20 year milestone!
+                        </p>
+                        <a href="/twenty-years" class="find-out-more-btn">FIND OUT MORE</a>
                     </div>
                 </div>
+            </section>
+        </div>
     </section>
-            <div class="fly-in" data-fly="left">
+
+    <section class="section home-panel home-panel--about">
+        <div class="home-panel__inner">
+            <div class="home-about-block fly-in" data-fly="left">
                 <h2>WHO WE ARE </h2>
                 <p>The Birthing Kit Foundation (Australia) is a humanitarian organisation that provides birthing kits and
                     education in clean birthing practices to women birthing at home in remote regions of the developing world.</p>
             </div>
-            <div class="fly-in" data-fly="right">
-                <h2>WHAT WE DO</h2>
-                <p>We work in partnership with the Australian Community and a number of Global Organisations to pack and
-                    supply Clean Birth Kits to pregnant women living in rural communities and low-resource settings around the world. To date,
-                    3 million Clean Birth Kits have been distributed to women in need. Kits are given to mothers through community outreach programs,
-                    supplied to health facilities for use by doctors, midwives and nurses or distributed to traditional birthing attendants.
-                    They are designed to support hygienic practices and environments during childbirth in under-resourced settings.</p>
-            </div>
-            <div class="fly-in" data-fly="left">
-                <h2>OUR ACHIEVEMENTS</h2>
-                <p>We have supplied over 3 million clean birth kits to women in remote regions of over 30 countries, trained
-                    over 10,000 traditional birth attendants and contributed to the prevention of FGM in communities that were killing their women in childbirth.
-                    The impact of our work can not be underestimated, with many unexpected benefits for the women and communities we support. You can find out more here.</p>
-                <h2>OUR VISION</h2>
-                <p>A world in which all women and girls have access to a clean and safe birth.</p>
-                <h2>OUR MISSION</h2>
-                <p>To positively impact the lives of mothers and babies in developing countries.</p>
-                <p>To partner with and empower our partner organisations and communities.</p>
-                <p>To enable systems where women and girls become truly empowered.</p>
+
+            <div class="home-about-layout">
+                <div class="home-about-copy">
+                    <div class="home-about-block fly-in" data-fly="right">
+                        <h2>WHAT WE DO</h2>
+                        <p>We work in partnership with the Australian Community and a number of Global Organisations to pack and
+                            supply Clean Birth Kits to pregnant women living in rural communities and low-resource settings around the world. To date,
+                            3 million Clean Birth Kits have been distributed to women in need. Kits are given to mothers through community outreach programs,
+                            supplied to health facilities for use by doctors, midwives and nurses or distributed to traditional birthing attendants.
+                            They are designed to support hygienic practices and environments during childbirth in under-resourced settings.</p>
+                    </div>
+                    <div class="home-about-block fly-in" data-fly="left">
+                        <h2>OUR ACHIEVEMENTS</h2>
+                        <p>We have supplied over 3 million clean birth kits to women in remote regions of over 30 countries, trained
+                            over 10,000 traditional birth attendants and contributed to the prevention of FGM in communities that were killing their women in childbirth.
+                            The impact of our work can not be underestimated, with many unexpected benefits for the women and communities we support. You can find out more here.</p>
+                        <h2>OUR VISION</h2>
+                        <p>A world in which all women and girls have access to a clean and safe birth.</p>
+                        <h2>OUR MISSION</h2>
+                        <p>To positively impact the lives of mothers and babies in developing countries.</p>
+                        <p>To partner with and empower our partner organisations and communities.</p>
+                        <p>To enable systems where women and girls become truly empowered.</p>
+                    </div>
+
+                </div>
+                <figure class="home-about-image fly-in" data-fly="right">
+                    <img src="/images/2022/11/BKF-pregnant-smiling.jpg" alt="A smiling pregnant woman standing outside.">
+                </figure>
             </div>
 
             <div class="cards-grid repeat-four mission-cta-grid fly-in" data-fly="up">
@@ -133,15 +130,17 @@ const kitItems = [
         </div>
     </section>
 
-    <section class="video-section">
-        <div class="video-wrapper">
-            <iframe
-                src="https://www.youtube.com/embed/PBk6cvC49SI"
-                title="BKFA Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+    <section class="video-section home-panel home-panel--video">
+        <div class="home-panel__inner">
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/PBk6cvC49SI"
+                    title="BKFA Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -173,8 +172,8 @@ const kitItems = [
         </div>
     </section>
 
-    <section>
-        <div class="container">
+    <section class="section home-panel home-panel--glance">
+        <div class="home-panel__inner">
             <div class="section__header">
                 <h2>2024/25 AT A GLANCE</h2>
                 <div class="cards-grid cards-grid--glance">
@@ -238,8 +237,8 @@ const kitItems = [
         </div>
     </section>
 
-    <section class="kit-carousel-section">
-        <div class="container">
+    <section class="kit-carousel-section home-panel home-panel--kit">
+        <div class="home-panel__inner">
             <div class="kit-carousel-header fly-in" data-fly="up">
                 <div class="kit-carousel-header__lead">
                     <div class="kit-carousel-header__title-row">
