@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<main class="search-main">
+    <div class="page-content search-page">
+        <h1 class="content-title">Search</h1>
+
+        <% if (query) { %>
+            <p class="search-summary">Results for "<%= query %>"</p>
+        <% } else { %>
+            <p class="search-summary">Enter a search term to find pages on the site.</p>
+        <% } %>
+
+        <div class="search-results">
+            <% if (query && results.length === 0) { %>
+                <p class="search-empty">No pages matched your search.</p>
+            <% } %>
+
+            <% results.forEach(function(result) { %>
+                <a class="search-result" href="<%= result.url %>">
+                    <span class="search-result__title"><%= result.title %></span>
+                    <span class="search-result__description"><%= result.description %></span>
+                </a>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

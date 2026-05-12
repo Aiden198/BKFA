@@ -983,8 +983,11 @@ main.page-main-with-hero .side-menu {
 .nav-search {
   display: flex;
   align-items: center;
+  justify-content: center;
+  align-self: center;
   margin-left: 0.5rem;
   width: 34px;
+  height: 34px;
   transition: width 0.28s ease;
 }
 
@@ -997,6 +1000,8 @@ main.page-main-with-hero .side-menu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  align-self: center;
+  margin: 0;
   background: var(--surface-soft);
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -1045,16 +1050,29 @@ main.page-main-with-hero .side-menu {
   color: var(--muted);
   padding: 0;
   margin-left: 0;
-  width: 18px;
-  min-width: 18px;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
   transition: color 0.2s;
+}
+
+.search-bar button i {
+  display: block;
+  line-height: 1;
 }
 
 .search-bar button:hover {
   color: var(--primary);
+}
+
+.search-main {
+  display: block;
+  width: min(var(--container), calc(100% - 2rem));
+  margin: 0 auto;
 }
 
 .search-page {
