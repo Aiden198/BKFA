@@ -83,3 +83,33 @@
         min-height: 220px;
     }
 }
+
+.donate-label {
+    margin: 0 0 1.2rem 0;
+    color: var(--secondary);
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.fundraise-list {
+    margin: 0 0 3rem 1.2rem;
+    padding: 0;
+    max-width: 760px;
+    color: var(--text);
+    font-size: var(--page-body-size);
+    line-height: var(--page-body-line);
+}
+
+.fundraise-list li {
+    margin-bottom: 0.35rem;
+}
+
+#donate-page .page-content a {
+    color: #55b7ac;
+    text-decoration: none;
+}
+
+#donate-page .page-content a:hover {
+    text-decoration: underline;
+}
