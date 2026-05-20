@@ -23,6 +23,8 @@ var volunteerRouter = require('./routes/Volunteer')
 var testRouter = require('./routes/test')
 var becomeAMemberRouter = require('./routes/BecomeAMember')
 var ourApproachRouter = require('./routes/OurApproach')
+var newsRouter = require('./routes/News');
+var adminNewsRouter = require('./routes/adminNews');
 
 var app = express();
 
@@ -58,6 +60,8 @@ app.use('/volunteer', volunteerRouter)
 app.use('/test', testRouter)
 app.use('/becomeamember', becomeAMemberRouter)
 app.use('/ourapproach', ourApproachRouter)
+app.use('/news', newsRouter);
+app.use('/admin/news', adminNewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

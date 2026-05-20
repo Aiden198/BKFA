@@ -1,3 +1,20 @@
 [
-    
+  {
+    "enquiryType": "General enquiry",
+    "firstName": "Aiden",
+    "lastName": "McMullen",
+    "email": "Aiden@gmail.com",
+    "phone": "0412345678",
+    "message": "Hello, this is a test",
+    "submittedAt": "2026-05-18T05:05:30.451Z"
+  },
+  {
+    "enquiryType": "Field Partner enquiry",
+    "firstName": "Aiden",
+    "lastName": "McMullen",
+    "email": "Aiden@gmail.com",
+    "phone": "0412345678",
+    "message": "Hello, this is also a test, thankyou for reading",
+    "submittedAt": "2026-05-18T05:06:29.203Z"
+  }
 ]
