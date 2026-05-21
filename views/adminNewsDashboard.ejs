@@ -1,0 +1,130 @@
+<%- include('partials/header') %>
+
+<main class="admin-page">
+
+    <div class="admin-header">
+
+        <h1>Manage News</h1>
+
+        <a
+            href="/admin/news/create"
+            class="admin-button"
+        >
+            + Create Article
+        </a>
+
+    </div>
+
+    <div class="admin-news-grid">
+
+        <% articles.forEach(article => { %>
+
+            <div class="admin-news-card">
+
+                <div class="admin-news-card__top">
+
+                    <div>
+
+                        <h2 class="admin-news-card__title">
+                            <%= article.title %>
+                        </h2>
+
+                        <div class="admin-news-card__meta">
+
+                            <span class="
+                                admin-status
+
+                                <% if (article.status === 'published') { %>
+                                    admin-status--published
+                                <% } else { %>
+                                    admin-status--draft
+                                <% } %>
+                            ">
+
+                                <%= article.status %>
+
+                            </span>
+
+                            <span class="admin-news-date">
+
+                                <%=
+                                    article.published_at
+                                    ? new Date(article.published_at)
+                                        .toLocaleDateString()
+                                    : 'Unpublished'
+                                %>
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-actions">
+
+                    <a
+                        href="/news/<%= article.slug %>"
+                        class="
+                            admin-action-btn
+                            admin-action-btn--view
+                        "
+                    >
+                        View
+                    </a>
+
+                    <a
+                        href="/admin/news/edit/<%= article.article_id %>"
+                        class="
+                            admin-action-btn
+                            admin-action-btn--edit
+                        "
+                    >
+                        Edit
+                    </a>
+
+                    <a
+                        href="/news/preview/<%= article.slug %>"
+                        target="_blank"
+                        class="
+                            admin-action-btn
+                            admin-action-btn--preview
+                        "
+                    >
+                        Preview
+                    </a>
+
+                    <form
+                        action="/admin/news/delete/<%= article.article_id %>"
+                        method="POST"
+                        onsubmit="
+                            return confirm(
+                                'Delete this article?'
+                            );
+                        "
+                    >
+
+                        <button
+                            type="submit"
+                            class="
+                                admin-action-btn
+                                admin-action-btn--delete
+                            "
+                        >
+                            Delete
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+</main>
+
+<%- include('partials/footer') %>

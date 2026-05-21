@@ -1,0 +1,313 @@
+<%- include('partials/header') %>
+
+<main class="page-main-with-hero">
+    <section class="page-content">
+        <h1>Create News Article</h1>
+        <form
+            action="/admin/news/create"
+            method="POST"
+            enctype="multipart/form-data"
+            class="news-admin-form"
+            id="newsForm"
+        >
+            <label>Title</label>
+
+            <input
+                type="text"
+                name="title"
+                required
+            >
+
+            <label>Summary</label>
+
+            <textarea
+                name="summary"
+                required
+            ></textarea>
+
+            <label>Hero Image Path</label>
+
+            <input
+                type="file"
+                name="hero_image"
+                accept="image/*"
+            >
+
+            <label>Categories</label>
+            <div class="category-checkboxes">
+                <% categories.forEach(category => { %>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="categories"
+                            value="<%= category.category_id %>"
+                        >
+                        <%= category.name %>
+                    </label>
+                <% }) %>
+            </div>
+
+            <label>Status</label>
+
+            <select name="status">
+
+                <option value="draft">
+                    Draft
+                </option>
+
+                <option value="published">
+                    Published
+                </option>
+
+            </select>
+
+            <label>Featured</label>
+            <input
+                type="checkbox"
+                name="featured"
+            >
+            <label>Article Blocks</label>
+
+            <div id="blockContainer"></div>
+
+            <div class="block-buttons">
+
+                <button
+                    type="button"
+                    onclick="addBlock('paragraph')"
+                >
+                    + Paragraph
+                </button>
+
+                <button
+                    type="button"
+                    onclick="addBlock('heading')"
+                >
+                    + Heading
+                </button>
+
+                <button
+                    type="button"
+                    onclick="addBlock('quote')"
+                >
+                    + Quote
+                </button>
+
+                <button
+                    type="button"
+                    onclick="addBlock('image')"
+                >
+                    + Image
+                </button>
+
+            </div>
+
+            <button type="submit">
+                Publish Article
+            </button>
+        </form>
+    </section>
+</main>
+
+<script>
+
+let blockIndex = 0;
+
+function addBlock(type) {
+
+    const container =
+        document.getElementById('blockContainer');
+
+    const block =
+        document.createElement('div');
+
+    block.className = 'editor-block';
+
+    if (type === 'image') {
+
+        block.innerHTML = `
+
+            <input
+                type="hidden"
+                name="blocks[${blockIndex}][type]"
+                value="image"
+            >
+
+            <label>IMAGE</label>
+
+            <input
+                type="file"
+                name="block_image_${blockIndex}"
+                accept="image/*"
+                required
+            >
+
+            <input
+                type="text"
+                name="blocks[${blockIndex}][caption]"
+                placeholder="Image caption"
+            >
+
+            <div class="block-reorder-buttons">
+
+                <button
+                    type="button"
+                    class="move-up-btn"
+                >
+                    ↑
+                </button>
+
+                <button
+                    type="button"
+                    class="move-down-btn"
+                >
+                    ↓
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="remove-block-btn"
+            >
+                Remove Block
+            </button>
+        `;
+
+    } else {
+
+        block.innerHTML = `
+
+            <input
+                type="hidden"
+                name="blocks[${blockIndex}][type]"
+                value="${type}"
+            >
+
+            <label>
+                ${type.toUpperCase()}
+            </label>
+
+            <textarea
+                name="blocks[${blockIndex}][content]"
+                rows="5"
+                required
+            ></textarea>
+
+            <div class="block-reorder-buttons">
+
+                <button
+                    type="button"
+                    class="move-up-btn"
+                >
+                    ↑
+                </button>
+
+                <button
+                    type="button"
+                    class="move-down-btn"
+                >
+                    ↓
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="remove-block-btn"
+            >
+                Remove Block
+            </button>
+        `;
+    }
+
+    block
+        .querySelector('.remove-block-btn')
+        .addEventListener('click', () => {
+
+            block.remove();
+        });
+
+    container.appendChild(block);
+
+    block
+        .querySelector('.move-up-btn')
+        .addEventListener('click', () => {
+
+            const previous =
+                block.previousElementSibling;
+
+            if (previous) {
+
+                container.insertBefore(
+                    block,
+                    previous
+                );
+            }
+        });
+
+    block
+        .querySelector('.move-down-btn')
+        .addEventListener('click', () => {
+
+            const next =
+                block.nextElementSibling;
+
+            if (next) {
+
+                container.insertBefore(
+                    next,
+                    block
+                );
+            }
+        });
+
+    blockIndex++;
+}
+
+addBlock('paragraph');
+
+function reindexBlocks() {
+
+    const blocks =
+        document.querySelectorAll('.editor-block');
+
+    blocks.forEach((block, index) => {
+
+        const inputs =
+            block.querySelectorAll(
+                'input, textarea'
+            );
+
+        inputs.forEach(input => {
+
+            if (!input.name) return;
+
+            input.name =
+                input.name.replace(
+                    /blocks\[\d+\]/,
+                    `blocks[${index}]`
+                );
+
+            if (
+                input.name.startsWith(
+                    'block_image_'
+                )
+            ) {
+
+                input.name =
+                    `block_image_${index}`;
+            }
+        });
+    });
+}
+
+document
+    .getElementById('newsForm')
+    .addEventListener('submit', () => {
+
+        reindexBlocks();
+    });
+</script>
+
+<%- include('partials/footer') %>

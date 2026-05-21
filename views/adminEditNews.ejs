@@ -1,0 +1,373 @@
+<%- include('partials/header') %>
+
+<main class="page-main-with-hero">
+    <section class="page-content">
+        <h1>Edit News Article</h1>
+        <form
+            action="/admin/news/edit/<%= article.article_id %>"
+            method="POST"
+            enctype="multipart/form-data"
+            class="news-admin-form"
+            id="newsForm"
+        >
+            <label>Title</label>
+
+            <input
+                type="text"
+                name="title"
+                value="<%= article.title %>"
+                required
+            >
+
+            <label>Summary</label>
+
+            <textarea
+                name="summary"
+                required
+            ><%= article.summary %></textarea>
+
+            <label>Hero Image Path</label>
+
+            <% if (article.hero_image) { %>
+
+                <img
+                    src="<%= article.hero_image %>"
+                    class="admin-existing-image"
+                >
+
+            <% } %>
+
+            <input
+                type="file"
+                name="hero_image"
+                accept="image/*"
+            >
+
+            <label>Categories</label>
+            <div class="category-checkboxes">
+                <% categories.forEach(category => { %>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="categories"
+                            value="<%= category.category_id %>"
+
+                            <% if (
+                                categories.some(
+                                    c => c.category_id === category.category_id
+                                )
+                            ) { %>
+                                checked
+                            <% } %>
+                        >
+                        <%= category.name %>
+                    </label>
+                <% }) %>
+            </div>
+
+            <label>Status</label>
+
+            <select name="status">
+
+                <option
+                    value="draft"
+
+                    <% if (article.status === 'draft') { %>
+                        selected
+                    <% } %>
+                >
+                    Draft
+                </option>
+
+                <option
+                    value="published"
+
+                    <% if (article.status === 'published') { %>
+                        selected
+                    <% } %>
+                >
+                    Published
+                </option>
+
+            </select>
+
+            <label>Featured</label>
+            <input
+                type="checkbox"
+                name="featured"
+
+                <% if (article.featured) { %>
+                    checked
+                <% } %>
+            >
+            <label>Article Blocks</label>
+
+            <div id="blockContainer"></div>
+
+            <div class="block-buttons">
+
+                <button
+                    type="button"
+                    onclick="addBlock('paragraph')"
+                >
+                    + Paragraph
+                </button>
+
+                <button
+                    type="button"
+                    onclick="addBlock('heading')"
+                >
+                    + Heading
+                </button>
+
+                <button
+                    type="button"
+                    onclick="addBlock('quote')"
+                >
+                    + Quote
+                </button>
+
+                <button
+                    type="button"
+                    onclick="addBlock('image')"
+                >
+                    + Image
+                </button>
+
+            </div>
+
+            <button type="submit">
+                Publish Article
+            </button>
+        </form>
+    </section>
+</main>
+
+<script>
+
+let blockIndex = 0;
+
+const existingBlocks = <%- JSON.stringify(blocks) %>;
+
+function addBlock(type, existingData = null) {
+
+    const container =
+        document.getElementById('blockContainer');
+
+    const block =
+        document.createElement('div');
+
+    block.className = 'editor-block';
+
+    if (type === 'image') {
+
+        block.innerHTML = `
+
+            <input
+                type="hidden"
+                name="blocks[${blockIndex}][type]"
+                value="image"
+            >
+
+            <input
+                type="hidden"
+                name="blocks[${blockIndex}][existing_image]"
+                value="${existingData?.image_path || ''}"
+            >
+
+            <label>IMAGE</label>
+
+            ${
+                existingData?.image_path
+                ? `
+                    <img
+                        src="${existingData.image_path}"
+                        class="admin-existing-image"
+                    >
+                `
+                : ''
+            }
+
+            <input
+                type="file"
+                name="block_image_${blockIndex}"
+                accept="image/*"
+            >
+
+            <input
+                type="text"
+                name="blocks[${blockIndex}][caption]"
+                placeholder="Image caption"
+                value="${existingData?.caption || ''}"
+            >
+
+            <div class="block-reorder-buttons">
+
+                <button
+                    type="button"
+                    class="move-up-btn"
+                >
+                    ↑
+                </button>
+
+                <button
+                    type="button"
+                    class="move-down-btn"
+                >
+                    ↓
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="remove-block-btn"
+            >
+                Remove Block
+            </button>
+        `;
+
+    } else {
+
+        block.innerHTML = `
+
+            <input
+                type="hidden"
+                name="blocks[${blockIndex}][type]"
+                value="${type}"
+            >
+
+            <label>
+                ${type.toUpperCase()}
+            </label>
+
+            <textarea
+                name="blocks[${blockIndex}][content]"
+                rows="5"
+                required
+            >${existingData?.content || ''}</textarea>
+
+            <div class="block-reorder-buttons">
+
+                <button
+                    type="button"
+                    class="move-up-btn"
+                >
+                    ↑
+                </button>
+
+                <button
+                    type="button"
+                    class="move-down-btn"
+                >
+                    ↓
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                class="remove-block-btn"
+            >
+                Remove Block
+            </button>
+        `;
+    }
+
+    block
+        .querySelector('.remove-block-btn')
+        .addEventListener('click', () => {
+
+            block.remove();
+        });
+
+    container.appendChild(block);
+
+    block
+        .querySelector('.move-up-btn')
+        .addEventListener('click', () => {
+
+            const previous =
+                block.previousElementSibling;
+
+            if (previous) {
+
+                container.insertBefore(
+                    block,
+                    previous
+                );
+            }
+        });
+
+    block
+        .querySelector('.move-down-btn')
+        .addEventListener('click', () => {
+
+            const next =
+                block.nextElementSibling;
+
+            if (next) {
+
+                container.insertBefore(
+                    next,
+                    block
+                );
+            }
+        });
+
+    blockIndex++;
+}
+
+existingBlocks.forEach(block => {
+
+    addBlock(
+        block.block_type,
+        block
+    );
+});
+
+function reindexBlocks() {
+
+    const blocks =
+        document.querySelectorAll('.editor-block');
+
+    blocks.forEach((block, index) => {
+
+        const inputs =
+            block.querySelectorAll(
+                'input, textarea'
+            );
+
+        inputs.forEach(input => {
+
+            if (!input.name) return;
+
+            input.name =
+                input.name.replace(
+                    /blocks\[\d+\]/,
+                    `blocks[${index}]`
+                );
+
+            if (
+                input.name.startsWith(
+                    'block_image_'
+                )
+            ) {
+
+                input.name =
+                    `block_image_${index}`;
+            }
+        });
+    });
+}
+
+document
+    .getElementById('newsForm')
+    .addEventListener('submit', () => {
+
+        reindexBlocks();
+    });
+    
+</script>
+
+<%- include('partials/footer') %>
