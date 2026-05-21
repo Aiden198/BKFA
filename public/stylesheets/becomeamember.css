@@ -55,6 +55,17 @@
     box-shadow: 0 8px 40px rgba(93, 90, 148, 0.15);
 }
 
+.captcha-error {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #ffe5e5;
+    color: #a10000;
+    border: 1px solid #ffb3b3;
+    font-weight: 600;
+}
+
 .map-form-card h2 {
     color: #5d5a94;
     font-size: 2rem;

@@ -24,7 +24,7 @@
 
     <section class="bs-story-section">
       <div class="bs-image-box">
-        <img src="/images/clean-birth-kits/Cleos-baby-shower3-e1564571922448.jpg" alt="Baby shower packing birthing kits">    
+        <img src="/images/clean-birth-kits/Cleos-baby-shower3-e1564571922448.jpg" alt="Baby shower packing birthing kits">
       </div>
 
       <div class="bs-quote-content">
@@ -86,17 +86,17 @@
         <h2>BOOK A BABY SHOWER</h2>
         <h3>Baby Shower Booking Form</h3>
 
-        <form class="bs-form">
+        <form class="bs-form" method="POST" action="/volunteer/babyshowers">
 
           <div class="bs-form-row">
             <div>
               <label>Date *</label>
-              <input type="date">
+              <input type="date" name="eventDate" required>
             </div>
 
             <div>
               <label>How many kits would you like to pack?</label>
-              <select>
+              <select name="kitQuantity" required>
                 <option>40 ($230)</option>
                 <option>60 ($345)</option>
                 <option>80 ($460)</option>
@@ -108,92 +108,92 @@
           <div class="bs-form-row">
             <div>
               <label>Baby Shower Host First Name *</label>
-              <input type="text">
+              <input type="text" name="hostFirstName" required>
             </div>
 
             <div>
               <label>Baby Shower Host Last Name *</label>
-              <input type="text">
+              <input type="text" name="hostLastName" required>
             </div>
           </div>
 
           <div class="bs-form-row">
             <div>
               <label>Mobile/Phone</label>
-              <input type="text">
+              <input type="text" name="phone">
             </div>
 
             <div>
               <label>Email *</label>
-              <input type="email">
+              <input type="email" name="email" required>
             </div>
           </div>
 
           <label>Mum-to-Be's Name *</label>
-          <input type="text">
+          <input type="text" name="mumToBeName" required>
 
           <label>Fundraising invoice to be sent to:</label>
-          <input type="text">
+          <input type="text" name="invoiceRecipient">
 
           <label>Expected number of guests (for glove supplies) *</label>
-          <input type="text">
+          <input type="text" name="guestCount" required>
 
           <label>Delivery Address for Baby Shower Birthing Kit Supplies *</label>
-          <input type="text">
+          <input type="text" name="deliveryAddress" required>
 
           <label>Street Address</label>
-          <input type="text">
+          <input type="text" name="streetAddress">
 
           <div class="bs-form-row">
             <div>
               <label>Address Line 2</label>
-              <input type="text">
+              <input type="text" name="addressLine2">
             </div>
 
             <div>
               <label>State / Province / Region</label>
-              <input type="text">
+              <input type="text" name="state">
             </div>
           </div>
 
           <label>City</label>
-          <input type="text">
+          <input type="text" name="city">
 
           <label>ZIP / Postal Code</label>
-          <input type="text">
+          <input type="text" name="postcode">
 
           <div class="bs-form-row">
             <div>
               <label>Business/Person’s name *</label>
-              <input type="text">
+              <input type="text" name="contactPersonName" required>
             </div>
 
             <div>
               <label>Telephone/mobile number *</label>
-              <input type="text">
+              <input type="text" name="contactPersonPhone" required>
             </div>
           </div>
 
           <p class="bs-confirm-heading">
             As the designated baby shower event organiser, I will ensure payment is made 4 weeks prior to assembly date or I will contact Bookings@bkfa.org.au *
           </p>
-          <label class="bs-checkbox"><input type="checkbox"> I will ensure payment is made 4 weeks prior to assembly date or I will contact Bookings@bkfa.org.au</label>
+          <label class="bs-checkbox"><input type="checkbox" name="paymentAgreement" required> I will ensure payment is made 4 weeks prior to assembly date or I will contact Bookings@bkfa.org.au</label>
 
           <p class="bs-confirm-heading">I confirm I have ensured public liability insurance is in place *</p>
-          <label class="bs-checkbox"><input type="checkbox"> I confirm I have ensured public liability insurance is in place</label>
+          <label class="bs-checkbox"><input type="checkbox" name="insuranceAgreement" required> I confirm I have ensured public liability insurance is in place</label>
 
           <p class="bs-confirm-heading">I confirm that I have read and understood the Assembly Day manual *</p>
-          <label class="bs-checkbox"><input type="checkbox"> I confirm that I have read and understood the Assembly Day manual</label>
+          <label class="bs-checkbox"><input type="checkbox" name="manualAgreement" required> I confirm that I have read and understood the Assembly Day manual</label>
 
           <p class="bs-confirm-heading">The venue for the baby shower event is a safe working environment *</p>
-          <label class="bs-checkbox"><input type="checkbox"> The venue for the Assembly Day is a safe working environment</label>
+          <label class="bs-checkbox"><input type="checkbox" name="safeEnvironmentAgreement" required> The venue for the Assembly Day is a safe working environment</label>
 
           <p class="bs-warning">
             **We require your booking form submission 8 weeks prior to the date of your Baby Shower event**.
           </p>
 
           <label>How did you hear about BKFA?</label>
-          <select>
+          <select name="heardAboutBKFA">
             <option>Zonta</option>
             <option>Website</option>
             <option>Social media</option>

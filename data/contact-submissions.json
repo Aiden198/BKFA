@@ -16,5 +16,32 @@
     "phone": "0412345678",
     "message": "Hello, this is also a test, thankyou for reading",
     "submittedAt": "2026-05-18T05:06:29.203Z"
+  },
+  {
+    "enquiryType": "General enquiry",
+    "firstName": "Aiden",
+    "lastName": "McMullen",
+    "email": "aidenmcmuffin@gmail.com",
+    "phone": "0412799879",
+    "message": "This is a test of the node mail service :) \r\nLets hope it works ",
+    "submittedAt": "2026-05-21T04:36:25.245Z"
+  },
+  {
+    "enquiryType": "General enquiry",
+    "firstName": "Aiden",
+    "lastName": "McMullen",
+    "email": "aidenmcmuffin@gmail.com",
+    "phone": "0430030357",
+    "message": "this is also a test number 2",
+    "submittedAt": "2026-05-21T04:37:00.316Z"
+  },
+  {
+    "enquiryType": "General enquiry",
+    "firstName": "Aiden",
+    "lastName": "McMullen",
+    "email": "aidenmcmuffin@gmail.com",
+    "phone": "0430030357",
+    "message": "this is a test pt 3",
+    "submittedAt": "2026-05-21T04:39:08.925Z"
   }
 ]

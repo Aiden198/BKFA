@@ -1,8 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
-var fs = require('fs');
 var axios = require('axios');
+
+const { sendEmail } = require('../services/emailService');
+const buildContactEmail = require(
+  '../services/templates/contactEmail'
+);
+const {
+  saveSubmission
+} = require('../services/submissionService');
 
 router.get('/', function(req, res) {
   res.render('Contact', {
@@ -54,29 +60,19 @@ router.post('/submit', async function(req, res) {
       submittedAt: new Date().toISOString()
     };
 
-    const filePath = path.join(
-      __dirname,
-      '../data/contact-submissions.json'
+    await saveSubmission(
+        'contact-submissions',
+        newSubmission
     );
 
-    let submissions = [];
+    const html = buildContactEmail(newSubmission);
 
-    if (fs.existsSync(filePath)) {
-      try {
-        const fileData = fs.readFileSync(filePath, 'utf8');
-        submissions = fileData ? JSON.parse(fileData) : [];
-      } catch (err) {
-        console.error('Error reading contact submissions file:', err);
-        submissions = [];
-      }
-    }
-
-    submissions.push(newSubmission);
-
-    fs.writeFileSync(
-      filePath,
-      JSON.stringify(submissions, null, 2)
-    );
+    await sendEmail({
+      to: process.env.CONTACT_EMAIL,
+      subject: `BKFA Contact Form - ${enquiryType}`,
+      html,
+      replyTo: email
+    });
 
     res.redirect('/contact?submitted=1');
 
