@@ -132,16 +132,10 @@
   resize: vertical;
 }
 
-.captcha-placeholder {
-  height: 78px;
-  border-radius: 16px;
-  border: 1px dashed #c8ccda;
-  background: #f8f9fd;
+.captcha-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: #6c7088;
-  font-weight: 600;
+  width: 100%;
 }
 
 .contact-form button {
