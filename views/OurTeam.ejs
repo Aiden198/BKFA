@@ -1,9 +1,22 @@
+<link rel="stylesheet" href="/stylesheets/ourteam.css">
+
 <%- include('partials/header') %>
 
-<main>
-    <%- include ('partials/aboutUsSideMenu') %>
-    <div class="page-content">
-        <h1> Our Team </h1>
+<main id="our-team-page" class="page-main-with-hero">
+    <section class="page-hero-top" aria-label="Our Team page hero image">
+        <img src="https://via.placeholder.com/1920x600/6b6296/ffffff?text=Our+Team+Hero+Image" alt="Placeholder for Our Team hero image">
+    </section>
+
+    <div class="page-body-with-sidebar">
+        <%- include ('partials/aboutUsSideMenu') %>
+
+        <div class="page-content">
+            <h1 class="content-title fly-in" data-fly="left">Our Board</h1>
+
+            <p class="content-text fly-in" data-fly="up">
+                The Board members of BKFA are all volunteers. The Board works to ensure that BKFA operates efficiently and with integrity.
+            </p>
+        </div>
     </div>
 </main>
 
