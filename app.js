@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -18,10 +20,11 @@ var ourSupportersRouter = require('./routes/OurSupporters')
 var ourTeamRouter = require('./routes/OurTeam')
 var reportsRouter = require('./routes/Reports')
 var resourcesRouter = require('./routes/Resources')
-var volunteerRouter = require('./routes/Volunteer')
+var searchRouter = require('./routes/Search')
 var testRouter = require('./routes/test')
-var becomeAMemberRouter = require('./routes/BecomeAMember')
 var ourApproachRouter = require('./routes/OurApproach')
+var newsRouter = require('./routes/News');
+var adminNewsRouter = require('./routes/adminNews');
 
 var app = express();
 
@@ -35,6 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -52,10 +56,13 @@ app.use('/oursupporters', ourSupportersRouter)
 app.use('/ourteam', ourTeamRouter)
 app.use('/reports', reportsRouter)
 app.use('/resources', resourcesRouter)
+app.use('/search', searchRouter)
 app.use('/volunteer', volunteerRouter)
 app.use('/test', testRouter)
 app.use('/becomeamember', becomeAMemberRouter)
 app.use('/ourapproach', ourApproachRouter)
+app.use('/news', newsRouter);
+app.use('/admin/news', adminNewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

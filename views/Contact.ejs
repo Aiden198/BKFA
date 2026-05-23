@@ -1,6 +1,7 @@
 <%- include('partials/header') %>
 
 <link rel="stylesheet" href="/stylesheets/contact.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <main class="contact-main">
   <section class="contact-page">
@@ -66,8 +67,11 @@
             <textarea id="message" name="message" placeholder="Message *" required></textarea>
           </div>
 
-          <div class="captcha-placeholder">
-            CAPTCHA
+          <div class="captcha-wrapper">
+            <div
+              class="g-recaptcha"
+              data-sitekey="<%= process.env.RECAPTCHA_SITE_KEY %>">
+            </div>
           </div>
 
           <button type="submit">Send Message</button>
@@ -76,5 +80,19 @@
     </div>
   </section>
 </main>
+
+<script>
+  const contactForm = document.querySelector('.contact-form');
+
+  contactForm.addEventListener('submit', function (e) {
+    const captchaResponse = grecaptcha.getResponse();
+
+    if (!captchaResponse) {
+      e.preventDefault();
+
+      alert('Please complete the CAPTCHA before submitting the form.');
+    }
+  });
+</script>
 
 <%- include('partials/footer') %>

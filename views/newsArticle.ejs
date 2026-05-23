@@ -1,0 +1,86 @@
+<%- include('partials/header') %>
+
+<main class="page-main-with-hero">
+
+    <% if (typeof isPreview !== 'undefined') { %>
+
+        <div class="preview-banner">
+
+            PREVIEW MODE
+
+        </div>
+
+    <% } %>
+
+    <section class="article-hero">
+
+        <img
+            src="<%= article.hero_image %>"
+            alt="<%= article.title %>"
+            class="article-hero__image"
+        >
+
+        <div class="article-hero__content">
+
+            <h1><%= article.title %></h1>
+
+            <p class="article-date">
+                <%= new Date(article.published_at).toLocaleDateString() %>
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="article-content">
+
+        <% blocks.forEach(block => { %>
+
+            <% if (block.block_type === 'paragraph') { %>
+
+                <p>
+                    <%= block.content %>
+                </p>
+
+            <% } %>
+
+            <% if (block.block_type === 'heading') { %>
+
+                <h2>
+                    <%= block.content %>
+                </h2>
+
+            <% } %>
+
+            <% if (block.block_type === 'image') { %>
+
+                <figure>
+
+                    <img
+                        src="<%= block.image_path %>"
+                        alt="<%= block.caption %>"
+                    >
+
+                    <figcaption>
+                        <%= block.caption %>
+                    </figcaption>
+
+                </figure>
+
+            <% } %>
+
+            <% if (block.block_type === 'quote') { %>
+
+                <blockquote>
+                    <%= block.content %>
+                </blockquote>
+
+            <% } %>
+
+        <% }) %>
+
+    </section>
+
+</main>
+
+<%- include('partials/footer') %>

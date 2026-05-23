@@ -2,8 +2,15 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
-router.get('/', function(req, res) {
-  res.render('News');
-});
+const newsController = require('../controllers/newsController');
+
+router.get('/', newsController.renderNewsPage);
+
+router.get(
+    '/preview/:slug',
+    newsController.renderPreviewPage
+);
+
+router.get('/:slug', newsController.renderArticlePage);
 
 module.exports = router;

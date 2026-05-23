@@ -1,9 +1,146 @@
 <%- include('partials/header') %>
 
-<main>
-    <div class="page-content">
-        <h1> News </h1>
-    </div>
+<main class="news-page">
+
+    <section class="news-header">
+        <div class="news-header__content">
+            <h1>Latest News</h1>
+
+            <p>
+                Stories, updates and announcements from BKFA.
+            </p>
+        </div>
+    </section>
+
+    <section class="news-filter-section">
+
+        <div class="news-filter-bar">
+
+            <button
+                class="
+                    news-filter-btn
+                    active
+                "
+                data-category="all"
+            >
+                All
+            </button>
+
+            <% allCategories.forEach(category => { %>
+
+                <button
+                    class="news-filter-btn"
+                    data-category="<%= category.name %>"
+                >
+                    <%= category.name %>
+                </button>
+
+            <% }) %>
+
+        </div>
+
+    </section>
+
+    <section class="news-grid-section">
+
+        <div class="news-grid">
+
+            <% articles.forEach(article => { %>
+
+                <a
+                    href="/news/<%= article.slug %>"
+                    class="news-card"
+                    data-categories="<%= (article.categories || []).join(',') %>"
+                >
+                    <img
+                        src="<%= article.hero_image %>"
+                        alt="<%= article.title %>"
+                        class="news-card__image"
+                    >
+
+                    <div class="news-card__content">
+
+                        <div class="news-card__categories">
+
+                            <% (article.categories || []).forEach(category => { %>
+
+                                <span class="news-category-pill">
+                                    <%= category %>
+                                </span>
+
+                            <% }) %>
+
+                        </div>
+
+                        <p class="news-card__date">
+                            <%= new Date(article.published_at).toLocaleDateString() %>
+                        </p>
+
+                        <h2 class="news-card__title">
+                            <%= article.title %>
+                        </h2>
+
+                        <p class="news-card__summary">
+                            <%= article.summary %>
+                        </p>
+
+                    </div>
+                </a>
+
+            <% }) %>
+
+        </div>
+
+    </section>
+
 </main>
+
+<script>
+
+const filterButtons =
+    document.querySelectorAll(
+        '.news-filter-btn'
+    );
+
+const newsCards =
+    document.querySelectorAll(
+        '.news-card'
+    );
+
+filterButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        const category =
+            button.dataset.category;
+
+        newsCards.forEach(card => {
+
+            const categories =
+                card.dataset.categories || '';
+
+            if (
+                category === 'all' ||
+                categories.includes(category)
+            ) {
+
+                card.style.display = 'flex';
+
+            } else {
+
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
 
 <%- include('partials/footer') %>

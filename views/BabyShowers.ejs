@@ -1,10 +1,212 @@
 <%- include('partials/header') %>
 
-<main>
-    <%- include ('partials/volunteerSideMenu') %>
-    <div class="page-content">
-        <h1> Contact Us </h1>
-    </div>
+<link rel="stylesheet" href="/stylesheets/volunteer.css">
+
+<main class="baby-showers-layout">
+  <%- include('partials/volunteerSideMenu') %>
+
+  <div class="baby-showers-page">
+
+    <section class="bs-intro">
+      <p class="bs-label">VOLUNTEER</p>
+
+      <h1>BABY SHOWERS</h1>
+
+      <h2>
+        Looking for a unique and memorable way to celebrate the arrival of a new baby?
+      </h2>
+
+      <p>
+        Host a baby shower for BKFA and invite your guests to come together and pack birthing kits
+        in honour of the mum-to-be and in support of mothers around the world.
+      </p>
+    </section>
+
+    <section class="bs-story-section">
+      <div class="bs-image-box">
+        <img src="/images/clean-birth-kits/Cleos-baby-shower3-e1564571922448.jpg" alt="Baby shower packing birthing kits">
+      </div>
+
+      <div class="bs-quote-content">
+        <p class="bs-story-intro">
+          Cleo recently held a BKFA Baby Shower event and this is what she had to say about the experience:
+        </p>
+
+        <blockquote>
+          “The decision to not have a baby shower was made very early on by my partner and me.
+          However, I still wanted an excuse to have my closest friends and ‘mums’ around for what
+          may be for a few of them, a last catch up before the baby!”
+        </blockquote>
+
+        <blockquote>
+          When researching alternatives to a baby shower, I came across BKFA. I didn’t have much
+          time to fundraise but after researching what the BKFA and their networks do for women
+          going through pregnancy and birth in developing countries without the supports and
+          services we have grown accustomed to – it was a no brainer!
+        </blockquote>
+
+        <blockquote>
+          Putting together the kits was also a really intimate experience; it is nice to have an event
+          so fulfilling, loving and personal with your nearest and dearest while doing something
+          bigger than yourself and your baby bubble.”
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="bs-book-section">
+      <p>
+        <strong>
+          Book your event by clicking on the button below and download our FREE Baby Shower invite.
+        </strong>
+      </p>
+
+      <div class="bs-action-buttons">
+        <a href="#baby-shower-form" class="bs-action-box">BOOK A BABY<br>SHOWER</a>
+
+        <a
+          href="https://www.bkfa.org.au/wp-content/uploads/2022/10/BKFA_Baby_Shower_Invitation_Editable.pdf"
+          target="_blank"
+          class="bs-action-box"
+        >
+          BABY SHOWER<br>INVITE
+        </a>
+      </div>
+    </section>
+
+    <section class="bs-video-section">
+      <iframe
+        src="https://www.youtube.com/embed/5HT00OpAN3w?start=3"
+        title="A baby shower for BKFA"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section id="baby-shower-form" class="bs-form-section">
+      <div class="bs-form-container">
+        <h2>BOOK A BABY SHOWER</h2>
+        <h3>Baby Shower Booking Form</h3>
+
+        <form class="bs-form" method="POST" action="/volunteer/babyshowers">
+
+          <div class="bs-form-row">
+            <div>
+              <label>Date *</label>
+              <input type="date" name="eventDate" required>
+            </div>
+
+            <div>
+              <label>How many kits would you like to pack?</label>
+              <select name="kitQuantity" required>
+                <option>40 ($230)</option>
+                <option>60 ($345)</option>
+                <option>80 ($460)</option>
+                <option>100 ($575)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="bs-form-row">
+            <div>
+              <label>Baby Shower Host First Name *</label>
+              <input type="text" name="hostFirstName" required>
+            </div>
+
+            <div>
+              <label>Baby Shower Host Last Name *</label>
+              <input type="text" name="hostLastName" required>
+            </div>
+          </div>
+
+          <div class="bs-form-row">
+            <div>
+              <label>Mobile/Phone</label>
+              <input type="text" name="phone">
+            </div>
+
+            <div>
+              <label>Email *</label>
+              <input type="email" name="email" required>
+            </div>
+          </div>
+
+          <label>Mum-to-Be's Name *</label>
+          <input type="text" name="mumToBeName" required>
+
+          <label>Fundraising invoice to be sent to:</label>
+          <input type="text" name="invoiceRecipient">
+
+          <label>Expected number of guests (for glove supplies) *</label>
+          <input type="text" name="guestCount" required>
+
+          <label>Delivery Address for Baby Shower Birthing Kit Supplies *</label>
+          <input type="text" name="deliveryAddress" required>
+
+          <label>Street Address</label>
+          <input type="text" name="streetAddress">
+
+          <div class="bs-form-row">
+            <div>
+              <label>Address Line 2</label>
+              <input type="text" name="addressLine2">
+            </div>
+
+            <div>
+              <label>State / Province / Region</label>
+              <input type="text" name="state">
+            </div>
+          </div>
+
+          <label>City</label>
+          <input type="text" name="city">
+
+          <label>ZIP / Postal Code</label>
+          <input type="text" name="postcode">
+
+          <div class="bs-form-row">
+            <div>
+              <label>Business/Person’s name *</label>
+              <input type="text" name="contactPersonName" required>
+            </div>
+
+            <div>
+              <label>Telephone/mobile number *</label>
+              <input type="text" name="contactPersonPhone" required>
+            </div>
+          </div>
+
+          <p class="bs-confirm-heading">
+            As the designated baby shower event organiser, I will ensure payment is made 4 weeks prior to assembly date or I will contact Bookings@bkfa.org.au *
+          </p>
+          <label class="bs-checkbox"><input type="checkbox" name="paymentAgreement" required> I will ensure payment is made 4 weeks prior to assembly date or I will contact Bookings@bkfa.org.au</label>
+
+          <p class="bs-confirm-heading">I confirm I have ensured public liability insurance is in place *</p>
+          <label class="bs-checkbox"><input type="checkbox" name="insuranceAgreement" required> I confirm I have ensured public liability insurance is in place</label>
+
+          <p class="bs-confirm-heading">I confirm that I have read and understood the Assembly Day manual *</p>
+          <label class="bs-checkbox"><input type="checkbox" name="manualAgreement" required> I confirm that I have read and understood the Assembly Day manual</label>
+
+          <p class="bs-confirm-heading">The venue for the baby shower event is a safe working environment *</p>
+          <label class="bs-checkbox"><input type="checkbox" name="safeEnvironmentAgreement" required> The venue for the Assembly Day is a safe working environment</label>
+
+          <p class="bs-warning">
+            **We require your booking form submission 8 weeks prior to the date of your Baby Shower event**.
+          </p>
+
+          <label>How did you hear about BKFA?</label>
+          <select name="heardAboutBKFA">
+            <option>Zonta</option>
+            <option>Website</option>
+            <option>Social media</option>
+            <option>Friend or family</option>
+            <option>Other</option>
+          </select>
+
+          <button type="submit" class="bs-submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
 </main>
 
 <%- include('partials/footer') %>

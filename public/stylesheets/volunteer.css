@@ -248,3 +248,661 @@
         font-size: 0.95rem;
     }
 }
+
+/* =====================================================
+    VOLUNTEER SUBPAGE STYLES
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.kits-at-home-layout,
+.baby-showers-layout,
+.host-assembly-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 42px;
+    padding: 40px 50px 90px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.baby-showers-layout {
+    padding-bottom: 0;
+}
+
+.kits-at-home-page,
+.baby-showers-page,
+.host-assembly-page {
+    flex: 1;
+    min-width: 0;
+    max-width: 1100px;
+    text-align: left;
+}
+
+.kah-label,
+.bs-label,
+.had-label {
+    margin: 0 0 28px 0;
+    font-size: 1.45rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #5b568f;
+    letter-spacing: 0.4px;
+}
+
+.kah-intro h1,
+.bs-intro h1,
+.had-intro h1 {
+    margin: 0 0 22px 0;
+    font-size: 4.2rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #5b568f;
+}
+
+.kah-intro p,
+.kah-text p,
+.kah-text li,
+.kah-booking li,
+.kah-giving p,
+.bs-intro p,
+.bs-story-intro,
+.bs-book-section p,
+.had-intro p {
+    margin: 0 0 18px 0;
+    font-size: 1.12rem;
+    line-height: 1.65;
+    color: #2f2f3a;
+}
+
+.kah-intro h2,
+.kah-text h2,
+.kah-booking h2,
+.kah-giving h2,
+.bs-intro h2,
+.had-intro h2 {
+    margin: 0 0 18px 0;
+    font-size: 2.45rem;
+    line-height: 1.15;
+    font-weight: 900;
+    color: #5b568f;
+}
+
+/* =====================================================
+   KITS AT HOME PAGE
+===================================================== */
+
+.kah-intro {
+    max-width: 980px;
+    margin-bottom: 95px;
+}
+
+.kah-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+    margin-bottom: 115px;
+}
+
+.kah-two-column-reverse {
+    margin-bottom: 130px;
+}
+
+.kah-image-box {
+    position: relative;
+    padding: 30px 0 0 30px;
+    max-width: 430px;
+}
+
+.kah-image-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 86%;
+    height: 88%;
+    background: #55b7ac;
+    z-index: 0;
+}
+
+.kah-image-box img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.kah-text {
+    max-width: 520px;
+}
+
+.kah-text ul {
+    margin: 18px 0 20px 0;
+    padding-left: 24px;
+}
+
+.kah-text li {
+    margin-bottom: 13px;
+    color: #5b568f;
+}
+
+.kah-booking {
+    max-width: 920px;
+    margin-bottom: 75px;
+}
+
+.kah-giving {
+    max-width: 980px;
+    margin-bottom: 80px;
+}
+
+.kah-giving hr,
+.kah-form hr {
+    border: none;
+    border-top: 1px solid #d9d9d9;
+    margin: 22px 0;
+}
+
+.kah-info-pack {
+    width: 230px;
+    height: 230px;
+    margin: 45px auto 0;
+    background: #8e89c6;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none !important;
+    font-size: 1.8rem;
+    line-height: 1.25;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.kah-form-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background:
+        linear-gradient(rgba(239, 248, 247, 0.86), rgba(239, 248, 247, 0.86)),
+        url("/images/world-map-bg.png");
+    background-size: cover;
+    background-position: center top;
+    padding: 70px 0 85px;
+}
+
+.kah-form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.kah-form-section h2 {
+    margin: 0 0 28px 0;
+    font-size: 3.7rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #5b568f;
+}
+
+.kah-form-section h3 {
+    margin: 28px 0 16px 0;
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #5b568f;
+}
+
+.kah-form {
+    max-width: 1080px;
+}
+
+.kah-form label {
+    display: block;
+    margin: 16px 0 7px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #5b568f;
+}
+
+.kah-form input,
+.kah-form select {
+    width: 100%;
+    height: 42px;
+    padding: 8px 10px;
+    border: 1px solid #b9b9b9;
+    background: #ffffff;
+    color: #222;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.kah-form-row,
+.kah-credit-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.kah-form-row {
+    grid-template-columns: 1fr 1fr;
+}
+
+.kah-credit-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.kah-price {
+    color: #146b2a !important;
+    font-weight: 700;
+}
+
+.kah-checkboxes label {
+    color: #111111;
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+.kah-checkboxes input {
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+}
+
+.kah-stripe-box {
+    margin-top: 18px;
+}
+
+.kah-secure-payment {
+    color: #4f7df3;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.kah-credit-grid input,
+.kah-stripe-box select {
+    width: 100%;
+    height: 58px;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 0 16px;
+    font-size: 1rem;
+    color: #444444;
+    box-sizing: border-box;
+}
+
+.kah-captcha {
+    margin-top: 42px;
+}
+
+.kah-captcha-box {
+    width: 300px;
+    height: 78px;
+    background: #ffffff;
+    border: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.kah-checkbox {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #666666;
+    background: white;
+}
+
+.kah-submit {
+    margin-top: 28px;
+    padding: 10px 22px;
+    border: 1px solid #bcbcbc;
+    background: #efefef;
+    color: #111111;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* =====================================================
+   BABY SHOWERS PAGE
+===================================================== */
+
+.bs-intro {
+    margin-bottom: 95px;
+}
+
+.bs-intro h2 {
+    max-width: 900px;
+    font-size: 2.35rem;
+}
+
+.bs-story-section {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 70px;
+    align-items: start;
+    margin-bottom: 85px;
+}
+
+.bs-image-box {
+    position: relative;
+    padding: 30px 0 0 30px;
+    max-width: 430px;
+}
+
+.bs-image-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 86%;
+    height: 88%;
+    background: #55b7ac;
+    z-index: 0;
+}
+
+.bs-image-box img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.bs-quote-content {
+    max-width: 560px;
+}
+
+.bs-story-intro {
+    color: #5b568f;
+    margin-bottom: 28px;
+}
+
+.bs-quote-content blockquote {
+    margin: 0 0 32px 0;
+    padding-left: 28px;
+    border-left: 4px solid #d9d6e8;
+    font-size: 1.18rem;
+    line-height: 1.55;
+    font-weight: 700;
+    color: #20203a;
+}
+
+.bs-book-section {
+    max-width: 700px;
+    margin: 0 auto 95px;
+    text-align: left;
+}
+
+.bs-book-section p {
+    color: #5b568f;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.bs-action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 120px;
+}
+
+.bs-action-box {
+    width: 300px;
+    min-height: 145px;
+    background: #55b0a7;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.55rem;
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.bs-video-section {
+    max-width: 880px;
+    margin: 0 auto 105px;
+}
+
+.bs-video-section iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
+.bs-form-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background:
+        linear-gradient(rgba(239, 248, 247, 0.86), rgba(239, 248, 247, 0.86)),
+        url("/images/world-map-bg.png");
+    background-size: cover;
+    background-position: center top;
+    padding: 70px 0 85px;
+}
+
+.bs-form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.bs-form-section h2 {
+    margin: 0 0 28px 0;
+    font-size: 3.1rem;
+    line-height: 1;
+    font-weight: 900;
+    color: #5b568f;
+}
+
+.bs-form-section h3 {
+    margin: 0 0 30px 0;
+    font-size: 1.25rem;
+    color: #5b568f;
+    font-weight: 900;
+}
+
+.bs-form {
+    max-width: 1050px;
+}
+
+.bs-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.bs-form label {
+    display: block;
+    margin: 16px 0 7px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #5b568f;
+}
+
+.bs-form input,
+.bs-form select {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #999;
+    background: #ffffff;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.bs-confirm-heading {
+    margin: 28px 0 8px;
+    color: #5b568f;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.bs-checkbox {
+    color: #111111 !important;
+    font-weight: 500 !important;
+}
+
+.bs-checkbox input {
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+}
+
+.bs-warning {
+    margin: 18px 0 24px;
+    color: #111111;
+    font-weight: 900;
+}
+
+.bs-submit {
+    display: block;
+    margin-top: 24px;
+    padding: 7px 13px;
+    border: 1px solid #999;
+    background: #eeeeee;
+    color: #111111;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* =====================================================
+   HOST ASSEMBLY DAY PAGE
+===================================================== */
+
+.had-intro {
+    max-width: 1000px;
+}
+
+.had-label {
+    margin-bottom: 35px;
+}
+
+.had-intro h1 {
+    margin-bottom: 28px;
+}
+
+.had-intro p {
+    margin-bottom: 22px;
+}
+
+.had-action-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 55px;
+    max-width: 1080px;
+}
+
+.had-action-box {
+    min-height: 150px;
+    background: #55b0a7;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 22px;
+    box-sizing: border-box;
+    font-size: 1.55rem;
+    line-height: 1.15;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.had-action-box:hover,
+.bs-action-box:hover {
+    background: #4ca39b;
+}
+
+/* =====================================================
+   RESPONSIVE VOLUNTEER SUBPAGES
+===================================================== */
+
+@media (max-width: 900px) {
+    .kits-at-home-layout,
+    .baby-showers-layout,
+    .host-assembly-layout {
+        flex-direction: column;
+        padding: 30px 24px 70px;
+    }
+
+    .baby-showers-layout {
+        padding-bottom: 0;
+    }
+
+    .kah-intro h1,
+    .bs-intro h1,
+    .had-intro h1 {
+        font-size: 3rem;
+    }
+
+    .kah-intro h2,
+    .kah-text h2,
+    .kah-booking h2,
+    .kah-giving h2,
+    .bs-intro h2 {
+        font-size: 2rem;
+    }
+
+    .kah-two-column,
+    .kah-two-column-reverse,
+    .bs-story-section,
+    .bs-form-row,
+    .kah-form-row,
+    .kah-credit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kah-two-column,
+    .kah-two-column-reverse {
+        gap: 32px;
+        margin-bottom: 75px;
+    }
+
+    .bs-action-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .bs-action-box {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .had-action-boxes {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .had-action-box {
+        max-width: 360px;
+    }
+
+    .kah-form-container,
+    .bs-form-container {
+        padding: 0 24px;
+    }
+
+    .kah-form-section h2 {
+        font-size: 2.8rem;
+    }
+}
