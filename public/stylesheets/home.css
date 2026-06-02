@@ -1383,32 +1383,3 @@ a.cta-band {
     background-size: 56% auto;
   }
 }
-.donate-bar {
-  width: 100%;
-  background-color: #6b21a8;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 6px 24px;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 1001;
-}
-
-.donate-bar__btn {
-  background-color: #fff;
-  color: #6b21a8;
-  border: none;
-  padding: 6px 18px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-}
-
-.donate-bar__btn:hover {
-  background-color: #f3e8ff;
-}

@@ -16,12 +16,6 @@
 </head>
 <body>
 
-    <% if (locals.showDonateBanner) { %>
-    <div class="donate-bar">
-        <a href="/donate" class="donate-bar__btn">Donate</a>
-    </div>
-    <% } %>
-
     <nav class="navbar">
         <a href="/" aria-label="Birthing Kit Foundation home">
             <img src="/images/2025/05/bkf_logo_l.jpg" alt="Logo" class="header-logo">
@@ -60,6 +54,9 @@
 
             <li class="nav-btn"><a href="/news">NEWS</a></li>
             <li class="nav-btn"><a href="/contact">CONTACT</a></li>
+            <!-- Send the navbar donation action directly to BKFA's external MyCause page. -->
+            <li class="nav-donate"><a href="https://www.mycause.com.au/charity/542/BirthingKitFoundationAustralia"><span>DONATE NOW</span></a></li>
+            <!-- Keep search as the final navbar action so its icon sits after the donation button. -->
             <li class="nav-search">
                 <form class="search-bar" action="/search" method="get" role="search">
                     <input type="search" name="q" placeholder="Search..." aria-label="Search site">
