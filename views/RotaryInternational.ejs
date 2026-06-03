@@ -1,9 +1,14 @@
 <%- include('partials/header') %>
 
-<main class="supporters-layout">
-    <%- include('partials/ourSupportersSideMenu') %>
+<main class="page-main-with-hero about-main">
+    <section class="page-hero-top about-hero-top" aria-label="Rotary International hero image">
+        <img src="/images/2024/03/rotary-makindye-2023.jpg" alt="Rotary Makindye community partnership with BKFA">
+    </section>
 
-    <div class="page-content supporters-page">
+    <div class="page-body-with-sidebar">
+        <%- include('partials/ourSupportersSideMenu') %>
+
+    <div class="page-content about-page-content supporters-page">
         <section class="supporters-hero">
             <h1 class="supporters-title">Rotary International</h1>
         </section>
@@ -113,7 +118,6 @@
         </section>
 
         <section class="supporters-content-section fly-in" data-fly="left">
-            <h2>Get Involved</h2>
 
             <p>
                 If your Club would like to hold an Assembly Day in Australia, you can find more information
@@ -125,19 +129,19 @@
                 <a href="/donate/fundraise" class="supporters-link">here</a>.
             </p>
         </section>
+        <section class="supporters-image-section">
+            <div class="supporters-image-card">
+                <img
+                    src="/images/2024/03/rotary-makindye-2023.jpg"
+                    alt="Rotary Makindye community partnership with BKFA"
+                >
+                <p class="supporters-image-caption">
+                    Rotary Makindye, Uganda
+                </p>
+            </div>
+        </section>
+        </div>
     </div>
 </main>
-
-<section class="supporters-image-section">
-    <div class="supporters-image-card">
-        <img
-            src="/images/2024/03/rotary-makindye-2023.jpg"
-            alt="Rotary Makindye community partnership with BKFA"
-        >
-        <p class="supporters-image-caption">
-            Rotary Makindye, Uganda
-        </p>
-    </div>
-</section>
 
 <%- include('partials/footer') %>
