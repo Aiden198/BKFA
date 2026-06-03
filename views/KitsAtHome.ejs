@@ -2,13 +2,18 @@
 
 <link rel="stylesheet" href="/stylesheets/volunteer.css">
 
-<main class="kits-at-home-layout">
-  <%- include('partials/volunteerSideMenu') %>
+<main class="page-main-with-hero volunteer-subpage-main kits-at-home-main">
+  <!-- Use the Kits at Home assembly image while keeping the rounded Volunteer baseline hero. -->
+  <section class="page-hero-top kits-at-home-hero" aria-label="Kits at Home hero image">
+    <img src="/images/2025/04/BKFA-community-AD-feb-7634.jpg" alt="Volunteers assembling clean birth kits at a table">
+  </section>
 
-  <div class="kits-at-home-page">
+  <div class="page-body-with-sidebar">
+    <%- include('partials/volunteerSideMenu') %>
+
+    <div class="page-content kits-at-home-page">
 
     <section class="kah-intro">
-      <p class="kah-label">VOLUNTEER</p>
       <h1>KITS AT HOME</h1>
       <h2>Pack a Kit. Change a life.</h2>
 
@@ -116,7 +121,7 @@
 
       <p>
         If you are interested in packing a different number of kits than the quantities we have
-        available, please contact us via email <a href="mailto:info@bkfa.org.au">info@bkfa.org.au</a>.
+        available, please contact us via email <a href="mailto:info@bkfa.org.au" class="volunteer-inline-link">info@bkfa.org.au</a>.
       </p>
 
       <a
@@ -124,9 +129,7 @@
         href="https://drive.google.com/file/d/1wy4rtMahZGLBXRzwQDJWho951q_qFV8d/view?usp=sharing"
         target="_blank"
       >
-        KITS AT<br>
-        HOME INFO<br>
-        PACK
+        KITS AT HOME INFO PACK
       </a>
     </section>
 
@@ -281,6 +284,7 @@
       </div>
     </section>
 
+    </div>
   </div>
 </main>
 

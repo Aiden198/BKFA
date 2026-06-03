@@ -2,14 +2,13 @@
 
 <link rel="stylesheet" href="/stylesheets/volunteer.css">
 
-<main class="baby-showers-layout">
+<main class="baby-showers-layout baby-showers-main">
+  <!-- Keep the Baby Showers page in a sidebar and content card layout without a hero image. -->
   <%- include('partials/volunteerSideMenu') %>
 
-  <div class="baby-showers-page">
+  <div class="page-content baby-showers-page">
 
     <section class="bs-intro">
-      <p class="bs-label">VOLUNTEER</p>
-
       <h1>BABY SHOWERS</h1>
 
       <h2>
@@ -61,14 +60,15 @@
       </p>
 
       <div class="bs-action-buttons">
-        <a href="#baby-shower-form" class="bs-action-box">BOOK A BABY<br>SHOWER</a>
+        <!-- Keep action row labels unbroken so they match the dropdown-style list treatment. -->
+        <a href="#baby-shower-form" class="bs-action-box">BOOK A BABY SHOWER</a>
 
         <a
           href="https://www.bkfa.org.au/wp-content/uploads/2022/10/BKFA_Baby_Shower_Invitation_Editable.pdf"
           target="_blank"
           class="bs-action-box"
         >
-          BABY SHOWER<br>INVITE
+          BABY SHOWER INVITE
         </a>
       </div>
     </section>
@@ -175,9 +175,9 @@
           </div>
 
           <p class="bs-confirm-heading">
-            As the designated baby shower event organiser, I will ensure payment is made 4 weeks prior to assembly date or I will contact Bookings@bkfa.org.au *
+            As the designated baby shower event organiser, I will ensure payment is made 4 weeks prior to assembly date or I will contact <a href="mailto:Bookings@bkfa.org.au" class="volunteer-inline-link">Bookings@bkfa.org.au</a> *
           </p>
-          <label class="bs-checkbox"><input type="checkbox" name="paymentAgreement" required> I will ensure payment is made 4 weeks prior to assembly date or I will contact Bookings@bkfa.org.au</label>
+          <label class="bs-checkbox"><input type="checkbox" name="paymentAgreement" required> I will ensure payment is made 4 weeks prior to assembly date or I will contact <a href="mailto:Bookings@bkfa.org.au" class="volunteer-inline-link">Bookings@bkfa.org.au</a></label>
 
           <p class="bs-confirm-heading">I confirm I have ensured public liability insurance is in place *</p>
           <label class="bs-checkbox"><input type="checkbox" name="insuranceAgreement" required> I confirm I have ensured public liability insurance is in place</label>

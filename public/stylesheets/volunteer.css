@@ -18,93 +18,51 @@
     object-position: center 28%;
 }
 
-/* ===== CTA BUTTONS (three side-by-side) ===== */
+/* ===== CTA LINK LIST ===== */
 
 .volunteer-cta-section {
     margin-top: 48px;
 }
 
 .volunteer-cta-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     max-width: 980px;
 }
 
 .vol-cta-band {
     --vol-cta-outline: #8fbfc8;
-    --vol-cta-outline-hover: #8fbfc8;
-    background: transparent;
+    --vol-cta-outline-hover: #7aaab4;
+    width: 100%;
+    background: #ffffff;
     color: var(--secondary);
-    padding: 1rem 1.5rem;
-    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    border-radius: 18px;
     border: 3px solid var(--vol-cta-outline);
-    text-align: center;
-    min-height: 104px;
+    text-align: left;
+    min-height: 92px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-    z-index: 0;
-}
-
-/* Match volunteer CTAs to the homepage slide-fill button animation. */
-.vol-cta-band::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--vol-cta-outline-hover);
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 0.5s ease;
-    z-index: -1;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .vol-cta-band h3 {
     margin: 0;
     color: var(--secondary);
-    font-size: 1.1rem;
-    font-weight: 900;
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    font-weight: 800;
     line-height: 1.2;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 1;
+    text-align: left;
+    text-transform: none;
 }
 
 .vol-cta-band:hover {
-    color: white;
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
-    border-color: var(--vol-cta-outline);
-}
-
-.vol-cta-band:hover::before {
-    transform: scaleX(1);
-}
-
-.vol-cta-band:hover h3 {
-    color: white;
-}
-
-.vol-cta-band--disabled {
-    cursor: default;
-}
-
-.vol-cta-band--disabled:hover {
-    transform: none;
-    box-shadow: none;
-}
-
-.vol-cta-band--disabled:hover::before {
-    transform: scaleX(0);
-}
-
-.vol-cta-band--disabled:hover h3 {
-    color: var(--secondary);
+    border-color: var(--vol-cta-outline-hover);
 }
 
 /* Emphasise important volunteer inline links with the site's teal action colour. */
@@ -120,15 +78,39 @@
     color: #7aaab4;
 }
 
+/* Match Volunteer page dropdowns to the FAQ accordion colour system. */
+.volunteer-page-content .expandable,
+.cv-details .expandable {
+    --expand-accent: #8f8ac0;
+    --expand-accent-hover: #7c76b2;
+    background: #ffffff;
+}
+
+.volunteer-page-content .expandable:nth-of-type(even),
+.cv-details .expandable:nth-of-type(even) {
+    --expand-accent: #8fbfc8;
+    --expand-accent-hover: #7aaab4;
+}
+
+.volunteer-page-content .expandable-toggle,
+.volunteer-page-content .expandable-inner,
+.cv-details .expandable-toggle,
+.cv-details .expandable-inner {
+    background: #ffffff;
+}
+
+.volunteer-page-content .expandable-title,
+.volunteer-page-content .expandable-icon,
+.cv-details .expandable-title,
+.cv-details .expandable-icon {
+    color: var(--secondary);
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 900px) {
-    .volunteer-cta-grid {
-        grid-template-columns: 1fr;
-    }
-
     .vol-cta-band {
-        min-height: 120px;
+        min-height: 92px;
     }
 }
 
@@ -287,7 +269,6 @@ html {
 }
 
 .kits-at-home-layout,
-.baby-showers-layout,
 .host-assembly-layout {
     display: flex;
     align-items: flex-start;
@@ -298,7 +279,9 @@ html {
 }
 
 .baby-showers-layout {
-    padding-bottom: 0;
+    /* Baby Showers has no hero image now, so let the shared soft page background show around its cards. */
+    background: transparent;
+    padding: 7.5rem 0 90px;
 }
 
 .kits-at-home-page,
@@ -308,6 +291,23 @@ html {
     min-width: 0;
     max-width: 1100px;
     text-align: left;
+}
+
+.page-content.kits-at-home-page,
+.page-content.baby-showers-page,
+.page-content.host-assembly-page {
+    /* Keep these Volunteer subpages aligned with the Volunteer and Corporate Volunteering card layout. */
+    flex: 1;
+    min-width: 0;
+    max-width: 1100px;
+    margin-top: 0;
+    text-align: left;
+}
+
+.kits-at-home-hero img,
+.baby-showers-hero img,
+.host-assembly-hero img {
+    object-position: center 28%;
 }
 
 .kah-label,
@@ -366,7 +366,7 @@ html {
 
 .kah-intro {
     max-width: 980px;
-    margin-bottom: 95px;
+    margin-bottom: 4rem;
 }
 
 .kah-two-column {
@@ -383,19 +383,12 @@ html {
 
 .kah-image-box {
     position: relative;
-    padding: 30px 0 0 30px;
+    padding: 0;
     max-width: 430px;
 }
 
 .kah-image-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 86%;
-    height: 88%;
-    background: #55b7ac;
-    z-index: 0;
+    content: none;
 }
 
 .kah-image-box img {
@@ -404,8 +397,8 @@ html {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 0;
-    box-shadow: none;
+    border-radius: 28px;
+    box-shadow: var(--shadow-sm);
 }
 
 .kah-text {
@@ -440,37 +433,45 @@ html {
 }
 
 .kah-info-pack {
-    width: 230px;
-    height: 230px;
-    margin: 45px auto 0;
-    background: #8e89c6;
-    color: #ffffff !important;
+    width: 100%;
+    min-height: 92px;
+    margin: 45px 0 0;
+    background: #ffffff;
+    border: 3px solid #8fbfc8;
+    border-radius: 18px;
+    color: var(--secondary) !important;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     text-decoration: none !important;
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
     line-height: 1.25;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-weight: 800;
+    padding: 1rem 1.25rem;
+    box-sizing: border-box;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.kah-info-pack:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: #7aaab4;
 }
 
 .kah-form-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    background:
-        linear-gradient(rgba(239, 248, 247, 0.86), rgba(239, 248, 247, 0.86)),
-        url("/images/world-map-bg.png");
-    background-size: cover;
-    background-position: center top;
-    padding: 70px 0 85px;
+    width: 100%;
+    margin: 0;
+    background: rgba(143, 191, 200, 0.16);
+    border-radius: 28px;
+    padding: 3rem;
+    box-sizing: border-box;
 }
 
 .kah-form-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 }
 
 .kah-form-section h2 {
@@ -607,7 +608,7 @@ html {
 ===================================================== */
 
 .bs-intro {
-    margin-bottom: 95px;
+    margin-bottom: 4rem;
 }
 
 .bs-intro h2 {
@@ -625,27 +626,20 @@ html {
 
 .bs-image-box {
     position: relative;
-    padding: 30px 0 0 30px;
+    padding: 0;
     max-width: 430px;
 }
 
 .bs-image-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 86%;
-    height: 88%;
-    background: #55b7ac;
-    z-index: 0;
+    content: none;
 }
 
 .bs-image-box img {
     position: relative;
     z-index: 1;
     width: 100%;
-    border-radius: 0;
-    box-shadow: none;
+    border-radius: 28px;
+    box-shadow: var(--shadow-sm);
 }
 
 .bs-quote-content {
@@ -681,25 +675,30 @@ html {
 
 .bs-action-buttons {
     display: flex;
-    justify-content: center;
-    gap: 35px;
-    margin-top: 120px;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .bs-action-box {
-    width: 300px;
-    min-height: 145px;
-    background: #55b0a7;
-    color: #ffffff;
+    width: 100%;
+    min-height: 92px;
+    background: #ffffff;
+    border: 3px solid #8fbfc8;
+    border-radius: 18px;
+    color: var(--secondary);
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    font-size: 1.55rem;
-    line-height: 1.15;
-    font-weight: 900;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    line-height: 1.25;
+    font-weight: 800;
+    box-sizing: border-box;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .bs-video-section {
@@ -715,20 +714,18 @@ html {
 }
 
 .bs-form-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    background:
-        linear-gradient(rgba(239, 248, 247, 0.86), rgba(239, 248, 247, 0.86)),
-        url("/images/world-map-bg.png");
-    background-size: cover;
-    background-position: center top;
-    padding: 70px 0 85px;
+    width: 100%;
+    margin: 0;
+    background: rgba(143, 191, 200, 0.16);
+    border-radius: 28px;
+    padding: 3rem;
+    box-sizing: border-box;
 }
 
 .bs-form-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 }
 
 .bs-form-section h2 {
@@ -832,33 +829,214 @@ html {
 }
 
 .had-action-boxes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     margin-top: 55px;
     max-width: 1080px;
 }
 
 .had-action-box {
-    min-height: 150px;
-    background: #55b0a7;
-    color: #ffffff;
+    min-height: 92px;
+    background: #ffffff;
+    border: 3px solid #8fbfc8;
+    border-radius: 18px;
+    color: var(--secondary);
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 22px;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1rem 1.25rem;
     box-sizing: border-box;
-    font-size: 1.55rem;
-    line-height: 1.15;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    line-height: 1.25;
+    font-weight: 800;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .had-action-box:hover,
 .bs-action-box:hover {
-    background: #4ca39b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: #7aaab4;
+}
+
+/* =====================================================
+   CORPORATE VOLUNTEERING PAGE
+===================================================== */
+
+.corporate-volunteering-hero img {
+    /* Use the same hero image placement rhythm as the Volunteer page. */
+    object-position: center 28%;
+}
+
+.page-content.corporate-volunteering-page {
+    /* Match the Volunteer page by making the main Corporate Volunteering column its own card. */
+    flex: 1;
+    min-width: 0;
+    max-width: 1100px;
+    margin-top: 0;
+    text-align: left;
+}
+
+.cv-feature-grid img,
+.cv-gallery img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: var(--shadow-sm);
+}
+
+.cv-intro,
+.cv-details,
+.cv-actions,
+.cv-feature-grid,
+.cv-gallery,
+.cv-booking {
+    max-width: 980px;
+    margin-bottom: 4rem;
+}
+
+.cv-intro h1,
+.cv-details h2,
+.cv-booking h2 {
+    margin: 0 0 1.6rem;
+    color: var(--secondary);
+    font-size: var(--page-title-size);
+    font-weight: var(--page-title-weight);
+    line-height: var(--page-title-line);
+    text-transform: uppercase;
+}
+
+.cv-intro h2 {
+    margin: 0 0 1.5rem;
+    color: var(--secondary);
+    font-size: var(--page-subtitle-size);
+    font-weight: var(--page-subtitle-weight);
+    line-height: var(--page-subtitle-line);
+    text-transform: uppercase;
+}
+
+.cv-intro p,
+.cv-intro li,
+.cv-details p,
+.cv-details li,
+.cv-feature-grid p,
+.cv-booking p {
+    color: var(--text);
+    font-size: var(--page-body-size);
+    font-weight: var(--page-body-weight);
+    line-height: var(--page-body-line);
+}
+
+.cv-intro p,
+.cv-details p,
+.cv-feature-grid p,
+.cv-booking p {
+    margin: 0 0 1.25rem;
+}
+
+.cv-intro ul,
+.cv-details ul {
+    margin: 0 0 1.5rem 1.4rem;
+    padding: 0;
+}
+
+.cv-tagline {
+    color: var(--secondary) !important;
+    font-size: clamp(1.35rem, 2.4vw, 2rem) !important;
+    font-weight: 900 !important;
+    font-style: italic;
+}
+
+.cv-actions {
+    display: flex;
+    justify-content: stretch;
+}
+
+.cv-download-link,
+.cv-booking-button {
+    --cv-action-outline: #8fbfc8;
+    --cv-action-outline-hover: #7aaab4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 92px;
+    max-width: 980px;
+    padding: 1rem 1.25rem;
+    border: 3px solid var(--cv-action-outline);
+    border-radius: 18px;
+    background: #ffffff;
+    color: var(--secondary);
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: left;
+    text-transform: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+/* Keep corporate actions as link rows so they match the page dropdown list. */
+.cv-download-link:hover,
+.cv-booking-button:hover {
+    color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--cv-action-outline-hover);
+}
+
+/* Keep list-style action labels on one line across Volunteer subpages. */
+.vol-cta-band h3,
+.kah-info-pack,
+.bs-action-box,
+.had-action-box,
+.cv-download-link,
+.cv-booking-button {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cv-feature-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+}
+
+.cv-feature-grid--reverse {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+}
+
+.cv-feature-grid img {
+    height: clamp(300px, 38vw, 520px);
+}
+
+.cv-gallery {
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.cv-gallery img {
+    height: 320px;
+}
+
+.cv-booking {
+    padding: 3rem;
+    border-radius: 28px;
+    background: rgba(143, 191, 200, 0.16);
+    text-align: center;
+}
+
+.cv-booking p {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* =====================================================
@@ -867,14 +1045,15 @@ html {
 
 @media (max-width: 900px) {
     .kits-at-home-layout,
-    .baby-showers-layout,
     .host-assembly-layout {
         flex-direction: column;
         padding: 30px 24px 70px;
     }
 
     .baby-showers-layout {
-        padding-bottom: 0;
+        /* Keep mobile spacing aligned with the other no-hero card pages. */
+        flex-direction: column;
+        padding: 8.5rem 0 70px;
     }
 
     .kah-intro h1,
@@ -924,6 +1103,20 @@ html {
 
     .had-action-box {
         max-width: 360px;
+    }
+
+    .cv-feature-grid,
+    .cv-feature-grid--reverse,
+    .cv-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-gallery img {
+        height: 260px;
+    }
+
+    .cv-booking {
+        padding: 2rem 1.25rem;
     }
 
     .kah-form-container,

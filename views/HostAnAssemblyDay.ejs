@@ -2,13 +2,17 @@
 
 <link rel="stylesheet" href="/stylesheets/volunteer.css">
 
-<main class="host-assembly-layout">
-  <%- include('partials/volunteerSideMenu') %>
+<main class="page-main-with-hero volunteer-subpage-main host-assembly-main">
+  <!-- Match the Volunteer baseline with a rounded hero image above the sidebar and content cards. -->
+  <section class="page-hero-top host-assembly-hero" aria-label="Host an Assembly Day hero image">
+    <img src="/images/2022/11/BKF-women-with-kits.jpg" alt="Women holding clean birth kits">
+  </section>
 
-  <div class="host-assembly-page">
+  <div class="page-body-with-sidebar">
+    <%- include('partials/volunteerSideMenu') %>
+
+    <div class="page-content host-assembly-page">
     <section class="had-intro">
-      <p class="had-label">VOLUNTEER</p>
-
       <h1>HOST AN ASSEMBLY DAY</h1>
 
       <p>
@@ -34,7 +38,7 @@
 
       <p>
         You can pack kits as part of a large community event clubs, schools, businesses or opt to
-        pack a smaller number of Kits at Home.
+        pack a smaller number of <a href="/volunteer/kitsathome" class="volunteer-inline-link">Kits at Home</a>.
       </p>
     </section>
 
@@ -44,17 +48,18 @@
         href="https://forms.monday.com/forms/faf9592aeb1d0cead561462b72420131?r=apse2"
         target="_blank"
       >
-        BOOK AN ASSEMBLY<br>DAY EVENT
+        BOOK AN ASSEMBLY DAY EVENT
       </a>
 
       <a class="had-action-box" href="/resources">
-        ASSEMBLY DAY<br>RESOURCES
+        ASSEMBLY DAY RESOURCES
       </a>
 
       <a class="had-action-box" href="/Volunteer/KitsAtHome">
-        BOOK A KITS AT<br>HOME EVENT
+        BOOK A KITS AT HOME EVENT
       </a>
     </section>
+    </div>
   </div>
 </main>
 

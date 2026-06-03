@@ -98,10 +98,6 @@
   line-height: 1.6;
 }
 
-.mission-cta-grid {
-  margin-top: 1.75rem;
-}
-
 .distribution-section {
   width: 100%;
   max-width: none;
@@ -320,19 +316,6 @@
 
 .home-panel--about p {
   color: rgba(255, 255, 255, 0.86);
-}
-
-.home-panel--about .mission-cta-grid .cta-band {
-  --cta-outline: rgba(255, 255, 255, 0.86);
-  --cta-outline-hover: #ffffff;
-}
-
-.home-panel--about .mission-cta-grid .cta-band h3 {
-  color: white;
-}
-
-.home-panel--about .mission-cta-grid .cta-band:hover h3 {
-  color: var(--secondary);
 }
 
 .home-about-block {
@@ -629,18 +612,6 @@ a.cta-band {
 
 .cta-band:hover h3 {
   color: white;
-}
-
-.mission-cta-grid {
-  margin-top: 2.5rem;
-  justify-items: start;
-  align-items: start;
-}
-
-.mission-cta-grid .cta-band {
-  width: 220px;
-  height: 104px;
-  padding: 0 1.25rem;
 }
 
 /* BUTTON OVERRIDES (OPTIONAL) - Use with global .btn classes */
