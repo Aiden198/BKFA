@@ -69,13 +69,14 @@
 .volunteer-inline-link {
     color: #8fbfc8;
     font-weight: 900;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.18em;
 }
 
 .volunteer-inline-link:hover {
     color: #7aaab4;
+    text-decoration: underline;
 }
 
 /* Match Volunteer page dropdowns to the FAQ accordion colour system. */
