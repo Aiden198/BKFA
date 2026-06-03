@@ -3,6 +3,10 @@ const dropdowns = document.querySelectorAll(".dropdown");
 dropdowns.forEach(dropdown => {
     const dropdownBtn = dropdown.querySelector(".dropdown-btn");
 
+    if (!dropdownBtn || dropdownBtn.tagName.toLowerCase() === "a") {
+        return;
+    }
+
     dropdownBtn.addEventListener("click", (e) => {
         e.stopPropagation();
 

@@ -163,7 +163,7 @@ select {
 
 /* making links and buttons look identical */
 .nav-btn a,
-.dropdown-btn {
+.nav-links .dropdown-btn {
   position: relative;
   display: flex;
   align-items: center;        /* vertical center */
@@ -193,7 +193,7 @@ select {
 /* underline effect on hover */
 
 .nav-btn a::after,
-.dropdown-btn::after {
+.nav-links .dropdown-btn::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -210,12 +210,12 @@ select {
 }
 
 .nav-btn a:hover,
-.dropdown-btn:hover {
+.nav-links .dropdown-btn:hover {
   color: var(--primary);
 }
 
 .nav-btn a:hover::after,
-.dropdown-btn:hover::after {
+.nav-links .dropdown-btn:hover::after {
   transform: scaleX(1);
 }
 
@@ -352,7 +352,7 @@ select {
   }
 
   .nav-btn a,
-  .dropdown-btn {
+  .nav-links .dropdown-btn {
     font-size: 0.92rem;
   }
 
@@ -957,6 +957,18 @@ main.page-main-with-hero .side-menu {
   color: var(--secondary);
   border-bottom: 2px solid #8fbfc8;
   padding-bottom: 0.5rem;
+}
+
+.side-menu__title-link {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.side-menu__title-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
 }
 
 .side-menu__list {

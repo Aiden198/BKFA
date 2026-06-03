@@ -485,7 +485,10 @@
 
 .resources-footer-note a {
     color: #6db5ba;
+    font-weight: 900;
     text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
 }
 
 .resources-footer-note a:hover {
