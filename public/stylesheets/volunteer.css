@@ -8,23 +8,14 @@
 }
 
 /* ===== COVER IMAGE ===== */
-/* adjusted so that it dosen't go behind the header */
+/* Match the Reports page hero while keeping the volunteer image cropped from the top. */
 
-.volunteer-cover {
-    margin-top: 130px;
-    display: flex;
-    justify-content: center;
-    padding: 0 50px;
-    box-sizing: border-box;
+.page-content.volunteer-page-content {
+    text-align: left;
 }
 
-.volunteer-cover img {
-    width: 100%;
-    max-width: 1100px;
-    height: 380px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+.volunteer-hero-top img {
+    object-position: center 28%;
 }
 
 /* ===== CTA BUTTONS (three side-by-side) ===== */
@@ -41,59 +32,97 @@
 }
 
 .vol-cta-band {
+    --vol-cta-outline: #8fbfc8;
+    --vol-cta-outline-hover: #8fbfc8;
     background: transparent;
-    color: #57508f;
-    padding: 1.8rem 1.4rem;
-    border-radius: 20px;
-    border: 3px solid #8f8ac0;
+    color: var(--secondary);
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    border: 3px solid var(--vol-cta-outline);
     text-align: center;
-    min-height: 170px;
+    min-height: 104px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
     text-decoration: none;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    z-index: 0;
+}
+
+/* Match volunteer CTAs to the homepage slide-fill button animation. */
+.vol-cta-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--vol-cta-outline-hover);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s ease;
+    z-index: -1;
 }
 
 .vol-cta-band h3 {
     margin: 0;
-    color: #57508f;
-    font-size: 1.45rem;
-    font-weight: 800;
-    line-height: 1.18;
-    letter-spacing: -0.02em;
+    color: var(--secondary);
+    font-size: 1.1rem;
+    font-weight: 900;
+    line-height: 1.2;
     text-align: center;
-}
-
-.vol-cta-band p {
-    margin: 0;
-    color: #57508f;
-    font-size: 0.95rem;
-    font-weight: 500;
-    line-height: 1.4;
-    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
 }
 
 .vol-cta-band:hover {
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(107, 98, 150, 0.15);
-    border-color: #7c76b2;
+    box-shadow: var(--shadow-sm);
+    border-color: var(--vol-cta-outline);
+}
+
+.vol-cta-band:hover::before {
+    transform: scaleX(1);
+}
+
+.vol-cta-band:hover h3 {
+    color: white;
+}
+
+.vol-cta-band--disabled {
+    cursor: default;
+}
+
+.vol-cta-band--disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.vol-cta-band--disabled:hover::before {
+    transform: scaleX(0);
+}
+
+.vol-cta-band--disabled:hover h3 {
+    color: var(--secondary);
+}
+
+/* Emphasise important volunteer inline links with the site's teal action colour. */
+.volunteer-inline-link {
+    color: #8fbfc8;
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
+}
+
+.volunteer-inline-link:hover {
+    color: #7aaab4;
 }
 
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 900px) {
-    .volunteer-cover {
-        padding: 0 20px;
-        margin-top: 110px;
-    }
-
-    .volunteer-cover img {
-        height: 240px;
-    }
-
     .volunteer-cta-grid {
         grid-template-columns: 1fr;
     }

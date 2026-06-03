@@ -2,43 +2,44 @@
 
 <%- include('partials/header') %>
 
-<div class="volunteer-cover">
-    <img src="images/2024/06/corporate-volunteer.jpg" alt="Volunteers assembling birthing kits">
-</div>
+<main class="page-main-with-hero">
+    <!-- Match the Reports page hero structure so the image sits above the content row. -->
+    <section class="page-hero-top volunteer-hero-top" aria-label="Volunteer page hero image">
+        <img src="images/2024/06/corporate-volunteer.jpg" alt="Volunteers assembling birthing kits">
+    </section>
 
-<main class="about-page">
-    <%- include('partials/getInvolvedSideMenu') %>
+    <div class="page-body-with-sidebar">
+        <%- include('partials/getInvolvedSideMenu') %>
 
-    <div class="page-content our-history-page">
-        <section class="history-text-section">
-            <p class="about-us-label">GET INVOLVED</p>
-            <h1>VOLUNTEER</h1>
-            <p>The support of our volunteers is essential in helping to manage our work in Australia.</p>
-            <p>You can get involved by organising an Assembly Day at your workplace, school, or home, or attending an existing event listed below.</p>
-            <p>Volunteers may also undertake fundraising activities and advocate on behalf of BKFA. The BKFA Board of Directors all undertake their roles on a voluntary basis.</p>
-        </section>
+        <div class="page-content our-history-page volunteer-page-content">
 
-        <section class="volunteer-cta-section">
-            <div class="volunteer-cta-grid">
-                <a href="#" class="vol-cta-band">
-                    <h3>PACK KITS</h3>
-                    <p>ORGANISE YOUR OWN ASSEMBLY DAY</p>
-                </a>
-                <a href="#" class="vol-cta-band">
-                    <h3>CORPORATE VOLUNTEERING</h3>
-                    <p>A FANTASTIC TEAM BUILDING OPPORTUNITY</p>
-                </a>
-                <a href="#" class="vol-cta-band">
-                    <h3>KITS AT HOME</h3>
-                    <p>MAKE A DIFFERENCE FROM YOUR HOME</p>
-                </a>
-            </div>
-        </section>
+            <section class="history-text-section">
+                <h1>VOLUNTEER</h1>
+                <p>The support of our volunteers is essential in helping to manage our work in Australia.</p>
+                <p>You can get involved by organising an Assembly Day at your workplace, school, or home, or attending an existing event listed below.</p>
+                <p>Volunteers may also undertake fundraising activities and advocate on behalf of BKFA. The BKFA Board of Directors all undertake their roles on a voluntary basis.</p>
+            </section>
+
+            <section class="volunteer-cta-section">
+                <div class="volunteer-cta-grid">
+                    <!-- Link volunteer CTAs to their pages while leaving Corporate Volunteering inactive until it exists. -->
+                    <a href="/volunteer/hostanassemblyday" class="vol-cta-band">
+                        <h3>PACK KITS</h3>
+                    </a>
+                    <span class="vol-cta-band vol-cta-band--disabled" aria-disabled="true">
+                        <h3>CORPORATE VOLUNTEERING</h3>
+                    </span>
+                    <a href="/volunteer/kitsathome" class="vol-cta-band">
+                        <h3>KITS AT HOME</h3>
+                    </a>
+                </div>
+            </section>
 
         <section class="history-text-section">
             <h2>How can I get involved?</h2>
 
-            <p>If you’re interested in volunteering at an Assembly Day near you, please have a look in the upcoming assembly day listing. This is updated regularly, so be sure to keep looking if there isn’t one near you at this stage. If you see one that suits, contact info@bkfa.org.au</p>
+            <!-- Highlight the assembly-day PDF and email so volunteers can act from this sentence. -->
+            <p>If you’re interested in volunteering at an Assembly Day near you, please have a look in the <a href="/documents/Upcoming-AD-Listing-May-June-2026.pdf" class="volunteer-inline-link" target="_blank" rel="noopener noreferrer">upcoming assembly day listing</a>. This is updated regularly, so be sure to keep looking if there isn’t one near you at this stage. If you see one that suits, contact <a href="mailto:info@bkfa.org.au" class="volunteer-inline-link">info@bkfa.org.au</a></p>
         </section>
 
         <section class="history-text-section">
@@ -56,6 +57,18 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr>
+                      <td>ACT</td>
+                      <td>14 Jun 2026</td>
+                      <td>Sri Sathya Sai Organisation Aust. and PNG (ACT Region)</td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td>ACT</td>
+                      <td>25 Jul 2026</td>
+                      <td>Zonta Club of Canberra Breakfast</td>
+                      <td>3000</td>
+                    </tr>
                   </tbody>
                 </table>
               `
@@ -76,9 +89,27 @@
                   <tbody>
                     <tr>
                       <td>NSW</td>
-                      <td>10 Apr 2026</td>
-                      <td>United Nations Association of Australia</td>
-                      <td>100</td>
+                      <td>1 Jun 2026</td>
+                      <td>Zonta Club of Toowoomba Garden City</td>
+                      <td>600</td>
+                    </tr>
+                    <tr>
+                      <td>NSW</td>
+                      <td>13 Jun 2026</td>
+                      <td>Zonta Club of Goulburn</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>NSW</td>
+                      <td>14 Jun 2026</td>
+                      <td>Sri Sathya Sai International Organisation of Australia</td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td>NSW</td>
+                      <td>27 Jul 2026</td>
+                      <td>Zonta Club of Macarthur</td>
+                      <td>1000</td>
                     </tr>
                   </tbody>
                 </table>
@@ -100,27 +131,27 @@
                   <tbody>
                     <tr>
                       <td>QLD</td>
-                      <td>17 Apr 2026</td>
-                      <td>Zonta Club of Stanthorpe</td>
-                      <td>200</td>
+                      <td>6 Jun 2026</td>
+                      <td>Zonta Club of Burdekin</td>
+                      <td>1000</td>
                     </tr>
                     <tr>
                       <td>QLD</td>
-                      <td>18 Apr 2026</td>
-                      <td>Zonta Club of Brisbane Sunrise</td>
+                      <td>12 Jun 2026</td>
+                      <td>Zonta Club of Redcliffe</td>
                       <td>400</td>
                     </tr>
                     <tr>
                       <td>QLD</td>
-                      <td>20 Apr 2026</td>
-                      <td>Coomera Anglican College</td>
-                      <td>400</td>
+                      <td>14 Jun 2026</td>
+                      <td>Sri Sathya Sai Global Council Australia - Qld</td>
+                      <td>200</td>
                     </tr>
                     <tr>
                       <td>QLD</td>
-                      <td>26 Apr 2026</td>
-                      <td>Zonta Club of Roma</td>
-                      <td>200</td>
+                      <td>21 Jun 2026</td>
+                      <td>Zonta Club of Brisbane City Heart</td>
+                      <td>400</td>
                     </tr>
                   </tbody>
                 </table>
@@ -142,15 +173,9 @@
                   <tbody>
                     <tr>
                       <td>SA</td>
-                      <td>12 Apr 2026</td>
-                      <td>Rotary Club of St Peter's</td>
-                      <td>2000</td>
-                    </tr>
-                    <tr>
-                      <td>SA</td>
-                      <td>22 Apr 2026</td>
-                      <td>Rotary Club of Mitcham</td>
-                      <td>200</td>
+                      <td>14 Jun 2026</td>
+                      <td>Rotary Club of Stirling</td>
+                      <td>400</td>
                     </tr>
                   </tbody>
                 </table>
@@ -172,27 +197,9 @@
                   <tbody>
                     <tr>
                       <td>VIC</td>
-                      <td>1 Apr 2026</td>
-                      <td>Siena College</td>
-                      <td>300</td>
-                    </tr>
-                    <tr>
-                      <td>VIC</td>
-                      <td>2 Apr 2026</td>
-                      <td>Ivanhoe Grammar School</td>
+                      <td>15 Jun 2026</td>
+                      <td>Canterbury Rotary Club</td>
                       <td>200</td>
-                    </tr>
-                    <tr>
-                      <td>VIC</td>
-                      <td>29 Apr 2026</td>
-                      <td>Mercer - Marsh Social Impact Committee</td>
-                      <td>200</td>
-                    </tr>
-                    <tr>
-                      <td>VIC</td>
-                      <td>30 Apr 2026</td>
-                      <td>Zonta Club of Central Goldfields</td>
-                      <td>400</td>
                     </tr>
                   </tbody>
                 </table>
@@ -212,6 +219,12 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr>
+                      <td>WA</td>
+                      <td>1 Jun 2026</td>
+                      <td>Sri Sathya Sai Global Council Australia (WA)</td>
+                      <td>200</td>
+                    </tr>
                   </tbody>
                 </table>
               `
@@ -230,6 +243,12 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr>
+                      <td>TAS</td>
+                      <td>18 Jul 2026</td>
+                      <td>Zonta Club of Devonport</td>
+                      <td>1000</td>
+                    </tr>
                   </tbody>
                 </table>
               `
@@ -266,30 +285,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>USA</td>
-                      <td>6 Apr 2026</td>
-                      <td>AIG - New York (USA)</td>
-                      <td>400</td>
-                    </tr>
-                    <tr>
-                      <td>USA</td>
-                      <td>29 Apr 2026</td>
-                      <td>AIG - Melville (USA)</td>
-                      <td>200</td>
-                    </tr>
-                    <tr>
-                      <td>UK</td>
-                      <td>17 Apr 2026</td>
-                      <td>Thermo Fisher Scientific - Paisley (UK)</td>
-                      <td>800</td>
-                    </tr>
                   </tbody>
                 </table>
               `
             }) %>
 
         </section>
+        </div>
     </div>
 </main>
 
