@@ -1,6 +1,12 @@
 <aside class="side-menu">
     <% if (title) { %>
-        <h3 class="side-menu__title"><%= title %></h3>
+        <h3 class="side-menu__title">
+            <% if (typeof titleHref !== 'undefined' && titleHref) { %>
+                <a href="<%= titleHref %>" class="side-menu__title-link"><%= title %></a>
+            <% } else { %>
+                <%= title %>
+            <% } %>
+        </h3>
     <% } %>
 
     <% if (items && items.length) { %>

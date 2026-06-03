@@ -32,6 +32,18 @@
     max-width: 760px;
 }
 
+#members-page .page-content a {
+    color: #55b7ac;
+    font-weight: 900;
+    text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
+}
+
+#members-page .page-content a:hover {
+    text-decoration: underline;
+}
+
 /* ===== MAP FORM SECTION ===== */
 
 .map-form-section {

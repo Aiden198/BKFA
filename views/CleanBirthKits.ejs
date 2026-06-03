@@ -1,12 +1,12 @@
 <%- include('partials/header') %>
 
-<main class="clean-birth-kits-page">
-    <%- include ('partials/ourWorkSideMenu') %>
+<main class="our-work-main our-work-main--no-hero clean-birth-kits-page">
+    <div class="page-body-with-sidebar">
+        <%- include ('partials/ourWorkSideMenu') %>
 
-    <div class="page-content clean-birth-kits-content">
-        <section class="cbk-intro-section">
-            <p class="cbk-subheading">OUR WORK</p>
-            <h1 class="cbk-main-heading">CLEAN BIRTH KITS</h1>
+        <div class="page-content our-work-content clean-birth-kits-content">
+            <section class="cbk-intro-section">
+                <h1 class="cbk-main-heading">CLEAN BIRTH KITS</h1>
 
             <p>
                 Our Clean Birth Kits are simple and effective tools for basic infection prevention and first-line childbirth care.
@@ -24,16 +24,16 @@
             </p>
         </section>
 
-        <section class="cbk-action-boxes">
-            <a href="#" class="cbk-action-box">KIT CONTENTS<br>POSTER</a>
-            <a href="#" class="cbk-action-box">BUY ASSEMBLED<br>KITS</a>
-        </section>
+            <section class="cbk-action-boxes">
+                <a href="/documents/BKFA_Kit_Contents_Poster_2017-2.pdf" class="cbk-action-box">KIT CONTENTS POSTER</a>
+                <a href="/cleanbirthkits/buyassembledkits" class="cbk-action-box">BUY ASSEMBLED KITS</a>
+            </section>
 
         <section class="cbk-accordion-section">
-            <div class="cbk-accordion-item active">
+            <div class="cbk-accordion-item">
                 <button class="cbk-accordion-header" type="button">
                     <span>SOAP</span>
-                    <span class="cbk-symbol">−</span>
+                    <span class="cbk-symbol">+</span>
                 </button>
                 <div class="cbk-accordion-content">
                     <div class="cbk-kit-detail">
@@ -156,12 +156,12 @@
                 Generous supporters raise funds and organise events to pack Clean Birth Kits. Thousands of volunteers contribute to our supply each year.
             </p>
             <p>
-                Read more about becoming involved and holding your own <a href="#">Assembly Day.</a>
+                Read more about becoming involved and holding your own <a href="/volunteer/hostanassemblyday">Assembly Day.</a>
             </p>
 
             <h2>WHERE OUR KITS ARE SENT</h2>
             <p>
-                We send Clean Birth Kits, as part of our Kit Initiative, to organisations that have undergone an application and approval process to become one of our <a href="#">Global Partners.</a>
+                We send Clean Birth Kits, as part of our Kit Initiative, to organisations that have undergone an application and approval process to become one of our <a href="/documents/BKFA-Partner.pdf">Global Partners.</a>
             </p>
             <p>
                 This capacity and risk assessment process ensures that all of our Global Partners are able to identify vulnerable populations and effectively integrate the Clean Birth Kits into their existing programs and/or services.
@@ -175,7 +175,8 @@
             <p>
                 To apply to be one our Global Partners, contact <a href="mailto:info@bkfa.org.au">info@bkfa.org.au</a>.
             </p>
-        </section>
+            </section>
+        </div>
     </div>
 </main>
 
@@ -185,22 +186,71 @@
 
         accordionItems.forEach(item => {
             const header = item.querySelector('.cbk-accordion-header');
+            const content = item.querySelector('.cbk-accordion-content');
             const symbol = item.querySelector('.cbk-symbol');
+
+            header.setAttribute('aria-expanded', 'false');
 
             header.addEventListener('click', function () {
                 const isActive = item.classList.contains('active');
 
+                if (isActive) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    requestAnimationFrame(() => {
+                        content.style.maxHeight = '0px';
+                    });
+
+                    item.classList.remove('active');
+                    header.setAttribute('aria-expanded', 'false');
+                    symbol.textContent = '+';
+                    return;
+                }
+
                 accordionItems.forEach(otherItem => {
+                    if (otherItem === item) {
+                        return;
+                    }
+
+                    const otherHeader = otherItem.querySelector('.cbk-accordion-header');
+                    const otherContent = otherItem.querySelector('.cbk-accordion-content');
                     otherItem.classList.remove('active');
                     const otherSymbol = otherItem.querySelector('.cbk-symbol');
+
+                    if (otherContent) {
+                        otherContent.style.maxHeight = otherContent.scrollHeight + 'px';
+                        requestAnimationFrame(() => {
+                            otherContent.style.maxHeight = '0px';
+                        });
+                    }
+
+                    if (otherHeader) {
+                        otherHeader.setAttribute('aria-expanded', 'false');
+                    }
+
                     if (otherSymbol) {
                         otherSymbol.textContent = '+';
                     }
                 });
 
-                if (!isActive) {
-                    item.classList.add('active');
-                    symbol.textContent = '−';
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                header.setAttribute('aria-expanded', 'true');
+                symbol.textContent = '+';
+            });
+
+            content.addEventListener('transitionend', function () {
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = 'none';
+                }
+            });
+        });
+
+        window.addEventListener('resize', function () {
+            accordionItems.forEach(item => {
+                const content = item.querySelector('.cbk-accordion-content');
+
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = 'none';
                 }
             });
         });

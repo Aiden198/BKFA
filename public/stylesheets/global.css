@@ -148,7 +148,7 @@ select {
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Keep the navbar on one line when the search field expands. */
 }
 
 /* each menu item becomes the anchor point for its own dropdown */
@@ -163,7 +163,7 @@ select {
 
 /* making links and buttons look identical */
 .nav-btn a,
-.dropdown-btn {
+.nav-links .dropdown-btn {
   position: relative;
   display: flex;
   align-items: center;        /* vertical center */
@@ -193,7 +193,7 @@ select {
 /* underline effect on hover */
 
 .nav-btn a::after,
-.dropdown-btn::after {
+.nav-links .dropdown-btn::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -210,12 +210,62 @@ select {
 }
 
 .nav-btn a:hover,
-.dropdown-btn:hover {
+.nav-links .dropdown-btn:hover {
   color: var(--primary);
 }
 
 .nav-btn a:hover::after,
-.dropdown-btn:hover::after {
+.nav-links .dropdown-btn:hover::after {
+  transform: scaleX(1);
+}
+
+/* Match the homepage CTA buttons with a left-to-right sliding colour on hover. */
+.nav-donate a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  border: 2px solid #8fbfc8; /* Reuse the standard annual report outline teal for visual consistency. */
+  background: #8fbfc8; /* Fill the resting donation button with the annual report outline teal. */
+  color: var(--text); /* Match the resting donation label with the other navbar text. */
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Animate the hover outline alongside the sliding fill. */
+}
+
+/* Slide the donation colour across the button in the same direction as homepage CTAs. */
+.nav-donate a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+/* Keep the button label above the sliding colour layer. */
+.nav-donate a span {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-donate a:hover {
+  color: white;
+  border-color: white; /* Show a white outline while the purple hover fill slides across the button. */
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(70, 60, 120, 0.2);
+}
+
+/* Fill the donation button when the user hovers over it. */
+.nav-donate a:hover::before {
   transform: scaleX(1);
 }
 
@@ -302,7 +352,7 @@ select {
   }
 
   .nav-btn a,
-  .dropdown-btn {
+  .nav-links .dropdown-btn {
     font-size: 0.92rem;
   }
 
@@ -745,13 +795,13 @@ main.page-main-with-hero .side-menu {
 /* ===== PRIVACY PAGE FIX ===== */
 
 .privacy-policy-section {
-  padding: 60px 0;
+  width: 100%;
 }
 
 .privacy-policy-container {
-  max-width: 900px;              /* controls width */
-  margin: 0 auto;                /* centers it */
-  padding: 0 20px;               /* spacing from sides */
+  max-width: 900px;
+  margin: 2rem auto 0;
+  text-align: center;
 }
 
 /* small label */
@@ -770,7 +820,7 @@ main.page-main-with-hero .side-menu {
   font-weight: var(--page-title-weight);
   line-height: var(--page-title-line);
   color: var(--secondary);
-  margin-bottom: 25px;
+  margin: 0 0 1.5rem;
   text-transform: uppercase;
 }
 
@@ -780,6 +830,16 @@ main.page-main-with-hero .side-menu {
   line-height: 1.8;
   color: #333;              /* 🔥 THIS FIXES LIGHT TEXT */
   margin-bottom: 18px;
+}
+
+/* Keep privacy body copy centered inside the shared card without losing readability. */
+.privacy-policy-container p {
+  color: var(--text);
+  font-size: var(--page-body-size);
+  font-weight: var(--page-body-weight);
+  line-height: var(--page-body-line);
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
 }
 
 /* links */
@@ -899,6 +959,18 @@ main.page-main-with-hero .side-menu {
   padding-bottom: 0.5rem;
 }
 
+.side-menu__title-link {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.side-menu__title-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+
 .side-menu__list {
   list-style: none;
   margin: 0;
@@ -993,7 +1065,7 @@ main.page-main-with-hero .side-menu {
 
 .nav-search:hover,
 .nav-search:focus-within {
-  width: 190px;
+  width: 130px; /* Expand enough for a short query without pushing the donation button down. */
 }
 
 .search-bar {
@@ -1014,7 +1086,7 @@ main.page-main-with-hero .side-menu {
 
 .nav-search:hover .search-bar,
 .nav-search:focus-within .search-bar {
-  width: 190px;
+  width: 130px; /* Match the reduced hover width of the search container. */
 }
 
 .search-bar:focus-within {
@@ -1038,7 +1110,7 @@ main.page-main-with-hero .side-menu {
 
 .nav-search:hover .search-bar input,
 .nav-search:focus-within .search-bar input {
-  width: 142px;
+  width: 82px; /* Leave room for the search icon inside the narrower expanded field. */
   opacity: 1;
   transform: translateX(0);
 }
@@ -1047,7 +1119,7 @@ main.page-main-with-hero .side-menu {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--muted);
+  color: var(--text); /* Match the search icon with the black navbar text. */
   padding: 0;
   margin-left: 0;
   width: 20px;

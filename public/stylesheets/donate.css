@@ -56,22 +56,52 @@
     max-width: 760px;
 }
 
-.ecard-btn {
-    display: inline-block;
-    background: #625b96;
-    color: white;
+/* Match the e-card CTA to the site's outlined slide-fill action buttons. */
+#donate-page .page-content .ecard-btn {
+    --ecard-btn-outline: var(--secondary);
+    --ecard-btn-fill: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--secondary);
     text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 18px 38px;
+    font-weight: 900;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 14px;
+    border: 3px solid var(--ecard-btn-outline);
     margin-top: 20px;
-    transition: 0.25s ease;
+    min-width: 230px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    z-index: 0;
 }
 
-.ecard-btn:hover {
-    background: #554f84;
+/* Slide the purple fill under the label to match the homepage button animation. */
+#donate-page .page-content .ecard-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--ecard-btn-fill);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+#donate-page .page-content .ecard-btn:hover {
+    color: #ffffff;
     transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--ecard-btn-outline);
+    text-decoration: none;
+}
+
+#donate-page .page-content .ecard-btn:hover::before {
+    transform: scaleX(1);
 }
 
 @media (max-width: 900px) {
@@ -107,7 +137,10 @@
 
 #donate-page .page-content a {
     color: #55b7ac;
+    font-weight: 900;
     text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
 }
 
 #donate-page .page-content a:hover {

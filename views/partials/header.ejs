@@ -13,14 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/stylesheets/news.css">
     <link rel="stylesheet" href="/stylesheets/admin.css">
+    <link rel="stylesheet" href="/stylesheets/about.css">
+    <link rel="stylesheet" href="/stylesheets/ourwork.css">
 </head>
 <body>
-
-    <% if (locals.showDonateBanner) { %>
-    <div class="donate-bar">
-        <a href="/donate" class="donate-bar__btn">Donate</a>
-    </div>
-    <% } %>
 
     <nav class="navbar">
         <a href="/" aria-label="Birthing Kit Foundation home">
@@ -30,7 +26,7 @@
             <li class="nav-btn"><a href="/">HOME</a></li>
 
             <li class="nav-item dropdown">
-                <button class="dropdown-btn">GET INVOLVED</button>
+                <a href="/volunteer" class="dropdown-btn">GET INVOLVED</a>
                 <ul class="dropdown-menu">
                     <li class="nav-btn-drp"><a href="/volunteer">Volunteer</a></li>
                     <li class="nav-btn-drp"><a href="/donate">Donate</a></li>
@@ -40,7 +36,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <button class="dropdown-btn">ABOUT US</button>
+                <a href="/ourteam" class="dropdown-btn">ABOUT US</a>
                 <ul class="dropdown-menu">
                     <li class="nav-btn-drp"><a href="/ourteam">Our Team</a></li>
                     <li class="nav-btn-drp"><a href="/ourhistory">Our History</a></li>
@@ -49,7 +45,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <button class="dropdown-btn">OUR WORK</button>
+                <a href="/cleanbirthkits" class="dropdown-btn">OUR WORK</a>
                 <ul class="dropdown-menu">
                     <li class="nav-btn-drp"><a href="/cleanbirthkits">Clean Birth Kits</a></li>
                     <li class="nav-btn-drp"><a href="/ourprojects">Our Projects</a></li>
@@ -60,6 +56,9 @@
 
             <li class="nav-btn"><a href="/news">NEWS</a></li>
             <li class="nav-btn"><a href="/contact">CONTACT</a></li>
+            <!-- Send the navbar donation action directly to BKFA's external MyCause page. -->
+            <li class="nav-donate"><a href="https://www.mycause.com.au/charity/542/BirthingKitFoundationAustralia"><span>DONATE NOW</span></a></li>
+            <!-- Keep search as the final navbar action so its icon sits after the donation button. -->
             <li class="nav-search">
                 <form class="search-bar" action="/search" method="get" role="search">
                     <input type="search" name="q" placeholder="Search..." aria-label="Search site">

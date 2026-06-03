@@ -8,8 +8,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #6b6296;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: var(--secondary);
     text-decoration: none;
     padding: 24px 48px;
     min-width: 260px;
@@ -22,9 +22,9 @@
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--secondary);
 }
 
 .field-partners-cta .cta-band:hover {
-    background-color: #57508f;
+    background-color: #ffffff;
 }

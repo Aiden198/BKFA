@@ -399,11 +399,16 @@
 }
 
 .resources-page-content {
+    /* Keep Resources aligned with the rounded hero plus sidebar/content card pattern. */
     flex: 1;
     min-width: 0;
-    max-width: 100%;
+    max-width: 1100px;
     padding-top: 10px;
     text-align: left;
+}
+
+.resources-hero img {
+    object-position: center 36%;
 }
 
 .resources-header-section {
@@ -480,7 +485,10 @@
 
 .resources-footer-note a {
     color: #6db5ba;
+    font-weight: 900;
     text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
 }
 
 .resources-footer-note a:hover {

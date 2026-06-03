@@ -2,11 +2,16 @@
 
 <%- include('partials/header') %>
 
-<main id="faq-page" class="main-container--sidebar">
-    <%- include ('partials/ourWorkSideMenu') %>
+<main id="faq-page" class="page-main-with-hero our-work-main">
+    <section class="page-hero-top our-work-hero faq-hero" aria-label="Frequently asked questions hero image">
+        <img src="/images/2025/04/BKFA-community-AD-feb-7631.jpg" alt="Volunteers preparing clean birth kits">
+    </section>
 
-    <div class="page-content">
-        <h1 class="content-title">Frequently Asked Questions</h1>
+    <div class="page-body-with-sidebar">
+        <%- include ('partials/ourWorkSideMenu') %>
+
+        <div class="page-content our-work-content">
+            <h1 class="content-title">Frequently Asked Questions</h1>
 
         <%- include("partials/expandable", {
           title: "How do you host an Assembly Day and what's involved in getting started?",
@@ -103,6 +108,7 @@
 
             <p>(2) WHO 2015 Pregnancy, Childbirth, Postpartum and Newborn Care: A guide for essential practice, 3rd Edition, Integrated Management of Pregnancy and Childbirth (IMPAC), WHO/UNFPA/UNICEF <a href="http://apps.who.int/iris/bitstream/10665/249580/1/9789241549356-eng.pdf?ua=1" target="_blank" rel="noopener noreferrer">http://apps.who.int/iris/bitstream/10665/249580/1/9789241549356-eng.pdf?ua=1</a></p>
         </section>
+        </div>
     </div>
 </main>
 

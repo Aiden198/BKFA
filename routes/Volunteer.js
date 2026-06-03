@@ -29,6 +29,16 @@ router.get('/babyshowers', function(req, res) {
   res.render('BabyShowers');
 });
 
+// Serve the dedicated Corporate Volunteering page from compact, hyphenated, and legacy-cased Volunteer URLs.
+router.get([
+  '/corporatevolunteering',
+  '/corporate-volunteering',
+  '/CorporateVolunteering',
+  '/Corporate-Volunteering'
+], function(req, res) {
+  res.render('CorporateVolunteering');
+});
+
 router.post('/babyshowers', async function(req, res) {
 
   try {

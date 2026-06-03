@@ -98,10 +98,6 @@
   line-height: 1.6;
 }
 
-.mission-cta-grid {
-  margin-top: 1.75rem;
-}
-
 .distribution-section {
   width: 100%;
   max-width: none;
@@ -320,19 +316,6 @@
 
 .home-panel--about p {
   color: rgba(255, 255, 255, 0.86);
-}
-
-.home-panel--about .mission-cta-grid .cta-band {
-  --cta-outline: rgba(255, 255, 255, 0.86);
-  --cta-outline-hover: #ffffff;
-}
-
-.home-panel--about .mission-cta-grid .cta-band h3 {
-  color: white;
-}
-
-.home-panel--about .mission-cta-grid .cta-band:hover h3 {
-  color: var(--secondary);
 }
 
 .home-about-block {
@@ -631,18 +614,6 @@ a.cta-band {
   color: white;
 }
 
-.mission-cta-grid {
-  margin-top: 2.5rem;
-  justify-items: start;
-  align-items: start;
-}
-
-.mission-cta-grid .cta-band {
-  width: 220px;
-  height: 104px;
-  padding: 0 1.25rem;
-}
-
 /* BUTTON OVERRIDES (OPTIONAL) - Use with global .btn classes */
 .hero .btn-primary {
   min-width: 140px;
@@ -819,69 +790,15 @@ a.cta-band {
   transform: scaleX(1);
 }
 
-.twenty-hero {
-  position: relative;
-  max-width: 1350px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.twenty-hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -60px;
-  width: 100%;
-  height: 90px;
-  background: #f7f5fb;
-  border-bottom-left-radius: 100% 100%;
-  border-bottom-right-radius: 100% 100%;
-}
-
-.twenty-hero img {
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-}
-
-
-.twenty-years-section {
-  padding: 4.5rem 0 5.5rem;
-}
-
-.twenty-years-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 3.5rem;
-  align-items: start;
-}
-
-.twenty-years-sidecard {
-  background: #f2f4f4;
-  border-radius: 10px;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  min-height: 96px;
-  display: flex;
-  align-items: center;
+/* Center the image-free anniversary page inside the standard internal-page card. */
+.twenty-years-main {
   justify-content: center;
 }
 
-.twenty-years-sidecard p {
-  margin: 0;
-  color: #5d5a94;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
 .twenty-years-content {
-  max-width: 760px;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  text-align: left;
 }
 
 .twenty-years-label {
@@ -939,23 +856,48 @@ a.cta-band {
 }
 
 .twenty-btn {
-  background: #8e89c6;
-  color: white;
+  --twenty-btn-outline: var(--secondary);
+  --twenty-btn-outline-hover: var(--secondary);
+  display: inline-block;
+  background: transparent;
+  color: var(--secondary);
   text-decoration: none;
-  padding: 1.3rem 1.5rem;
+  padding: 1rem 1.5rem;
   min-width: 220px;
   text-align: center;
-  border-radius: 999px;
-  font-weight: 800;
+  border-radius: 14px;
+  border: 3px solid var(--twenty-btn-outline);
+  font-weight: 900;
   font-size: 1rem;
   line-height: 1.35;
-  transition: 0.25s ease;
-  box-shadow: 0 8px 20px rgba(93, 90, 148, 0.12);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  z-index: 0;
+}
+
+/* Match anniversary actions with the homepage Find Out More sliding-fill animation. */
+.twenty-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--twenty-btn-outline-hover);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s ease;
+  z-index: -1;
 }
 
 .twenty-btn:hover {
-  background: #7872b2;
+  color: white;
   transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--twenty-btn-outline);
+}
+
+.twenty-btn:hover::before {
+  transform: scaleX(1);
 }
 
 .twenty-years-public h3 {
@@ -970,20 +912,6 @@ a.cta-band {
 }
 
 @media (max-width: 900px) {
-  .twenty-hero img {
-    height: 280px;
-  }
-
-  .twenty-years-container {
-    grid-template-columns: 1fr;
-    gap: 2rems;
-    padding: 0 1.25rem;
-  }
-
-  .twenty-years-sidecard {
-    max-width: 240px;
-  }
-
   .twenty-years-content h1 {
     font-size: 2.4rem;
   }
@@ -1382,33 +1310,4 @@ a.cta-band {
     background-position: center 10%;
     background-size: 56% auto;
   }
-}
-.donate-bar {
-  width: 100%;
-  background-color: #6b21a8;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 6px 24px;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 1001;
-}
-
-.donate-bar__btn {
-  background-color: #fff;
-  color: #6b21a8;
-  border: none;
-  padding: 6px 18px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-}
-
-.donate-bar__btn:hover {
-  background-color: #f3e8ff;
 }

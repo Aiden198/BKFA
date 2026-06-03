@@ -1,0 +1,192 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/stylesheets/volunteer.css">
+
+<main class="page-main-with-hero corporate-volunteering-main">
+  <!-- Place the Corporate Volunteering image in the same full-width hero position as the Volunteer page. -->
+  <section class="page-hero-top corporate-volunteering-hero" aria-label="Corporate volunteering page hero image">
+    <img src="/images/2024/06/corporate-volunteering.jpg" alt="Clean birth kit boxes at a corporate volunteering event">
+  </section>
+
+  <div class="page-body-with-sidebar">
+    <%- include('partials/volunteerSideMenu') %>
+
+    <div class="page-content corporate-volunteering-page">
+      <!-- Keep Corporate Volunteering in the same sidebar-and-content card layout as the Volunteer page. -->
+      <section class="cv-intro">
+      <h1>Corporate Volunteering</h1>
+      <h2>A Positive Impact for All</h2>
+
+      <p>
+        If you&rsquo;re looking for a corporate volunteering activity that brings people together while making a genuine difference, BKFA&rsquo;s Birthing Kit Assembly Days offer a practical and meaningful way to do both.
+      </p>
+
+      <p>
+        As part of your organisation&rsquo;s broader corporate social responsibility program, Assembly Days give colleagues the chance to connect, step outside the day-to-day and contribute to something with real and lasting impact.
+      </p>
+
+      <p>
+        BKFA Assembly Days are a hands-on experience where participants pack Clean Birth Kits for women and babies in low-resource communities.
+      </p>
+
+      <p>
+        Distributed through trusted global health partners at no cost to the women who use them, the kits help support safer, more hygienic births and reduce the risk of infection for mothers and newborns.
+      </p>
+
+      <p><strong>Assembly Days are ideal for:</strong></p>
+      <ul>
+        <li>corporate volunteering programs</li>
+        <li>team-building and workplace culture initiatives</li>
+        <li>organisations with ESG or corporate social responsibility commitments</li>
+        <li>purpose-led events that can be run in the office or off-site.</li>
+      </ul>
+
+      <p>
+        We provide all materials, guidance and support to make your event easy to run, and worthwhile for everyone involved.
+      </p>
+
+      <p class="cv-tagline">
+        Bring people together with purpose and help support safer births for women and babies worldwide.
+      </p>
+    </section>
+
+    <section class="cv-details">
+      <h2>Assembly Day Details</h2>
+
+      <%- include("partials/expandable", {
+        title: "What Your Team Will Do",
+        content: `
+          <p>Your team will assemble Clean Birth Kits containing six essential items: soap, gloves, plastic sheeting, cord ties, gauze and a sterile blade.</p>
+          <p>It&rsquo;s a practical, purposeful activity with a clean outcome: every kit packed helps support a safer birth for a mother and baby in a low-resource setting.</p>
+        `
+      }) %>
+
+      <%- include("partials/expandable", {
+        title: "Costs",
+        content: `
+          <p>Clean Birth Kits cost AU$5 each to produce and distribute to the women who will use them.</p>
+          <p>The minimum quantity of kits for an Assembly Day is 200, at a cost of $1000, with additional increments of 200 available.</p>
+          <p>As a general rule, we recommend ordering enough kits for each team member at a rate of 10 per hour.</p>
+          <p>For example, if you have 50 staff and wish to run a 2 hour event, we recommend 1000 kits at a cost of $5000.</p>
+        `
+      }) %>
+
+      <%- include("partials/expandable", {
+        title: "Venue Requirements",
+        content: `
+          <p>While our offices are based in SA, Assembly Days can be held anywhere across Australia!</p>
+          <p>Most groups hold their Assembly Days on-site in their own venue, but we can also offer some recommendations for off-site locations if you require. We&rsquo;ve seen Assembly Days held in boardrooms, warehouses, gymnasiums and more.</p>
+          <p>You will need enough tables and chairs for the number of staff attending, plus additional tables to prepare supplies on. Tables should be able to be sanitised prior to use.</p>
+          <p>The kit components will be delivered in the weeks prior to your event date, and collected by courier upon completion. You will need somewhere to store the supplies and finished kits pre and post-event.</p>
+        `
+      }) %>
+
+      <%- include("partials/expandable", {
+        title: "Support Provided",
+        content: `
+          <p>Events will be supported by our dedicated Assembly Day Coordinator, who will provide email support in the lead-up to your event date.</p>
+          <p>You will be provided with an Assembly Day Manual and supporting marketing materials to ensure your event is a success.</p>
+          <p>After the event, the boxed kits will be collected via courier, and returned to our warehouse for distribution to our Field Partners.</p>
+        `
+      }) %>
+
+      <%- include("partials/expandable", {
+        title: "Benefits of Volunteering",
+        content: `
+          <p>The Clean Birth Kit Assembly process is a highly tangible activity, offering participants a deep sense of purpose and benefit as a result of their efforts.</p>
+          <p>The procedure is simple, and clearly outlined, but flexible enough to allow smaller teams to develop their own approach to packing. This means there is plenty of opportunity for groups to design and negotiate a system, improve on processes and provide some friendly rivalry as the completed kits stack up.</p>
+          <p>The activity also allows for plenty of discussion and interaction between attendees!</p>
+        `
+      }) %>
+
+      <%- include("partials/expandable", {
+        title: "Corporate Impact & ESG Alignment",
+        content: `
+          <p>Corporate volunteering with BKFA supports organisations to meet ESG and corporate social responsibility objectives through a clear and measurable impact.</p>
+          <p>Assembly Days align with key United Nations Sustainable Development Goals, including:</p>
+          <ul>
+            <li>SDG 3: Good Health and Wellbeing</li>
+            <li>SDG 5: Gender Equality</li>
+            <li>SDG 12: Responsible Consumption and Production</li>
+          </ul>
+          <p>Organisations receive tangible outcomes, including:</p>
+          <ul>
+            <li>Number of kits assembled</li>
+            <li>Contribution to safer births globally</li>
+            <li>Stories and updates from field partners</li>
+          </ul>
+        `
+      }) %>
+
+      <%- include("partials/expandable", {
+        title: "Environmental Impact",
+        content: `
+          <p>All of our birth kits are environmentally friendly. The plastic bag and sheets are treated with an organic compound and are biodegradable in microbe rich environments, such as landfill.</p>
+          <p>As an organisation, we aim to review the social and environmental impact of the birth kits annually, part of our commitment to better understand our impact to the global environment.</p>
+        `
+      }) %>
+    </section>
+
+    <section class="cv-actions">
+      <a
+        class="cv-download-link"
+        href="https://drive.google.com/file/d/1W3ry1yKFTvE2HnstZfaBrhVeWD0nD1-0/view"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download Corporate Volunteering Brochure
+      </a>
+    </section>
+
+    <section class="cv-feature-grid">
+      <img src="/images/2024/06/pernod-ricard-ad-0714.jpg" alt="Corporate volunteers holding a clean birth kit">
+      <div>
+        <p>
+          Our Clean Birth Kits are a valuable resource in emergency and humanitarian settings to help prevent infection for mothers and newborns.
+        </p>
+        <p>
+          Kits are assembled by Australian volunteers, and our Assembly Days are a perfect team-building activity for corporate groups looking to give back to the community.
+        </p>
+        <p>
+          We provide all the support you need to run a successful event, including delivery of supplies, clean instructions for assembly and courier collection of the completed kits.
+        </p>
+      </div>
+    </section>
+
+    <section class="cv-feature-grid cv-feature-grid--reverse">
+      <div>
+        <p>
+          Corporate volunteering is a popular end of financial year activity, a great alternative to the office Christmas Party, or part of your ongoing Corporate Social Responsibility calendar.
+        </p>
+        <p>
+          Whether you have a team of 10 or 100, we can design an event to suit your needs. Simply contact our Assembly Day Coordinator, or complete the booking form below to register your interest and we&rsquo;ll be in touch!
+        </p>
+      </div>
+      <img src="/images/2024/06/pernod-ricard-ad-0672.jpg" alt="Large corporate team packing clean birth kits">
+    </section>
+
+    <section class="cv-gallery" aria-label="Corporate volunteering photos">
+      <img src="/images/2024/06/team-volunteering.jpg" alt="Corporate volunteers standing behind clean birth kit boxes">
+      <img src="/images/2024/06/corporate-volunteer.jpg" alt="Volunteers assembling clean birth kits at tables">
+      <img src="/images/2024/06/pernod-ricard-ad-0720.jpg" alt="Corporate volunteer holding a box of clean birth kit supplies">
+    </section>
+
+    <section class="cv-booking">
+      <h2>Book an Assembly Day Event</h2>
+      <p>
+        Register your interest and our Assembly Day Coordinator will be in touch to help plan your corporate volunteering event.
+      </p>
+      <a
+        class="cv-booking-button"
+        href="https://forms.monday.com/forms/faf9592aeb1d0cead561462b72420131?r=apse2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book an Assembly Day Event
+      </a>
+    </section>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
