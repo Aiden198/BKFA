@@ -1,95 +1,97 @@
 <%- include('partials/header') %>
 
-<main class="news-page">
+<main class="news-main">
 
-    <section class="news-header">
-        <div class="news-header__content">
+    <section class="page-content news-page">
+
+        <header class="news-header">
             <h1>Latest News</h1>
 
             <p>
                 Stories, updates and announcements from BKFA.
             </p>
-        </div>
-    </section>
+        </header>
 
-    <section class="news-filter-section">
+        <section class="news-filter-section" aria-label="Filter news by category">
 
-        <div class="news-filter-bar">
-
-            <button
-                class="
-                    news-filter-btn
-                    active
-                "
-                data-category="all"
-            >
-                All
-            </button>
-
-            <% allCategories.forEach(category => { %>
+            <div class="news-filter-bar">
 
                 <button
-                    class="news-filter-btn"
-                    data-category="<%= category.name %>"
+                    class="
+                        news-filter-btn
+                        active
+                    "
+                    data-category="all"
                 >
-                    <%= category.name %>
+                    All
                 </button>
 
-            <% }) %>
+                <% allCategories.forEach(category => { %>
 
-        </div>
-
-    </section>
-
-    <section class="news-grid-section">
-
-        <div class="news-grid">
-
-            <% articles.forEach(article => { %>
-
-                <a
-                    href="/news/<%= article.slug %>"
-                    class="news-card"
-                    data-categories="<%= (article.categories || []).join(',') %>"
-                >
-                    <img
-                        src="<%= article.hero_image %>"
-                        alt="<%= article.title %>"
-                        class="news-card__image"
+                    <button
+                        class="news-filter-btn"
+                        data-category="<%= category.name %>"
                     >
+                        <%= category.name %>
+                    </button>
 
-                    <div class="news-card__content">
+                <% }) %>
 
-                        <div class="news-card__categories">
+            </div>
 
-                            <% (article.categories || []).forEach(category => { %>
+        </section>
 
-                                <span class="news-category-pill">
-                                    <%= category %>
-                                </span>
+        <section class="news-grid-section">
 
-                            <% }) %>
+            <div class="news-grid">
+
+                <% articles.forEach(article => { %>
+
+                    <a
+                        href="/news/<%= article.slug %>"
+                        class="news-card"
+                        data-categories="<%= (article.categories || []).join(',') %>"
+                    >
+                        <img
+                            src="<%= article.hero_image %>"
+                            alt="<%= article.title %>"
+                            class="news-card__image"
+                        >
+
+                        <div class="news-card__content">
+
+                            <div class="news-card__categories">
+
+                                <% (article.categories || []).forEach(category => { %>
+
+                                    <span class="news-category-pill">
+                                        <%= category %>
+                                    </span>
+
+                                <% }) %>
+
+                            </div>
+
+                            <p class="news-card__date">
+                                <%= new Date(article.published_at).toLocaleDateString() %>
+                            </p>
+
+                            <h2 class="news-card__title">
+                                <%= article.title %>
+                            </h2>
+
+                            <p class="news-card__summary">
+                                <%= article.summary %>
+                            </p>
 
                         </div>
+                    </a>
 
-                        <p class="news-card__date">
-                            <%= new Date(article.published_at).toLocaleDateString() %>
-                        </p>
+                <% }) %>
 
-                        <h2 class="news-card__title">
-                            <%= article.title %>
-                        </h2>
+            </div>
 
-                        <p class="news-card__summary">
-                            <%= article.summary %>
-                        </p>
-
-                    </div>
-                </a>
-
-            <% }) %>
-
-        </div>
+        </section>
 
     </section>
 
