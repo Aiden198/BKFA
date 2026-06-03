@@ -795,13 +795,13 @@ main.page-main-with-hero .side-menu {
 /* ===== PRIVACY PAGE FIX ===== */
 
 .privacy-policy-section {
-  padding: 60px 0;
+  width: 100%;
 }
 
 .privacy-policy-container {
-  max-width: 900px;              /* controls width */
-  margin: 0 auto;                /* centers it */
-  padding: 0 20px;               /* spacing from sides */
+  max-width: 900px;
+  margin: 2rem auto 0;
+  text-align: center;
 }
 
 /* small label */
@@ -820,7 +820,7 @@ main.page-main-with-hero .side-menu {
   font-weight: var(--page-title-weight);
   line-height: var(--page-title-line);
   color: var(--secondary);
-  margin-bottom: 25px;
+  margin: 0 0 1.5rem;
   text-transform: uppercase;
 }
 
@@ -830,6 +830,16 @@ main.page-main-with-hero .side-menu {
   line-height: 1.8;
   color: #333;              /* 🔥 THIS FIXES LIGHT TEXT */
   margin-bottom: 18px;
+}
+
+/* Keep privacy body copy centered inside the shared card without losing readability. */
+.privacy-policy-container p {
+  color: var(--text);
+  font-size: var(--page-body-size);
+  font-weight: var(--page-body-weight);
+  line-height: var(--page-body-line);
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
 }
 
 /* links */
