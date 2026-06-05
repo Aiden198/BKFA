@@ -58,10 +58,10 @@ router.post('/babyshowers', async function(req, res) {
     );
 
     await sendEmail({
-      to: process.env.BABY_SHOWER_EMAIL,
-      subject: 'New Baby Shower Booking',
+      to: req.body.email,
+      subject: 'Thank you for your form Submission to the Birthing Kit Foundation',
       html,
-      replyTo: req.body.email
+      replyTo: process.env.BABY_SHOWER_EMAIL
     });
 
     res.redirect(
