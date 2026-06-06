@@ -1,10 +1,421 @@
+<link rel="stylesheet" href="/stylesheets/ourteam.css">
+
 <%- include('partials/header') %>
 
-<main>
-    <%- include ('partials/aboutUsSideMenu') %>
-    <div class="page-content">
-        <h1> Our Team </h1>
+<main id="our-team-page" class="page-main-with-hero">
+    <section class="page-hero-top" aria-label="Our Team page hero image">
+        <img src="" alt="Placeholder for Our Team hero image">
+    </section>
+
+    <div class="page-body-with-sidebar">
+        <%- include ('partials/aboutUsSideMenu') %>
+
+        <div class="page-content">
+            <div class="staff-section">
+                <h1 class="content-title fly-in" data-fly="left">Our Board</h1>
+
+                <p class="content-text fly-in" data-fly="up">
+                    The Board members of BKFA are all volunteers. The Board works to ensure that BKFA operates efficiently and with integrity.
+                </p>
+
+                <!-- Team Board Grid -->
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-jenny.jpg" alt="Jenny Weaver OAM">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Jenny Weaver</h2>
+                            <p class="member-role">Chairperson</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-joy.jpg" alt="Dr Joy O'Hazy OAM">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Dr Joy O'Hazy OAM</h2>
+                            <p class="member-role">Deputy Chair</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-ted.jpg" alt="Edward (Ted) A'Bear">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Edward (Ted) A'Bear</h2>
+                            <p class="member-role">Director</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-julie.jpg" alt="Dr Julie Monis-Ivett OAM">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Dr Julie Monis-Ivett OAM</h2>
+                            <p class="member-role">Director</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <!-- Cannot find Julie Black's staff photo. Using Vaccant Staff picture in place for the meantime -->
+                        <img src="/images/2022/11/Vaccant-staff2-1.jpg" alt="Julie Black">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Julie Black</h2>
+                            <p class="member-role">Director</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2022/11/BKF-Madhumita-Mazumdar.jpeg" alt="Madhumita Mazumdar">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Madhumita Mazumdar</h2>
+                            <p class="member-role">Director</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2025/08/bkfa-team-clare.jpg" alt="Clare Quartuccio">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Clare Quartuccio</h2>
+                            <p class="member-role">Treasurer</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-angelina.jpg" alt="Angelina Arora">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Angelina Arora</h2>
+                            <p class="member-role">Director</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Carosuel -->
+                <div class="team-carousel-container">
+                    <!-- Uses HTML character entity angle bracket -->
+                    <button class="carousel-btn prev-btn" aria-label="Previous member">&#10094;</button>
+
+                    <div class="carousel-window">
+                        <div class="carousel-track">
+                            <div class="carousel-item active">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Jenny Weaver</h2>
+                                        <p class="carousel-member-role">Chairperson</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-jenny.jpg" alt="Jenny Weaver Oam">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Jenny was a senior adviser in a financial advisory company and retired in 2010. She brings corporate, financial and
+                                    management skills to the Board. She is an active member of Zonta International, having served in many capacities during her 20+
+                                    years of membership. Jenny is an active member of the Zonta Club of Adelaide Torrens and coordinates a Zonta interclub advocacy group.
+                                    She was an inaugural Board member and was awarded an OAM in the King's Birthday Honours in 2023.
+                                </p>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Dr Joy O'Hazy OAM</h2>
+                                        <p class="carousel-member-role">Director</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-joy.jpg" alt="Dr Joy O'Hazy Oam">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Joy is a medical practitioner who has a wide background in administration and strategic planning. She created the Birthing Kit and started
+                                    production in 1999, supported by her fellow members of the Zonta Club of Adelaide Hills, and was an original member of the Zonta Birthing Kit Committee
+                                    and an inaugural Board member of the BKFA. She brings specialist skills in maternal health research and informs the Board on matters of medical research.
+                                </p>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Edward (Ted) A'Bear</h2>
+                                        <p class="carousel-member-role">Director</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-ted.jpg" alt="Edward (Ted) A'Bear">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Ted has worked in international development since 1975 after graduating from Reading University (UK). This has involved working with communities
+                                    in over 50 countries and living with his family in Somalia, Swaziland and Papua New Guinea. He has given support and advice on community development
+                                    to BKFA informally over the last twelve years. He was co-opted to the Board in May 2017. He is pleased to have the opportunity to use his program
+                                    management and international development skills to support BKFA, gained through working with Aid Agencies like DFAT, United Nations and
+                                    internationa and local NGOS.
+                                </p>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Dr Julie Monis-Ivett OAM</h2>
+                                        <p class="carousel-member-role">Director</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-julie.jpg" alt="Dr Julie Monis-Ivett OAM">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Julie is an inagural Board member and brings with her business administration, personnel management skills, and health profession knowledge
+                                    as a partner in a large private dental practice. She is a Charter Member of Zonta Club of Adelaide Hills, serving at Board level for 15 years,
+                                    including that of president for two years. She coordinated the Zonta Birthing Kit Project with Joy O'Hazy from 2000, and was Project Administrator
+                                    from 2000-2007. She was inaugural Chair of the Board from 2006 - 2009, the Zonta District Project Co-coordinator for Australia from 2004 to the present
+                                    and has been the liaison with Zonta International and clubs overseas since 2000.
+                                </p>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Julie Black</h2>
+                                        <p class="carousel-member-role">Director</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2022/11/Vaccant-staff2-1.jpg" alt="Julie Black">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Julie has worked in the not-for-profit sector for 30 years, including 25 years in CEO roles with Asthma SA, Arthritis SA, the RDNS Foundation and Ronald McDonald House.
+                                    A member of Zonta Club of Adelaide Torrens for over a decade, Julie has served on the Board for six years, including two as President. Her board experience also includes roles with Kidsafe,
+                                    the SA Medical Education Association, and Transplant Australia SA and NT. A qualified nurse and midwife, Julie was awarded a gold medal in midwifery. She is a graduate of the Governor’s
+                                    Leadership Foundation program, an ANZAC Fellowship recipient, and has been a finalist in both the Telstra Business Woman of the Year Awards and the SA Nursing and Midwifery Excellence in Education Awards.
+                                </p>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Madhumita Mazumdar</h2>
+                                        <p class="carousel-member-role">Director</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2022/11/BKF-Madhumita-Mazumdar.jpeg" alt="Madhumita Mazumdar">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Madhu is General Manager of IT in a large Australian Experiential Tourism business. She has over 14 years of experience in a wide range of Technology and Leadership roles in Australia, Belgium and India.
+                                    She is a strong technologist with strategic vision, who leads technology-based growth initiatives grounded on business value and user centric design. Her passion for women rights, education and
+                                    financial independence brings her to BKFA board.
+                                </p>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Clare Quartuccio</h2>
+                                        <p class="carousel-member-role">Treasurer</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2025/08/bkfa-team-clare.jpg" alt="Clare Quartuccio">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    With over 15 years experience as a finance professional, Clare has developed broad expertise across multiple industries. She is currently the Finance Manager for a South Australian advanced manufacturing group
+                                    of companies. Her skill set includes finance, leadership, human resource, and strategy. Clare’s problem-solving mindset focuses on operational outcomes that align to the strategy of the organisation. She drives
+                                    change through stakeholder engagement and a collaborative leadership style. Clare’s business expertise and passion for advancing women’s rights motivate her to be part of the BKFA board.
+                                </p>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Angelina Arora</h2>
+                                        <p class="carousel-member-role">Director</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-angelina.jpg" alt="Angelina Arora">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Angelina is a medical doctor with a strong background in global health. Deeply committed to compassion, empathy and social justice, she has supported a number of not-for-profits throughout her career,
+                                    including serving on several national boards. Her work in health equity and social justice has earned recognition at both national and international levels. Among her many honours are the Barbara Hackett
+                                    Medal for Inspiration, the 7NEWS Young Achiever of the Year Award, recognition by Federal Parliament and Dame Marie Bashir for promoting peace and harmony, and being named Young Citizen of the Year.
+                                    She is also a TEDx speaker and a nominee for Young Australian of the Year. As a member of the BKFA Board, Angelina is passionate about advancing maternal health and education, and contributing to meaningful,
+                                    lasting change for women and communities around the world.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    <button class="carousel-btn next-btn" aria-label="Next member">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="staff-section">
+                <h1 class="content-title fly-in" data-fly="left">Our Team</h1>
+                <p class="content-text fly-in" data-fly="up">
+                    We are proud of what we do. Here are the people who make our organisation so great.
+                </p>
+
+                <!-- Team Grid -->
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-adrian.jpg" alt="Adrian Harris">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Adrian Harris</h2>
+                            <p class="member-role">Business Development Manager</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-mercy.jpg" alt="Mercy Oloo">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Mercy Oloo</h2>
+                            <p class="member-role">Program Manager</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2024/12/bkfa-team-hilary.jpg" alt="Hilary Carruthers">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Hilary Carruthers</h2>
+                            <p class="member-role">Assembly Day Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/2022/11/Vaccant-staff2-1.jpg" alt="Emily Ainsworth">
+                        <div class="text-overlay">
+                            <h2 class="member-name">Emily Ainsworth</h2>
+                            <p class="member-role">Social Media and Marketing Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-carousel-container alt-colour">
+                    <!-- Uses HTML character entity angle bracket -->
+                    <button class="carousel-btn prev-btn" aria-label="Previous member">&#10094;</button>
+
+                    <div class="carousel-window">
+                        <div class="carousel-track">
+                            <div class="carousel-item active">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Adrian Harris</h2>
+                                        <p class="carousel-member-role">Business Development Manager</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-adrian.jpg" alt="Adrian Harris">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Adrian has been involved in managing transport and logistics for over 30 years. He has managed the operations of the supplies, storage, and logistics of the BKFA for over 15 years creating effective and
+                                    efficient channels for distribution of clean birth kits to the most challenging of locations.
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Mercy Oloo</h2>
+                                        <p class="carousel-member-role">Program Manager</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-mercy.jpg" alt="Mercy Oloo">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Mercy has a professional background in accounting, entrepreneurship, and community development, with work experience spanning Africa, North America, and Australia. She has been with BKFA for over five years, managing the Clean Birth
+                                    Program and managing in-country projects for the foundation. Mercy is deeply passionate about entrepreneurship and innovation, particularly in empowering communities to improve their economic outcomes.
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Hilary Carruthers</h2>
+                                        <p class="carousel-member-role">Assembly Day Coordinator</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2024/12/bkfa-team-hilary.jpg" alt="Hilary Carruthers">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Hilary oversees the organization of 250-300 groups annually to assemble birthing kits. With nearly 13 years in the role, Hilary is the first point of contact for groups, expertly managing their needs from start to finish.
+                                    Dedicated to ensuring smooth and enjoyable assembly days, she addresses all questions and requirements with care. Hilary’s commitment and passion for her work play a pivotal role in BKFA’s mission to support safe birthing practices worldwide.
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-member-header">
+                                    <div class="member-identity-content">
+                                        <h2 class="carousel-member-name">Emily Ainsworth</h2>
+                                        <p class="carousel-member-role">Social Media and Marketing Coordinator</p>
+                                    </div>
+                                    <div class="member-photo-content">
+                                        <img src="/images/2022/11/Vaccant-staff2-1.jpg" alt="Emily Ainsworth">
+                                    </div>
+                                </div>
+                                <p class="carousel-member-desc">
+                                    Emily is a trained journalist with more than 20 years’ experience in media and communications. As BKFA’s Social Media and Marketing Coordinator, she helps bring the Foundation’s impact to life by telling the stories
+                                    behind every birthing kit – from the volunteers who pack them and the partners who distribute them, to the mothers and babies whose lives they are designed to protect. A natural storyteller, she is passionate about turning statistics
+                                    into stories that inform, connect and inspire action. Emily is the proud mother of two girls, which fuels her passion for helping to build a more equal future for women.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn" aria-label="Next member">&#10095;</button>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
 <%- include('partials/footer') %>
+
+<script>
+
+    // Script that does a variety of important features on this page.
+    // This includes a carousel to show details of each staff member,
+    // as well as clickable above to immediately go to member on the carousel.
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // variable that targets all staff section containers on page
+        const staffSections = document.querySelectorAll('.staff-section');
+
+        // loop through staff sections
+        staffSections.forEach(section => {
+
+            // set up variables with classes
+            const slides = section.querySelectorAll('.carousel-item');
+            const track = section.querySelector('.carousel-track');
+            const prevBtn = section.querySelector('.prev-btn');
+            const nextBtn = section.querySelector('.next-btn');
+            const gridMembers = section.querySelectorAll('.team-grid .team-member');
+            const carouselContainer = section.querySelector('.team-carousel-container');
+
+            // index for staff members
+            let currentIndex = 0
+
+            // function to move through carousel
+            function updateCarousel(newIndex) {
+                // if index goes below 0, go to last entry
+                if (newIndex < 0) {
+                    currentIndex = slides.length - 1;
+                // if index is greater than or equel to length, go to first entry
+                } else if (newIndex >= slides.length) {
+                    currentIndex = 0;
+                // change current position on carousel to indicated index
+                } else {
+                    currentIndex = newIndex;
+                }
+                // make sure the transition is smooth and sliding
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            // section button arrow event listeners
+            // makes index go back by one
+            prevBtn.addEventListener('click', () => {
+                updateCarousel(currentIndex - 1);
+            });
+
+            // makes index go forward by one
+            nextBtn.addEventListener('click', () => {
+                updateCarousel(currentIndex + 1);
+            });
+
+            // make each member clickable, which moves the
+            // view down to the carousel on the members section
+            gridMembers.forEach((member, index) => {
+                member.addEventListener('click', () => {
+                    updateCarousel(index);
+                    carouselContainer.scrollIntoView({
+                        // ensures that the scroll down is smooth and centered
+                        behavior:"smooth",
+                        block:"center"
+                    })
+                })
+            });
+        });
+    });
+
+</script>
+

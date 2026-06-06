@@ -1,0 +1,243 @@
+/* Our Team Page CSS */
+
+/* CSS below copied from donate.css */
+#our-team-page .page-content {
+    text-align: left;
+    background-color: #ffffff;
+    padding: 3rem;
+}
+
+#our-team-page h1 {
+    color: var(--secondary);
+    font-size: var(--page-title-size);
+    font-weight: var(--page-title-weight);
+    margin-bottom: 1.5rem;
+    line-height: var(--page-title-line);
+    text-transform: uppercase;
+}
+
+#our-team-page .content-text {
+    color: var(--text);
+    font-size: var(--page-body-size);
+    font-weight: var(--page-body-weight);
+    line-height: var(--page-body-line);
+    margin-bottom: 1.5rem;
+    max-width: 760px;
+}
+/* -------------------- */
+
+/* Team Grid and effects */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+/* Parent Container for cards */
+.team-member {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer; /* makes it so that it indicates that its clickable when hovered */
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    filter: grayscale(100%); /* Black and white until hovered over */
+    transition: filter 0.4s ease, transform 0.4s ease; /* Should make the transition smoothly when hovered over */
+}
+
+/* Text overlay and styling */
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* added a slight gradient effect so that the text at the bottom is more readable. Maybe not neccesary? */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes text container to bottom */
+    align-items: center; /* centers text */
+    padding: 1.5rem;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+/* When hovered-over, make it fully coloured and slightly larger for effect */
+.team-member:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+/* Makes text appear when hovered-over */
+.team-member:hover .text-overlay {
+    opacity: 1;
+}
+
+/* Text attributes for cards */
+.member-info {
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+}
+
+.member-name {
+    color:#ffffff;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem 0;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.member-role {
+    color: #d9d0f3; /* darker color to make it stand out */
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-identity-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Team Carousel */
+
+.team-carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    max-width: 850px;
+    background: #6b6296;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.015);
+    min-height: 600px; /* prevents the page from moving up and down through carousel */
+}
+
+.team-carousel-container.alt-colour {
+    background: #807791;
+}
+
+.carousel-window {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item {
+    display: flex; /* keeps inactive slides out of sight */
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0; /* space between bio and image */
+    width: 100%;
+    padding: 0 2.5rem; /* creates empty buffer so sliding animation looks more professional */
+    box-sizing: border-box;
+
+}
+
+/* css no longer needed
+.member-bio-content {
+    flex: 1;
+    text-align: left;
+}
+*/
+
+.member-photo-content {
+    flex-shrink: 0;
+    width: 240px;
+    margin-top: 0;
+
+}
+
+.member-photo-content img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    border-radius: 8px;
+}
+
+/* Carousel text and font */
+
+.carousel-member-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+
+}
+
+.carousel-member-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.25rem 0;
+}
+
+.carousel-member-role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d9d0f3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.carousel-member-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #f5f2ff;
+    margin: 0;
+}
+
+.carousel-btn {
+    background: #ffffff;
+    color: #6b6286;
+    border: none;
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background: #d9d0f3;
+    color: #6b6296;
+    transform: scale(1.08);
+}
+
+.staff-section + .staff-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+}
