@@ -26,7 +26,9 @@ router.get('/hostanassemblyday', function(req, res) {
 });
 
 router.get('/babyshowers', function(req, res) {
-  res.render('BabyShowers');
+  res.render('BabyShowers',  {
+    submitted: req.query.submitted
+  });
 });
 
 // Serve the dedicated Corporate Volunteering page from compact, hyphenated, and legacy-cased Volunteer URLs.

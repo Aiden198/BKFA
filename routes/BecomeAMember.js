@@ -24,34 +24,36 @@ router.get('/', function(req, res) {
 
 router.post('/', async function(req, res) {
 
-  const {
-    'g-recaptcha-response': captchaToken
-  } = req.body;
+  if (process.env.NODE_ENV !== 'development') {
+    const {
+      'g-recaptcha-response': captchaToken
+    } = req.body;
 
-  if (!captchaToken) {
-    return res.status(400).send(
-      'Captcha verification failed.'
-    );
-  }
-
-  const verificationURL =
-    'https://www.google.com/recaptcha/api/siteverify';
-
-  const captchaResponse = await axios.post(
-    verificationURL,
-    null,
-    {
-      params: {
-        secret: process.env.RECAPTCHA_SECRET_KEY,
-        response: captchaToken
-      }
+    if (!captchaToken) {
+      return res.status(400).send(
+        'Captcha verification failed.'
+      );
     }
-  );
 
-  if (!captchaResponse.data.success) {
-    return res.status(400).send(
-      'Captcha verification failed.'
+    const verificationURL =
+      'https://www.google.com/recaptcha/api/siteverify';
+
+    const captchaResponse = await axios.post(
+      verificationURL,
+      null,
+      {
+        params: {
+          secret: process.env.RECAPTCHA_SECRET_KEY,
+          response: captchaToken
+        }
+      }
     );
+
+    if (!captchaResponse.data.success) {
+      return res.status(400).send(
+        'Captcha verification failed.'
+      );
+    }
   }
 
   try {
@@ -71,10 +73,10 @@ router.post('/', async function(req, res) {
     );
 
     await sendEmail({
-      to: process.env.MEMBERSHIP_EMAIL,
-      subject: 'New Membership Application',
+      to: req.body.email,
+      subject: 'Thank you for your membership application',
       html,
-      replyTo: req.body.email
+      replyTo: process.env.MEMBERSHIP_EMAIL
     });
 
     res.redirect(
