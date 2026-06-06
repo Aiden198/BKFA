@@ -15,11 +15,11 @@
                     For just $30 for an individual and $70 for a corporate membership, becoming a BKFA member is a great way to show your support.
                     Anyone over the age of 18 is eligible and membership lasts for one year. BKFA Members will receive the newsletter and Annual Report,
                     plus general updates and occasional appeals. Members are also invited to attend and vote at the AGM. If you do not wish to receive
-                    this information please confirm this by email to info@bkfa.org.au.
+                    this information please confirm this by email to <a href="mailto:info@bkfa.org.au">info@bkfa.org.au</a>.
                 </p>
 
                 <p>
-                    If you would like to become a member, download the Membership Application Form and email it to info@bkfa.org.au or
+                    If you would like to become a member, download the Membership Application Form and email it to <a href="mailto:info@bkfa.org.au">info@bkfa.org.au</a> or
                     simply complete the form below. Membership runs from the time you join until June 30th.
                 </p>
             </div>
@@ -612,5 +612,11 @@
     );
 
 </script>
+
+<% if (submitted) { %>
+<script>
+  alert("🎉 Thank you! Your membership application has been submitted successfully. A confirmation email has been sent to you.");
+</script>
+<% } %>
 
 <%- include('partials/footer') %>

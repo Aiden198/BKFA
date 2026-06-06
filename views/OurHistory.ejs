@@ -1,12 +1,16 @@
 <%- include('partials/header') %>
 
-<main class="about-page">
-    <%- include('partials/aboutUsSideMenu') %>
+<main class="page-main-with-hero about-main">
+    <section class="page-hero-top about-hero-top" aria-label="Our history hero image">
+        <img src="/images/2022/11/BKF-line-up-holding-kits.jpg" alt="Women holding clean birth kits">
+    </section>
 
-    <div class="page-content our-history-page">
-        <section class="history-text-section">
-            <p class="about-us-label">ABOUT US</p>
-            <h1>OUR HISTORY</h1>
+    <div class="page-body-with-sidebar">
+        <%- include('partials/aboutUsSideMenu') %>
+
+        <div class="page-content about-page-content our-history-page">
+            <section class="history-text-section">
+                <h1>OUR HISTORY</h1>
 
             <p>
                 The concept of the Birthing Kit began in 1995, when Adelaide Doctor, Joy O’Hazy, attended the
@@ -28,7 +32,7 @@
             <p>
                 You can access the <a href="https://www.bkfa.org.au/wp-content/uploads/2023/07/BKFA-Constitution.pdf">BKFA Constitution here.</a>
             </p>
-        </section>
+            </section>
 
         <section class="history-video-section">
             <div class="history-video-wrapper">
@@ -63,6 +67,7 @@
             <div class="milestone-item"><strong>2025</strong> – BKFA hits a major milestone: 3 million Clean Birth Kits distributed worldwide.</div>
             <div class="milestone-item"><strong>2026</strong> – The Foundation officially marks 20 years of life-saving work supporting safer births for mothers and babies.</div>
         </section>
+        </div>
     </div>
 </main>
 

@@ -19,7 +19,7 @@ async function sendEmail({
 }) {
 
     const mailOptions = {
-        from: `"BKFA Website" <${process.env.EMAIL_USER}>`,
+        from: `"The Birthing Kit Foundation" <${process.env.EMAIL_USER}>`,
         to,
         subject,
         html,

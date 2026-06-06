@@ -1,11 +1,14 @@
 <%- include("sidemenu", {
     title: "Get Involved",
+    titleHref: "/volunteer",
     items: [
-        { href: "/Volunteer", label: "Volunteer",
+        { href: "/volunteer", label: "Volunteer",
             sublinks: [
-                { href: "/Volunteer/KitsAtHome", label: "Kits At Home" },
-                { href: "/Volunteer/HostAnAssemblyDay", label: "Host An Assembly Day" },
-                { href: "/Volunteer/BabyShowers", label: "Baby Showers" }
+                { href: "/volunteer/kitsathome", label: "Kits At Home" },
+                { href: "/volunteer/hostanassemblyday", label: "Host An Assembly Day" },
+                { href: "/volunteer/babyshowers", label: "Baby Showers" },
+                // Keep Corporate Volunteering listed beneath Baby Showers in the Get Involved menu.
+                { href: "/volunteer/corporate-volunteering", label: "Corporate Volunteering" }
             ]
         },
         { href: "/Donate", label: "Donate",

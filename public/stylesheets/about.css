@@ -1,0 +1,351 @@
+.about-main .page-body-with-sidebar {
+    align-items: flex-start;
+}
+
+.about-hero-top img {
+    object-position: center 38%;
+}
+
+.page-content.about-page-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 1100px;
+    margin-top: 0;
+    text-align: left;
+}
+
+.about-text-section,
+.history-text-section,
+.history-video-section,
+.milestones-section,
+.supporters-hero,
+.supporters-content-section,
+.supporters-image-section {
+    max-width: 980px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+.about-text-section h1,
+.history-text-section h1,
+.supporters-title,
+.supporters-page h1 {
+    margin: 0 0 1.6rem;
+    color: var(--secondary);
+    font-size: var(--page-title-size);
+    font-weight: var(--page-title-weight);
+    line-height: var(--page-title-line);
+    text-transform: uppercase;
+}
+
+.about-text-section p,
+.history-text-section p,
+.milestone-item,
+.supporters-content-section p,
+.supporters-club-list p {
+    color: var(--text);
+    font-size: var(--page-body-size);
+    font-weight: var(--page-body-weight);
+    line-height: var(--page-body-line);
+    text-align: left;
+}
+
+.about-text-section p,
+.history-text-section p,
+.supporters-content-section p {
+    margin: 0 0 1.35rem;
+}
+
+.history-text-section a,
+.supporters-link {
+    color: #7aaab4;
+    font-weight: 900;
+    text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
+}
+
+.history-text-section a:hover,
+.supporters-link:hover {
+    text-decoration: underline;
+}
+
+.history-video-section {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+.history-video-wrapper {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+}
+
+.history-video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.milestones-section h2,
+.supporters-content-section h2 {
+    margin: 0 0 1.4rem;
+    color: var(--secondary);
+    font-size: var(--page-subtitle-size);
+    font-weight: var(--page-subtitle-weight);
+    line-height: var(--page-subtitle-line);
+    text-transform: uppercase;
+}
+
+.milestone-item {
+    margin: 0 0 1rem;
+    padding: 1rem 1.25rem;
+    border: 3px solid #8fbfc8;
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.milestone-item:nth-of-type(even) {
+    border-color: #8f8ac0;
+}
+
+.milestone-item strong {
+    color: var(--secondary);
+    font-weight: 900;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    max-width: 980px;
+    margin-top: 2.5rem;
+}
+
+.team-card {
+    margin: 0;
+    padding: 1rem;
+    border: 3px solid #8fbfc8;
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.team-card:nth-child(even) {
+    border-color: #8f8ac0;
+}
+
+.team-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.team-card h2 {
+    margin: 1rem 0 0;
+    color: var(--secondary);
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1.25;
+}
+
+.supporters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 980px;
+    margin-top: 2.5rem;
+}
+
+.supporter-logo {
+    min-height: 160px;
+    padding: 1.5rem;
+    border: 3px solid #8fbfc8;
+    border-radius: 18px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.supporter-logo:nth-child(even) {
+    border-color: #8f8ac0;
+}
+
+.supporter-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: #7aaab4;
+}
+
+.supporter-logo img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.supporters-page {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.supporters-hero {
+    margin-bottom: 2.5rem;
+}
+
+.supporters-content-section {
+    margin-bottom: 3rem;
+}
+
+.supporters-content-section:last-child {
+    margin-bottom: 0;
+}
+
+.supporters-resources-grid,
+.supporters-impact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 980px;
+    margin-top: 1.5rem;
+}
+
+.supporters-resources-grid .card,
+.supporters-impact-grid .card {
+    width: 100%;
+    min-height: 92px;
+    height: auto;
+    padding: 1rem 1.25rem;
+    border: 3px solid #8fbfc8;
+    border-radius: 18px;
+    background: #ffffff;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.supporters-resources-grid .card:hover,
+.supporters-impact-grid .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: #7aaab4;
+}
+
+.supporters-resources-grid .card__text,
+.supporters-impact-grid .card__text {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: inherit;
+    text-align: left;
+}
+
+.supporters-resources-grid .card__text h3,
+.supporters-impact-grid .card__text h3 {
+    display: block;
+    margin: 0;
+    color: var(--secondary);
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.supporters-resources-grid .card__text p,
+.supporters-impact-grid .card__text p {
+    display: block;
+    margin: 0.35rem 0 0;
+    color: var(--text);
+    text-align: left;
+}
+
+.supporters-club-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+    text-align: center;
+}
+
+.supporters-club-list p {
+    margin: 0;
+    text-align: center;
+}
+
+.supporters-image-card,
+.supporters-image-banner,
+.supporters-gallery-item,
+.supporters-logo-block {
+    overflow: hidden;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+.supporters-image-card img,
+.supporters-image-banner img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 18px 18px 0 0;
+    box-shadow: none;
+}
+
+.supporters-image-banner img {
+    border-radius: 18px;
+}
+
+.supporters-image-caption {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.supporters-logo-block {
+    padding: 2rem;
+}
+
+.supporters-logo-block img {
+    max-width: 320px;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.supporters-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.supporters-gallery-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: none;
+}
+
+@media (max-width: 900px) {
+    .team-grid,
+    .supporters-grid,
+    .supporters-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

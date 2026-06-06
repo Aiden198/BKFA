@@ -1,4 +1,3 @@
-<% locals.showDonateBanner = true; %>
 <%- include('partials/header') %>
 
 <script src="/javascripts/countUp.umd.js"></script>
@@ -40,14 +39,6 @@ const kitItems = [
     }
 ];
 %>
-
-<script>
-  const bar = document.querySelector('.donate-bar');
-  const nav = document.querySelector('.navbar');
-  if (bar && nav) {
-    nav.style.top = bar.offsetHeight + 'px';
-  }
-</script>
 
 <main class="home-page">
     <header class="hero hero--feature">
@@ -119,23 +110,7 @@ const kitItems = [
                 </figure>
             </div>
 
-            <div class="cards-grid repeat-four mission-cta-grid fly-in" data-fly="up">
-                <a href="/donate" class="cta-band">
-                    <h3>DONATE NOW</h3>
-                </a>
-
-                <a href="/volunteer" class="cta-band">
-                    <h3>PACK KITS</h3>
-                </a>
-
-                <a href="/resources" class="cta-band">
-                    <h3>ASSEMBLY DAY MANUAL</h3>
-                </a>
-
-                <a href="/OurProjects/FieldPartners" class="cta-band">
-                    <h3>BECOME A FIELD PARTNER</h3>
-                </a>
-            </div>
+            <!-- Mission CTA buttons removed so the about section flows directly into the video section. -->
         </div>
     </section>
 

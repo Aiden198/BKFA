@@ -3,15 +3,16 @@
 
 <%- include('partials/header') %>
 
-<div class="achievements-cover">
-    <img src="/images/2022/10/DSC00538-scaled.jpg" alt="Banner Image">
-</div>
+<main class="page-main-with-hero our-work-main achievements-main">
+    <section class="page-hero-top our-work-hero achievements-hero" aria-label="Our achievements hero image">
+        <img src="/images/2022/10/DSC00538-scaled.jpg" alt="Community members supported by BKFA programs">
+    </section>
 
-<main class="about-page">
-    <%- include('partials/ourProjectsSideMenu') %>
+    <div class="page-body-with-sidebar">
+        <%- include('partials/ourProjectsSideMenu') %>
 
-    <div class="page-content our-history-page">
-        <section class="achievements-text-section">
+        <div class="page-content our-work-content our-history-page">
+            <section class="achievements-text-section">
             <h1>OUR ACHIEVEMENTS</h1>
             <h2>Resources</h2>
             <p>From our very first 100 kits sent to Papua New Guinea, we received positive feedback on the impact of the birthing kits. The Traditional Birth Attendants (TBA) could see more women and babies surviving as a result of these kits, and universally all requested more.</p>
@@ -216,7 +217,8 @@
             }) %>
 
 
-        </section>
+            </section>
+        </div>
     </div>
 </main>
 

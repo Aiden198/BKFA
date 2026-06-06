@@ -3,23 +3,19 @@
 
 <%- include('partials/header') %>
 
-<div class="buy-kits-cover">
-    <img src="/images/2022/10/DSC09131-scaled.jpg" alt="">
-</div>
+<main class="page-main-with-hero our-work-main buy-kits-main">
+    <section class="page-hero-top our-work-hero buy-kits-hero" aria-label="Buy assembled kits hero image">
+        <img src="/images/2022/10/DSC09131-scaled.jpg" alt="Boxes of clean birth kits ready for dispatch">
+    </section>
 
-<main class="about-page">
+    <div class="page-body-with-sidebar">
+        <%- include('partials/cleanBirthKitsSideMenu') %>
 
-    <%- include('partials/getInvolvedSideMenu') %>
+        <div class="page-content our-work-content buy-kits-content">
+            <section class="history-text-section">
+                
 
-    <div class="page-content our-history-page">
-
-        <section class="history-text-section">
-
-            <p class="about-us-label">
-                CLEAN BIRTH KITS
-            </p>
-
-            <h1>BUY KITS</h1>
+                <h1>BUY KITS</h1>
 
             <p>
                 Clean Birth Kits can be purchased and shipped to your organisation.
@@ -44,17 +40,11 @@
                 If you require kits shipped to a destination outside of Australia, please contact us via email.
             </p>
 
-        </section>
+            </section>
 
-    </div>
-
-</main>
-
-<div class="map-form-section">
-
-    <div class="map-form-card">
-
-        <h2>BUY ASSEMBLED KITS</h2>
+            <section class="map-form-section">
+                <div class="map-form-card">
+                    <h2>BUY ASSEMBLED KITS</h2>
 
         <form
             method="POST"
@@ -347,9 +337,11 @@
 
         </form>
 
+                </div>
+            </section>
+        </div>
     </div>
-
-</div>
+</main>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 

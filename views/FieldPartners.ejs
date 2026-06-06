@@ -3,11 +3,15 @@
 
 <%- include('partials/header') %>
 
-<main>
-    <%- include ('partials/ourProjectsSideMenu') %>
-    <div class="page-content our-history-page">
-        <section class="history-text-section">
-            <p class="about-us-label">OUR PROJECTS</p>
+<main class="page-main-with-hero our-work-main field-partners-main">
+    <section class="page-hero-top our-work-hero field-partners-hero" aria-label="Field partners hero image">
+        <img src="/images/2022/11/map-of-birthing-kit-distribution.jpg" alt="Map showing clean birth kit distribution">
+    </section>
+
+    <div class="page-body-with-sidebar">
+        <%- include('partials/ourProjectsSideMenu') %>
+        <div class="page-content our-work-content our-history-page">
+            <section class="history-text-section">
             <h1>FIELD PARTNERS</h1>
 
             <p>BKFA works in partnership with NGOs, governments, and health service providers around the world to end preventable maternal and newborn deaths. Our approach is two-fold:</p>
@@ -35,7 +39,8 @@
                 </a>
             </div>
 
-        </section>
+            </section>
+        </div>
     </div>
 </main>
 

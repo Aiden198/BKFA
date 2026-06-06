@@ -16,7 +16,7 @@ function buildBabyShowerEmail(data) {
                 border-bottom: 3px solid #555583;
                 padding-bottom: 1rem;
             ">
-                New Baby Shower Booking
+                Thank you for your form Submission to the Birthing Kit Foundation
             </h1>
 
             <h2 style="color: #555583;">

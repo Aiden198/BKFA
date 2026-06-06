@@ -2,16 +2,21 @@
 
 <%- include('partials/header') %>
 
-<main id="projects-page" class="main-container--sidebar">
-    <%- include ('partials/ourWorkSideMenu') %>
-    <div class="page-content">
-        <h1>Our Projects</h1>
+<main id="projects-page" class="page-main-with-hero our-work-main">
+    <section class="page-hero-top our-work-hero projects-hero" aria-label="Our projects hero image">
+        <img src="/images/2022/10/Womens-VTC_hands2-scaled.jpg" alt="Women participating in a maternal health project">
+    </section>
 
-        <p class="content-text fly-in" data-fly="left">Since 2005, we have been working in developing countries to achieve long-term change and are in the
-            process of growing our innovation partnerships across the world.
-            Our projects are driven by our Global Partners and are designed through a collaborative process in response to
-            local maternal and newborn health issues.
-        </p>
+    <div class="page-body-with-sidebar">
+        <%- include ('partials/ourWorkSideMenu') %>
+        <div class="page-content our-work-content">
+            <h1>Our Projects</h1>
+
+            <p class="content-text fly-in" data-fly="left">Since 2005, we have been working in developing countries to achieve long-term change and are in the
+                process of growing our innovation partnerships across the world.
+                Our projects are driven by our Global Partners and are designed through a collaborative process in response to
+                local maternal and newborn health issues.
+            </p>
 
         <%- include("partials/expandable", {
           title: "ETHIOPIA",
@@ -70,6 +75,7 @@
         }) %>
 
 
+        </div>
     </div>
 </main>
 
