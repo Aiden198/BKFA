@@ -41,6 +41,15 @@ router.get([
   res.render('CorporateVolunteering');
 });
 
+router.get([
+  '/workplacegiving',
+  '/workplace-giving',
+  '/WorkplaceGiving',
+  '/Workplace-Giving'
+], function(req, res) {
+  res.render('WorkplaceGiving');
+});
+
 router.post('/babyshowers', async function(req, res) {
 
   try {
