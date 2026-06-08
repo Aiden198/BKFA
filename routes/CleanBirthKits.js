@@ -85,6 +85,12 @@ router.post('/buyassembledkits', async function(req, res) {
       replyTo: req.body.email
     });
 
+    await sendEmail({
+    to: req.body.email,
+    subject: 'Thank you for your Clean Birth Kit order',
+    html  
+    });
+
     res.redirect(
       '/cleanbirthkits/buyassembledkits?submitted=1'
     );

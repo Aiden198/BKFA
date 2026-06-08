@@ -13,12 +13,43 @@ const buildBabyShowerEmail = require(
   '../services/templates/babyShowerEmail'
 );
 
+const buildKitOrderEmail = require(
+  '../services/templates/kitOrderEmail'
+);
+
 router.get('/', function(req, res) {
   res.render('Volunteer');
 });
 
 router.get('/kitsathome', function(req, res) {
-  res.render('KitsAtHome');
+  res.render('KitsAtHome', {
+    submitted: req.query.submitted === '1'
+  });
+});
+
+router.post('/kitsathome', async function(req, res) {
+  try {
+    const newSubmission = {
+      ...req.body,
+      submittedAt: new Date().toISOString()
+    };
+
+    await saveSubmission('kits-at-home-submissions', newSubmission);
+
+    const html = buildKitOrderEmail(newSubmission);
+
+    await sendEmail({
+      to: req.body.email,
+      subject: 'Thank you for your Kits At Home booking',
+      html
+    });
+
+    res.redirect('/volunteer/kitsathome?submitted=1');
+
+  } catch (err) {
+    console.error('Kits At Home form error:', err);
+    res.status(500).send('There was an error submitting the form.');
+  }
 });
 
 router.get('/hostanassemblyday', function(req, res) {

@@ -5,3 +5,4 @@ git add views/partials/footer.ejsnode_modules/
 
 data/baby-shower-submissions.json
 data/membership-submissions.json
+data/kits-at-home-submissions.json
