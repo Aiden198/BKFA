@@ -7,14 +7,9 @@ const db = require('./db');
 async function runSqlFile(filePath, label) {
   const sql = await fs.readFile(filePath, 'utf8');
 
-  if (!sql.trim()) {
-    console.log(`[DB Setup] ${label} is empty, skipping.`);
-    return;
-  }
-
-  console.log(`[DB Setup] Running ${label}...`);
+  console.log(`Running ${label}...`);
   await db.query(sql);
-  console.log(`[DB Setup] ${label} completed.`);
+  console.log(`${label} completed.`);
 }
 
 async function setupDatabase() {
@@ -25,9 +20,9 @@ async function setupDatabase() {
     await runSqlFile(schemaPath, 'schema.sql');
     await runSqlFile(seedPath, 'seed.sql');
 
-    console.log('[DB Setup] Database setup finished successfully.');
+    console.log('Database setup finished successfully.');
   } catch (err) {
-    console.error('[DB Setup] Failed:', err);
+    console.error('Failed:', err);
   } finally {
     await db.end();
   }

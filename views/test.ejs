@@ -57,6 +57,25 @@
             </div>
 
             </section>
+
+            <%- include('partials/expandable', {
+                title: 'What is this section?',
+                content: `
+                <p>This is a reusable expandable/dropdown section.</p>
+                <p>It can be used on any page by changing the title and content.</p>
+                `
+            }) %>
+
+            <%- include('partials/expandable', {
+                title: 'Another dropdown',
+                content: `
+                <ul>
+                    <li>Reusable</li>
+                    <li>Clean</li>
+                    <li>Good for FAQ-style sections</li>
+                </ul>
+                `
+            }) %>
     </div>
 </main>
 
