@@ -33,6 +33,13 @@ const searchPages = [
     keywords: 'member membership join get involved'
   },
   {
+    title: 'Corporate Support',
+    url: '/corporate-support',
+    view: 'CorporateSupport.ejs',
+    description: 'Explore corporate support, employee engagement, ESG, CSR and workplace giving opportunities with BKFA.',
+    keywords: 'corporate support csr esg employee engagement workplace giving corporate volunteering'
+  },
+  {
     title: 'Clean Birth Kits',
     url: '/cleanbirthkits',
     view: 'CleanBirthKits.ejs',
