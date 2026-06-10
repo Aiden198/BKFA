@@ -7,6 +7,8 @@
         <%- include ('partials/aboutUsSideMenu') %>
 
         <div class="page-content">
+            <!-- The 'staff-section' class allows you to break up staff types, as long as the structure is followed. Based on the script
+             below, carousel and buttons are separated. -->
             <div class="staff-section">
                 <h1 class="content-title fly-in" data-fly="left">Our Board</h1>
 
@@ -387,13 +389,16 @@
     document.addEventListener('DOMContentLoaded', () => {
 
         // variable that targets all staff section containers on page
+        // with the structure above, this allows seperate carousels for each section
         const staffSections = document.querySelectorAll('.staff-section');
 
         // loop through staff sections
         staffSections.forEach(section => {
 
             // set up variables with classes
+            // grabs all items inside the carousel to know calculate number
             const slides = section.querySelectorAll('.carousel-item');
+            //
             const track = section.querySelector('.carousel-track');
             const prevBtn = section.querySelector('.prev-btn');
             const nextBtn = section.querySelector('.next-btn');
@@ -415,7 +420,7 @@
                 } else {
                     currentIndex = newIndex;
                 }
-                // make sure the transition is smooth and sliding
+                // slide only by the same amount (total length of the member slide)
                 track.style.transform = `translateX(-${currentIndex * 100}%)`;
             }
 

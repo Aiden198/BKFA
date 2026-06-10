@@ -152,6 +152,7 @@
 
 .carousel-track {
     display: flex;
+    /* makes the carousel slide smooth */
     transition: 0.5s ease-in-out;
     position: relative;
     width: 100%;
@@ -255,6 +256,7 @@
 
 /* Donors section */
 .donor-partners-section {
+    /* ensures that top and bottom padding and automatically calculate the left/right padding */
     padding: 4rem max(1.5rem, calc((100% - var(--container)) / 2 + 1rem));
     background-color: #02ADA0;
     border-top: 1px solid #f0f0f0;
