@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function isVisibleOnLoad(element) {
-    const rect = element.getBoundingClientRect();
+    const rect = element.getBoundingClientRect(); // rel position
     return rect.top < window.innerHeight && rect.bottom > 0; // returns true if any part visible
   }
 
-  const observer = new IntersectionObserver((entries, obs) => {
+  const observer = new IntersectionObserver((entries, obs) => { // triggers when entering viewport
     entries.forEach((entry) => {
-      if (entry.isIntersecting || entry.intersectionRatio > 0) { // a little redundant but safe
+      if (entry.isIntersecting || entry.intersectionRatio > 0) { //function of observer but safer
         const el = entry.target;
         el.classList.add("fly-show");
         obs.unobserve(el);
@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, {
     threshold: 0,
-    rootMargin: "0px 0px -10% 0px"
+    rootMargin: "0px 0px -10% 0px" // lets the element enter bottom 10% before triggering
   });
 
   flyElements.forEach((element) => {
     if (isVisibleOnLoad(element)) {
-      element.classList.add("fly-show");
+      element.classList.add("fly-show");  // if already visible, just show it without animation
     } else {
-      const direction = normaliseDirection(element.dataset.fly);
+      const direction = normaliseDirection(element.dataset.fly); // prepare animation for later
       element.classList.add("fly-in-prepare");
       element.classList.add(`fly-start-${direction}`);
       observer.observe(element);

@@ -1,6 +1,8 @@
 const fs = require('fs').promises;
 const path = require('path');
 
+// saves to json file for records just in case
+
 async function saveSubmission(fileName, submissionData) {
 
     try {

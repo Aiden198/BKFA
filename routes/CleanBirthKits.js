@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var axios = require('axios');
+var axios = require('axios'); // used to varify captcha 
 
 const {
   saveSubmission
@@ -88,7 +88,7 @@ router.post('/buyassembledkits', async function(req, res) {
     await sendEmail({
     to: req.body.email,
     subject: 'Thank you for your Clean Birth Kit order',
-    html  
+    html
     });
 
     res.redirect(
