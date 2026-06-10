@@ -1,8 +1,10 @@
+# Local dependencies and environment secrets should never be committed.
 node_modules/
 .env
 .DS_Store
 git add views/partials/footer.ejsnode_modules/
 
+# Form submissions are generated while the application is running.
 data/baby-shower-submissions.json
 data/membership-submissions.json
 data/kits-at-home-submissions.json

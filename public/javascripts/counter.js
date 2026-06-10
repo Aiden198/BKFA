@@ -1,16 +1,17 @@
+// Start the impact counters after the page and CountUp library have loaded.
 window.onload = function() {
 
-    // Shared options for scroll spy.
+    // Animate each counter once when it first enters the viewport.
     const animateOptions = {
         autoAnimate: true,
         autoAnimateOnce: true,
     }
 
-    // Total Counter consts
+    // Keep the displayed values and suffixes aligned with the homepage copy.
     const totalKits = new countUp.CountUp('count-total-kits', 3, {
         ...animateOptions,
         suffix: 'm',
-        // Higher duration as it syncs up faster due to single digit I believe.
+        // Give the short "3m" counter more time so it finishes with the others.
         duration: 5
     });
 

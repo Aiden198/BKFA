@@ -3,6 +3,8 @@ var router = express.Router();
 var path = require('path');
 var fs = require('fs');
 
+// This list is the searchable site index. Add a page here when it should
+// appear in search results, then provide a few terms visitors may use for it.
 const searchPages = [
   {
     title: 'Home',
@@ -124,6 +126,7 @@ const searchPages = [
     keywords: 'twenty years celebrate anniversary kits'
   }
 ].map(function(page) {
+  // Build the searchable text once at startup instead of on every request.
   return Object.assign({}, page, {
     searchText: buildSearchText(page)
   });
@@ -131,6 +134,8 @@ const searchPages = [
 
 function readViewText(viewName) {
   try {
+    // Strip EJS, scripts, styles, tags, and entities so only readable page
+    // content contributes to search matching.
     return fs.readFileSync(path.join(__dirname, '..', 'views', viewName), 'utf8')
       .replace(/<%[\s\S]*?%>/g, ' ')
       .replace(/<script[\s\S]*?<\/script>/gi, ' ')
@@ -138,10 +143,12 @@ function readViewText(viewName) {
       .replace(/<[^>]+>/g, ' ')
       .replace(/&[a-zA-Z0-9#]+;/g, ' ');
   } catch (error) {
+    // A missing view should not prevent the rest of the site from starting.
     return '';
   }
 }
 
+// Use a simple lowercase word format for both indexed content and user input.
 function normaliseText(text) {
   return String(text || '')
     .toLowerCase()
@@ -150,6 +157,7 @@ function normaliseText(text) {
 }
 
 function searchVariants(term) {
+  // Include a basic singular or plural alternative without adding a stemmer.
   if (term.endsWith('s') && term.length > 3) {
     return [term, term.slice(0, -1)];
   }
@@ -162,6 +170,7 @@ function searchVariants(term) {
 }
 
 function buildSearchText(page) {
+  // Combine curated metadata with the visible copy from the EJS template.
   return normaliseText([
     page.title,
     page.url,
@@ -172,6 +181,8 @@ function buildSearchText(page) {
 }
 
 function scorePage(page, terms) {
+  // A normal content match is worth one point. Matches in the title and
+  // curated keywords receive extra weight so the most relevant page rises.
   return terms.reduce(function(score, term) {
     const variants = searchVariants(term);
     const matches = variants.filter(function(variant) {
@@ -198,6 +209,7 @@ router.get('/', function(req, res) {
   const query = (req.query.q || '').trim();
   const terms = normaliseText(query).split(/\s+/).filter(Boolean);
 
+  // Score, remove unrelated pages, and return only the ten strongest matches.
   const results = terms.length
     ? searchPages
         .map(function(page) {

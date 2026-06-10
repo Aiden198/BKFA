@@ -1,5 +1,6 @@
 const dropdowns = document.querySelectorAll(".dropdown");
 
+// Add click support to dropdown buttons while leaving linked headings alone.
 dropdowns.forEach(dropdown => {
     const dropdownBtn = dropdown.querySelector(".dropdown-btn");
 
@@ -10,15 +11,17 @@ dropdowns.forEach(dropdown => {
     dropdownBtn.addEventListener("click", (e) => {
         e.stopPropagation();
 
-        dropdowns.forEach(d => { // romove others
+        // Close the other menus before opening or closing this one.
+        dropdowns.forEach(d => {
             if(d !== dropdown) d.classList.remove("active");
         });
 
-        dropdown.classList.toggle("active"); // toggle current
+        dropdown.classList.toggle("active");
     });
 });
 
-document.addEventListener("click", () => { // listens for click and removes
+// Clicking anywhere outside a dropdown closes all open menus.
+document.addEventListener("click", () => {
     dropdowns.forEach(dropdown => {
         dropdown.classList.remove("active");
     });

@@ -2,6 +2,7 @@
 
 <%- include('partials/header') %>
 
+<!-- Each question uses the shared expandable partial and accordion script. -->
 <main id="faq-page" class="page-main-with-hero our-work-main">
     <section class="page-hero-top our-work-hero faq-hero" aria-label="Frequently asked questions hero image">
         <img src="/images/2025/04/BKFA-community-AD-feb-7631.jpg" alt="Volunteers preparing clean birth kits">
@@ -13,6 +14,7 @@
         <div class="page-content our-work-content">
             <h1 class="content-title">Frequently Asked Questions</h1>
 
+        <!-- Answers remain HTML strings because the partial renders rich content. -->
         <%- include("partials/expandable", {
           title: "How do you host an Assembly Day and what's involved in getting started?",
           content: `
@@ -103,6 +105,7 @@
           `
         }) %>
 
+        <!-- Source notes stay outside the accordions so they are always visible. -->
         <section class="faq-notes" aria-label="Frequently asked questions references">
             <p>(1) The <em>Six Principles of Cleanliness at Birth</em> are: clean hands, clean perineum, nothing unclean to be introduced into the vagina, clean delivery surface, cleanliness in cutting the umbilical cord, cleanliness for cord care of the newborn baby (WHO 1996 Essential Newborn Care: Report of a Technical Working Group).</p>
 
