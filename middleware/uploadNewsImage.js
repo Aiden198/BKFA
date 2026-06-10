@@ -1,8 +1,8 @@
-const multer = require('multer');
+const multer = require('multer');  // for uploads
 
 const path = require('path');
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage({ // NEED TO CHANGE TO PERSISTANT STORAGE FOR LAUNCH, ie railway volume
 
     destination: (req, file, cb) => {
 
@@ -14,12 +14,12 @@ const storage = multer.diskStorage({
         const uniqueName =
             Date.now() +
             '-' +
-            Math.round(Math.random() * 1e9);
+            Math.round(Math.random() * 1e9); // no unique names, probably change later
 
         cb(
             null,
             uniqueName +
-            path.extname(file.originalname)
+            path.extname(file.originalname)  // keeps original extension like .png
         );
     }
 });
@@ -34,7 +34,7 @@ const fileFilter = (req, file, cb) => {
 
     if (allowedTypes.includes(file.mimetype)) {
 
-        cb(null, true);
+        cb(null, true); // (no error, allow file)
 
     } else {
 

@@ -1,9 +1,9 @@
 const db = require('../db/db');
 
-const fs = require('fs');
+const fs = require('fs');   // For deleting images when articles are deleted
 const path = require('path');
 
-exports.getAllPublishedArticles = async () => {
+exports.getAllPublishedArticles = async () => {  // gets all published articles with catagory
     const [rows] = await db.query(`
         SELECT
             na.*,
@@ -35,7 +35,7 @@ exports.getAllPublishedArticles = async () => {
     }));
 };
 
-exports.getArticleBySlug = async (slug) => {
+exports.getArticleBySlug = async (slug) => { // returns article with given slug
     const [articles] = await db.query(`
         SELECT *
         FROM news_articles
@@ -72,7 +72,7 @@ exports.getArticleCategories = async (articleId) => {
     return categories;
 };
 
-exports.getFeaturedArticle = async () => {
+exports.getFeaturedArticle = async () => { // newest featured article
     const [rows] = await db.query(`
         SELECT *
         FROM news_articles
@@ -118,7 +118,7 @@ exports.createArticle = async (articleData) => {
     return result.insertId;
 };
 
-exports.attachCategoriesToArticle = async (
+exports.attachCategoriesToArticle = async ( // links aarticle to categories in join table
     articleId,
     categoryIds
 ) => {
@@ -182,7 +182,7 @@ exports.createBlock = async ({
     ]);
 };
 
-exports.slugExists = async (slug) => {
+exports.slugExists = async (slug) => {  //checks for slug, used in generateUniqueSlug
 
     const [rows] = await db.query(`
         SELECT article_id
@@ -194,7 +194,7 @@ exports.slugExists = async (slug) => {
     return rows.length > 0;
 };
 
-exports.createImageBlock = async ({
+exports.createImageBlock = async ({ // need image path and caption
     articleId,
     order,
     image_path,
@@ -236,16 +236,16 @@ exports.deleteArticle = async (articleId) => {
     await db.query(`
         DELETE FROM news_articles
         WHERE article_id = ?
-    `, [articleId]);
+    `, [articleId]); // cascade delete deletes blocks and such
 
     if (articleRows.length > 0) {
 
-        await deleteImageIfUnused(
+        await deleteImageIfUnused( // checks for image usage elsewhere
             articleRows[0].hero_image
         );
     }
 
-    for (const block of blockRows) {
+    for (const block of blockRows) { // deletes hero image then loops through block images so no redundant memory usage
 
         await deleteImageIfUnused(
             block.image_path
@@ -265,7 +265,7 @@ exports.getArticleById = async (articleId) => {
     return rows[0];
 };
 
-exports.deleteBlocksForArticle = async (
+exports.deleteBlocksForArticle = async (   // used for edits
     articleId
 ) => {
 
@@ -305,7 +305,7 @@ exports.updateArticle = async ({
     ]);
 };
 
-exports.deleteCategoryJoins = async (
+exports.deleteCategoryJoins = async (  // used for edits in catagory
     articleId
 ) => {
 
@@ -315,7 +315,7 @@ exports.deleteCategoryJoins = async (
     `, [articleId]);
 };
 
-exports.getArticlePreviewBySlug = async (
+exports.getArticlePreviewBySlug = async (  // note they dont need to be published, hence preview
     slug
 ) => {
 
@@ -329,7 +329,7 @@ exports.getArticlePreviewBySlug = async (
     return rows[0];
 };
 
-async function deleteImageIfUnused(imagePath) {
+async function deleteImageIfUnused(imagePath) { // deletes images if they are not used in any other articles
 
     if (!imagePath) return;
 
