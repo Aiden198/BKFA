@@ -1,3 +1,4 @@
+/* Annual report archive layout and download-link presentation. */
 .reports-page {
   text-align: left;
 }
@@ -35,6 +36,7 @@
   gap: 1rem;
 }
 
+/* Each report is a large keyboard-friendly link rather than a small text row. */
 .report-link {
   display: block;
   padding: 1rem 1.25rem;
@@ -56,6 +58,7 @@
 }
 
 .report-link[aria-disabled="true"] {
+  /* Reserved for report years that may be listed before a file is available. */
   cursor: default;
 }
 
@@ -68,6 +71,7 @@
 }
 
 @media (max-width: 700px) {
+  /* Centre the short introduction when the archive becomes a single column. */
   .reports-page {
     padding: 2rem 1.25rem;
   }

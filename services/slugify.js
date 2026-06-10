@@ -4,9 +4,9 @@ module.exports = function slugify(text) {
         .toLowerCase()
         .trim()
 
-        .replace(/\s+/g, '-')
+        .replace(/\s+/g, '-')  // \s is whitespace, /g is global
 
-        .replace(/[^\w\-]+/g, '')
+        .replace(/[^\w\-]+/g, '') // anything not a word character or hyphen
 
-        .replace(/\-\-+/g, '-');
+        .replace(/\-\-+/g, '-'); // multiple hyphens to single
 };

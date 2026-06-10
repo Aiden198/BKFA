@@ -1,3 +1,4 @@
+/* Shared layout and typography for the About Us pages. */
 .about-main .page-body-with-sidebar {
     align-items: flex-start;
 }
@@ -76,6 +77,7 @@
     margin-bottom: 3.5rem;
 }
 
+/* Keep embedded history videos responsive without hard-coded heights. */
 .history-video-wrapper {
     width: 100%;
     max-width: 900px;
@@ -119,6 +121,7 @@
     font-weight: 900;
 }
 
+/* Team cards use a three-column overview before the detailed team carousel. */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -155,6 +158,7 @@
     line-height: 1.25;
 }
 
+/* Supporter logos stay equal in size even when the source artwork differs. */
 .supporters-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -209,6 +213,7 @@
     margin-bottom: 0;
 }
 
+/* Resource and impact cards intentionally use rows for easy scanning. */
 .supporters-resources-grid,
 .supporters-impact-grid {
     display: flex;
@@ -285,6 +290,7 @@
     text-align: center;
 }
 
+/* Shared image framing for supporter stories, galleries, and logo blocks. */
 .supporters-image-card,
 .supporters-image-banner,
 .supporters-gallery-item,
@@ -342,6 +348,7 @@
 }
 
 @media (max-width: 900px) {
+    /* Stack card and gallery layouts before they become too narrow to read. */
     .team-grid,
     .supporters-grid,
     .supporters-gallery-grid {

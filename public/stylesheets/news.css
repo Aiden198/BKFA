@@ -1,3 +1,4 @@
+/* News listing page shell and introductory heading. */
 .news-main {
     justify-content: center;
 }
@@ -31,6 +32,7 @@
     line-height: var(--page-body-line);
 }
 
+/* Category filters are buttons so the client-side filter can update in place. */
 .news-filter-section {
     margin: 0 auto 2.5rem;
     max-width: 840px;
@@ -73,6 +75,7 @@
     color: white;
 }
 
+/* Responsive card grid used for the public news archive. */
 .news-grid-section {
     width: 100%;
     margin-top: 0;
@@ -105,6 +108,7 @@
     box-shadow: var(--shadow-md);
 }
 
+/* Keep article thumbnails consistent when uploaded images have different sizes. */
 .news-card__image,
 .news-card img {
     width: 100%;
@@ -168,6 +172,7 @@
     line-height: 1.6;
 }
 
+/* Full article header, metadata, and rich-text content styles. */
 .article-hero {
     width: min(var(--container), calc(100% - 2rem));
     margin: 0 auto 3rem;
@@ -261,6 +266,7 @@
     line-height: 1.6;
 }
 
+/* Clearly identify unpublished articles when an administrator previews them. */
 .preview-banner {
     background: var(--secondary);
     color: white;
@@ -270,7 +276,7 @@
     letter-spacing: 0.08em;
 }
 
-/* admin news styling */
+/* Admin form controls for categories and repeatable article content blocks. */
 .news-admin-form {
     display: flex;
     flex-direction: column;
@@ -313,12 +319,14 @@
 }
 
 @media (max-width: 980px) {
+    /* Move the archive to two cards per row on tablets. */
     .news-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 700px) {
+    /* Use one card per row and reduce page spacing on phones. */
     .news-page {
         width: min(var(--container), calc(100% - 1.5rem));
     }

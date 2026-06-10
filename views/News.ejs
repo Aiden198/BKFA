@@ -1,5 +1,6 @@
 <%- include('partials/header') %>
 
+<!-- Public news archive with category filters and server-rendered cards. -->
 <main class="news-main">
 
     <section class="page-content news-page">
@@ -26,6 +27,7 @@
                     All
                 </button>
 
+                <!-- Categories come from the route so filters match stored article data. -->
                 <% allCategories.forEach(category => { %>
 
                     <button

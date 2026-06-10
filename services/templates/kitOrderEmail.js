@@ -1,5 +1,4 @@
 function buildKitOrderEmail(data) {
-
     return `
 
         <div style="

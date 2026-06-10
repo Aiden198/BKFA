@@ -1,5 +1,4 @@
 function buildMembershipEmail(data) {
-
     return `
 
         <div style="

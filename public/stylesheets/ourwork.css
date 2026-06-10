@@ -1,5 +1,6 @@
 /* Shared Our Work layout, aligned with the Get Involved page rhythm. */
 
+/* Position the shared hero and align the sidebar with the content card. */
 .our-work-main .our-work-hero img {
   object-position: center 36%;
 }
@@ -18,6 +19,7 @@
   background: rgba(255, 255, 255, 0.7);
 }
 
+/* Normalise headings across pages that use different historical class names. */
 .our-work-content h1,
 .our-work-content .content-title,
 .our-work-content .cbk-main-heading,
@@ -47,6 +49,7 @@
   text-align: left;
 }
 
+/* Give all Our Work body copy the same readable size and line spacing. */
 .our-work-content p,
 .our-work-content li,
 .our-work-content .content-text,
@@ -120,6 +123,7 @@
   margin-top: 0;
 }
 
+/* Action links and report downloads share the same large outlined-card style. */
 .cbk-action-boxes,
 .had-action-boxes,
 .field-partners-cta,
@@ -190,6 +194,7 @@
   text-transform: none;
 }
 
+/* The clean birth kit details expand inside bordered accordion cards. */
 .cbk-accordion-section {
   max-width: 980px;
   margin: 0 0 3.5rem;
@@ -301,6 +306,7 @@
   margin-bottom: 0;
 }
 
+/* The field-partner form uses a soft panel instead of the original map image. */
 .map-form-section {
   width: 100%;
   margin-top: 3rem;
@@ -349,6 +355,7 @@
 }
 
 @media (max-width: 900px) {
+  /* Stack detailed kit content and form fields on compact screens. */
   .page-content.our-work-content {
     max-width: none;
     padding: 2rem 1.5rem;

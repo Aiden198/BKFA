@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
+// These informational pages live at the site root rather than in a route group.
 router.get('/', function(req, res) {
   res.render('home');
 });
@@ -20,6 +21,7 @@ router.get([
   '/CorporateSupport',
   '/Corporate-Support'
 ], function(req, res) {
+  // Accept common spelling and casing variations for older external links.
   res.render('CorporateSupport');
 });
 
