@@ -3,6 +3,8 @@ const db = require('../db/db');
 const fs = require('fs');   // For deleting images when articles are deleted
 const path = require('path');
 
+// DB functionality
+
 exports.getAllPublishedArticles = async () => {  // gets all published articles with catagory
     const [rows] = await db.query(`
         SELECT

@@ -6,8 +6,7 @@ const newsController = require('../controllers/newsController');
 
 router.get('/', newsController.renderNewsPage);
 
-router.get(
-    '/preview/:slug',
+router.get('/preview/:slug',
     newsController.renderPreviewPage
 );
 

@@ -1,5 +1,4 @@
 const slugify = require('./slugify');
-
 const newsModel = require('../models/newsModel');
 
 module.exports = async function generateUniqueSlug(title) {
@@ -11,9 +10,7 @@ module.exports = async function generateUniqueSlug(title) {
     let counter = 1;
 
     while (await newsModel.slugExists(slug)) { //loops until slug is unique from news models
-
         slug = `${baseSlug}-${counter}`;
-
         counter++;
     }
 

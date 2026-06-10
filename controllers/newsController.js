@@ -1,7 +1,7 @@
 const newsModel = require('../models/newsModel'); // uses functions made in models
 const generateUniqueSlug = require('../services/generateUniqueSlug');
 const db = require('../db/db');
-
+// for functions called in routes
 // params are in the url like /news/:slug or /admin/news/edit/:id
 
 exports.renderNewsPage = async (req, res) => {
