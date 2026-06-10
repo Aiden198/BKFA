@@ -6,6 +6,8 @@
 <script src="/javascripts/home-kit-carousel.js" defer></script>
 
 <%
+// This data drives the kit carousel cards rendered later in the template.
+// Add or edit an item here instead of duplicating the card markup.
 const kitItems = [
     {
         title: 'A Plastic Sheet',
@@ -40,6 +42,7 @@ const kitItems = [
 ];
 %>
 
+<!-- Full-width rotating hero. The carousel script changes the active image. -->
 <main class="home-page">
     <header class="hero hero--feature">
         <div class="container">
