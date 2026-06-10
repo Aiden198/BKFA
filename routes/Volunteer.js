@@ -72,6 +72,7 @@ router.get([
   res.render('CorporateVolunteering');
 });
 
+// Keep legacy workplace-giving links working alongside the preferred slug.
 router.get([
   '/workplacegiving',
   '/workplace-giving',

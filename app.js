@@ -1,11 +1,13 @@
 require('dotenv').config();
 
+// Load the framework, middleware, and path helpers used to build the Express app.
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Keep route imports together so new page groups are easy to register below.
 var homeRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
 var memberRouter = require('./routes/BecomeAMember')
@@ -30,11 +32,11 @@ var adminNewsRouter = require('./routes/adminNews');
 
 var app = express();
 
-
-// view engine setup
+// Render EJS templates from the project's views directory.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// Parse requests and expose files from public and uploaded-content folders.
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -44,6 +46,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(express.urlencoded({ extended: true }));
 
+// Mount each route group at the public URL used by the site.
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/member', memberRouter)
@@ -66,18 +69,18 @@ app.use('/ourapproach', ourApproachRouter)
 app.use('/news', newsRouter);
 app.use('/admin/news', adminNewsRouter);
 
-// catch 404 and forward to error handler
+// Turn any request that reaches this point into a standard 404 error.
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// Give every Express error the same response shape and error page.
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // Only expose the full error details while the app is in development.
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+  // Respect an existing status code, or use 500 for an unexpected failure.
   res.status(err.status || 500);
   res.render('error');
 });
